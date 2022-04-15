@@ -5,6 +5,7 @@ TypeScript Apps to docelowo projekt będący zbiorem aplikacji implementujących
 React, NextJS, TypeScript, Chakra UI
 
 ## Instrukcja pracy z repozytorium
+Dla osób które nie mają większego doświadczenia z gitem ;)
 1. Akceptacja zaproszenia - wchodzimy na główną stronę repozytorium, na górze ekranu powinien być widoczny przycisk 'View invitation' > Accept
 2. Klonujemy repozytorium na lokalne środowisko wpisując poniższe polecenie w terminal w IDE
 ```bash
