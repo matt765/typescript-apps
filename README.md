@@ -47,7 +47,7 @@ git push
 - W projekcie jest skonfigurowany Eslint, narzucający pewne standardy pisania kodu. Warto zintegrować wtyczkę Eslinta ze swoim IDE
 - Tworzymy komponenty funkcyjne z TypeScriptem
 - Przed wypchnięciem brancha dobrze jest usunąć zakomentowany kod i puste pliki jeśli takie się trafią
-- Stylowanie piszemy z użyciem Chakra UI. Polecam poczytac dokumentację bo to świetna i prosta w obsłudze biblioteka ;) Design raczej minimalistyczny ale tu duża dowolność, aby tylko w miarę dobrze to wyglądało
+- Stylowanie piszemy z użyciem Chakra UI. Polecam poczytac dokumentację bo to świetna i prosta w obsłudze biblioteka ;) Design raczej minimalistyczny ale tu duża dowolność
 - Requesty do API możemy tworzyć z wykorzystaniem obecnego już hooka useFetch
 - Pliki komponentów: nazwa.comp.tsx
 - Pliki stylów: nazwa.styles.tsx - w Chakra UI zwykle pisze się style razem z komponentami ale czasem jak jest tego za dużo to można umieścić je w folderze styles tam gdzie jest nasz komponent.
