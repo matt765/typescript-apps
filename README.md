@@ -1,5 +1,5 @@
 ## Wprowadzenie
-TypeScript Apps to docelowo projekt będący zbiorem aplikacji implementujących różne rozwiązania możliwe do wykonania z wykorzystaniem javascriptowej biblioteki ReactJS. Z założenia cechuje go duża dowolność w zakresie pomysłów na aplikacje
+TypeScript Apps to projekt Open Source będący docelowo zbiorem aplikacji implementujących różne rozwiązania możliwe do wykonania z wykorzystaniem javascriptowej biblioteki ReactJS. Z założenia cechuje go duża dowolność w zakresie pomysłów na aplikacje
 
 ## Tech stack
 React, NextJS, TypeScript, Chakra UI
