@@ -39,7 +39,7 @@ Jeśli swój branch już wcześniej wypchnęliśmy i dorzucamy poprawki to wysta
 ```bash
 git push
 ```
-8. Wchodzimy na Github i tworzymy Pull Request. Po prawej stronie zaznaczamy Request Review > matt765. Można wrzucić linka na wspólną konwersację
+8. Wchodzimy na Github i tworzymy Pull Request. Można wrzucić linka na wspólną konwersację
 9. W Pull Request mogą pojawić się komentarze ze wskazówkami co można poprawić. Na koniec branch zostanie zmergowany z masterem i trafi bezpośrednio na serwer live.
 
 ## Wskazówki dotyczące pisania kodu
