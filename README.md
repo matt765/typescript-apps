@@ -5,7 +5,7 @@ TypeScript Apps to projekt Open Source będący docelowo zbiorem aplikacji imple
 React, NextJS, TypeScript, Chakra UI
 
 ## Instrukcja pracy z repozytorium
-Dla osób które nie mają większego doświadczenia z gitem ;)
+Dla osób które nie mają większego doświadczenia z gitem :slightly_smiling_face:
 1. Akceptacja zaproszenia - wchodzimy na główną stronę repozytorium, na górze ekranu powinien być widoczny przycisk 'View invitation' > Accept
 2. Klonujemy repozytorium na lokalne środowisko wpisując poniższe polecenie w terminal w IDE
 ```bash
@@ -47,7 +47,7 @@ git push
 - W projekcie jest skonfigurowany Eslint, narzucający pewne standardy pisania kodu. Warto zintegrować wtyczkę Eslinta ze swoim IDE
 - Tworzymy komponenty funkcyjne z TypeScriptem
 - Przed wypchnięciem brancha dobrze jest usunąć zakomentowany kod i puste pliki jeśli takie się trafią
-- Stylowanie piszemy z użyciem Chakra UI. Polecam poczytac dokumentację bo to świetna i prosta w obsłudze biblioteka ;) Design raczej minimalistyczny ale tu duża dowolność
+- Stylowanie piszemy z użyciem Chakra UI. Polecam poczytac dokumentację bo to świetna i prosta w obsłudze biblioteka :slightly_smiling_face: Design raczej minimalistyczny ale tu duża dowolność
 - Requesty do API możemy tworzyć z wykorzystaniem obecnego już hooka useFetch
 - Pliki komponentów: nazwa.comp.tsx
 - Pliki stylów: nazwa.styles.tsx - w Chakra UI zwykle pisze się style razem z komponentami ale czasem jak jest tego za dużo to można umieścić je w folderze styles tam gdzie jest nasz komponent.
@@ -88,6 +88,6 @@ git push
 - [TypeScript](https://www.typescriptlang.org/) 
 - [ChakraUI](https://chakra-ui.com/) 
 
-Jeśli ktoś ma doświadczenie w programowaniu, ma sugestie co do funkcjonalności aplikacji, workflow, designu, chce uczestniczyć w Code Review lub ma jakieś pytania to proszę pisać :) 
+Jeśli ktoś ma doświadczenie w programowaniu, ma sugestie co do funkcjonalności aplikacji, workflow, designu, chce uczestniczyć w Code Review lub ma jakieś pytania to proszę pisać :slightly_smiling_face:
 
 
