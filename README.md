@@ -2,7 +2,7 @@
 TypeScript Apps to projekt Open Source będący docelowo zbiorem aplikacji implementujących różne rozwiązania możliwe do wykonania z wykorzystaniem javascriptowej biblioteki ReactJS. Z założenia cechuje go duża dowolność w zakresie pomysłów na aplikacje. Główne cele projektu to nauka  TypeScriptu i pracy w zespole
 
  
-[Live link](https://typescriptapps.netlify.app/  
+https://typescriptapps.netlify.app/
 
 ## Tech stack
 React, NextJS, TypeScript, Chakra UI
