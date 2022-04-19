@@ -14,6 +14,7 @@ export const Navbar: React.FC = () => {
         <Link href="/email-verifier">E-mail Verifier</Link>
         <Link href="/color-picker">Color picker</Link>
         <Link href="/users-list">List of users</Link>
+        <Link href="/tic-tac-toe">Tic Tac Toe</Link>
       </Flex>
       <Flex alignItems="center">
         <ChakraLink href="https://github.com/matt765/typescript-apps" sx={ headerGitlabIicon } isExternal>
