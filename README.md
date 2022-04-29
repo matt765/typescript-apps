@@ -61,7 +61,7 @@ Go to Github and create a Pull Request. After quick review the branch will be me
 - Book catalog
 - Calorie counter / BMI
 - Link shortener
-- 
+
 ## To do:
 - mobile version
 - updating React to v18
@@ -70,7 +70,7 @@ Go to Github and create a Pull Request. After quick review the branch will be me
 
 ## Docs
 - [Next.js](https://nextjs.org/docs)
-- [React](https://pl.reactjs.org/)
+- [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/) 
 - [ChakraUI](https://chakra-ui.com/) 
 
