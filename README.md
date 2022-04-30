@@ -1,5 +1,5 @@
 ## Wprowadzenie
-TypeScript Apps to projekt Open Source będący docelowo zbiorem niedużych aplikacji napisanych w ReactJS. Z założenia cechuje go duża dowolność w zakresie pomysłów na aplikacje.
+TypeScript Apps to projekt Open Source będący docelowo zbiorem niedużych aplikacji napisanych w ReactJS
  
 https://typescriptapps.netlify.app/
 
