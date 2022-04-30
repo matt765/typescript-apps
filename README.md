@@ -29,10 +29,10 @@ Gdy zakończymy pracę nad kodem, wypychamy nasz roboczy branch na zdalne repozy
 ```bash
 git push -u origin NAZWA_BRANCHA
 ```
-Wchodzimy na Github i tworzymy Pull Request. Po szybkim reviewc branch zostanie zmergowany z masterem i trafi bezpośrednio na serwer live.
+Wchodzimy na Github i tworzymy Pull Request. Po szybkim review branch zostanie zmergowany z masterem i trafi bezpośrednio na serwer live.
 
 ## Wskazówki dotyczące pisania kodu
-- Trzymajmy się proszę komponentów funkcyjnych z TypeScriptem
+-  Komponenty funkcyjne z TypeScriptem
 - W projekcie jest skonfigurowany Eslint. Warto zintegrować wtyczkę Eslinta ze swoim IDE 
 - Do stylowania mamy bibliotekę Chakra UI. Polecam poczytac dokumentację bo to świetna i prosta w obsłudze biblioteka :slightly_smiling_face: Design raczej minimalistyczny ale tu duża dowolność
 - Requesty do API możemy tworzyć z wykorzystaniem obecnego już hooka useFetch
@@ -69,7 +69,7 @@ Wchodzimy na Github i tworzymy Pull Request. Po szybkim reviewc branch zostanie 
 - dodanie trybu nocnego i przełącznika z Chakra UI
 - zabezpieczenia przed spamowaniem requestów do API
 
-## Linki do dokumentacji wybranych technologii
+## Dokumentacje
 - [Next.js](https://nextjs.org/docs)
 - [React](https://pl.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/) 
