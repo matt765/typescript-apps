@@ -32,7 +32,7 @@ git push -u origin NAZWA_BRANCHA
 Wchodzimy na Github i tworzymy Pull Request. Po szybkim review branch zostanie zmergowany z masterem i trafi bezpośrednio na serwer live.
 
 ## Wskazówki dotyczące pisania kodu
--  Komponenty funkcyjne z TypeScriptem
+- Tworzymy komponenty funkcyjne z TypeScriptem
 - W projekcie jest skonfigurowany Eslint. Warto zintegrować wtyczkę Eslinta ze swoim IDE 
 - Do stylowania mamy bibliotekę Chakra UI. Polecam poczytac dokumentację bo to świetna i prosta w obsłudze biblioteka :slightly_smiling_face: Design raczej minimalistyczny ale tu duża dowolność
 - Requesty do API możemy tworzyć z wykorzystaniem obecnego już hooka useFetch
