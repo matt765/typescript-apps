@@ -10,9 +10,10 @@ import {
   Td,
   TableContainer
 } from '@chakra-ui/react'
+
 interface Props {
-  userData: User[];
-  loading: boolean;
+    userData: User[];
+    loading: boolean;
 }
 
 export const Result: React.FC<Props> = ({
@@ -31,7 +32,7 @@ export const Result: React.FC<Props> = ({
         >
           <Table size="sm">
             <Thead>
-              <Tr >
+              <Tr>
                 <Th pt="0.8rem" pb="0.8rem">Id</Th>
                 <Th pt="0.8rem" pb="0.8rem">Name</Th>
                 <Th pt="0.8rem" pb="0.8rem">E-mail</Th>
@@ -57,7 +58,7 @@ export const Result: React.FC<Props> = ({
 
   return (
     <>
-      <div className="mt-2">{loading ? <LoadingOutlined /> : renderData()}</div>
+      <div className="mt-2">{loading ? <LoadingOutlined/> : renderData()}</div>
     </>
   )
 }

@@ -19,7 +19,7 @@ export const EmailVerifier: React.FC = () => {
           setValidationResult={setValidationResult}
           setLoading={setLoading}
         />
-        <Result validationResult={validationResult} loading={loading} />
+        <Result validationResult={validationResult} loading={loading}/>
       </Flex>
     </>
   )

@@ -23,9 +23,9 @@ export const UI = ({ children }: { children: ReactNode }) => {
           padding="1rem"
           id="app"
         >
-          <Flex sx={ Header }>
-            <Logo />
-            <Navbar />
+          <Flex sx={Header}>
+            <Logo/>
+            <Navbar/>
           </Flex>
           <Flex justifyContent="center"
             width="100%"

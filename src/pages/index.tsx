@@ -5,7 +5,7 @@ import { UI } from '../components/UI/UI.comp'
 const Home: NextPage = () => {
   return (
     <UI>
-      <EmailVerifier />
+      <EmailVerifier/>
     </UI>
   )
 }

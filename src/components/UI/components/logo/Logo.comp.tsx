@@ -30,7 +30,7 @@ export const Logo: React.FC = () => {
           color="#3178c6"
           marginLeft="0.3rem"
         >
-          Apps
+                    Apps
         </Box>
       </Flex>
 

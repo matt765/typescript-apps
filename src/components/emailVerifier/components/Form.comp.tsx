@@ -10,9 +10,10 @@ import {
 } from '@chakra-ui/react'
 import { Search } from '@chakra-icons/bootstrap'
 import { useFetch } from '../../../hooks/useFetch'
+
 interface Props {
-  setValidationResult: (result: string) => void;
-  setLoading: (loading: boolean) => void;
+    setValidationResult: (result: string) => void;
+    setLoading: (loading: boolean) => void;
 }
 
 export const Form: React.FC<Props> = ({
@@ -61,17 +62,17 @@ export const Form: React.FC<Props> = ({
               <Button
                 variant="solid"
                 colorScheme="twitter"
-                leftIcon={<Search />}
+                leftIcon={<Search/>}
                 type="submit"
                 w="14rem"
                 borderRadius="20px"
                 fontSize="0.9rem"
               >
-    Check E-mail
+                                Check E-mail
               </Button>
             </Flex>
             {isError &&
-          <FormErrorMessage>Email is required.</FormErrorMessage>
+                          <FormErrorMessage>Email is required.</FormErrorMessage>
             }
           </FormControl>
         </Flex>

@@ -5,7 +5,7 @@ import { UI } from '../components/UI/UI.comp'
 const UsersListPage: NextPage = () => {
   return (
     <UI>
-      <UsersList />
+      <UsersList/>
     </UI>
   )
 }

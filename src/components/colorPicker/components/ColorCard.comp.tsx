@@ -4,9 +4,9 @@ import {
 } from '@chakra-ui/react'
 
 interface Props {
-  hexValue: string;
-  rgbValue: string;
-  setMessage: (message:string) => void
+    hexValue: string;
+    rgbValue: string;
+    setMessage: (message: string) => void
 }
 
 export const ColorCard: React.FC<Props> = ({
@@ -15,7 +15,7 @@ export const ColorCard: React.FC<Props> = ({
   const styles = { colorCardBox: { backgroundColor: hexValue } } as const
 
   const changeBackground = () => {
-    document.getElementById('app')!.style.backgroundColor = hexValue
+        document.getElementById('app')!.style.backgroundColor = hexValue
   }
 
   return (
@@ -28,10 +28,10 @@ export const ColorCard: React.FC<Props> = ({
         height="12rem"
         color="black"
         _hover={{
-          borderRadius:'15px',
-          borderStyle:'solid',
-          borderColor:'rgb(219, 219, 219)',
-          borderWidth:'0px'
+          borderRadius: '15px',
+          borderStyle: 'solid',
+          borderColor: 'rgb(219, 219, 219)',
+          borderWidth: '0px'
         }}
       >
         <Box

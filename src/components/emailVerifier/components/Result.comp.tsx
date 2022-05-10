@@ -2,8 +2,8 @@ import { LoadingOutlined } from '@ant-design/icons'
 import { Box } from '@chakra-ui/react'
 
 interface Props {
-  validationResult: string;
-  loading: boolean;
+    validationResult: string;
+    loading: boolean;
 }
 
 export const Result: React.FC<Props> = ({
@@ -25,7 +25,7 @@ export const Result: React.FC<Props> = ({
         mb="3rem"
         w="40vw"
       >
-        {!loading ? renderResult() : <LoadingOutlined />}
+        {!loading ? renderResult() : <LoadingOutlined/>}
       </Box>
 
     </>

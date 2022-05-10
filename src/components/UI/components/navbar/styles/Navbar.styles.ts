@@ -14,7 +14,7 @@ export const headerLinks = {
     fontSize: '0.8rem',
     fontFamily: 'Quicksand',
     fontWeight: '700',
-    '&:hover':{
+    '&:hover': {
       transition: '0.2s',
       borderColor: '#3178c6'
     }
