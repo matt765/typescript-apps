@@ -29,7 +29,7 @@ Wypchnięcie brancha na zdalne repozytorium
 ```bash
 git push -u origin NAZWA_BRANCHA
 ```
-Następnym krokiem jest stworzenie Pull Requestu na Githubi. Po szybkim review branch zostanie zmergowany z masterem i trafi bezpośrednio na serwer live.
+Następnym krokiem jest stworzenie Pull Requestu na Githubie. Po szybkim review branch zostanie zmergowany z masterem i trafi bezpośrednio na serwer live.
 
 ## Wskazówki dotyczące pisania kodu
 - Konwencja projektu to komponenty funkcyjne z TypeScriptem, style w Chakra UI
