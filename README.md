@@ -8,15 +8,15 @@ React, NextJS, TypeScript, Chakra UI
 
 ## Instrukcja pracy z repozytorium
 
-Klonujemy repozytorium na lokalne środowisko wpisując poniższe polecenie w terminal w IDE
+Pobranie repozytorium na lokalne środowisko 
 ```bash
 git clone https://github.com/matt765/typescript-apps.git
 ```
-Ustawiamy połączenie edytora ze zdalnym repozytorium, aby możliwe było pobieranie i pushowanie zmian
+Połączenie IDE ze zdalnym repozytorium
 ```bash
 git remote add upstream https://github.com/matt765/typescript-apps.git
 ```
-Tworzymy swój branch, wybierając angielskojęzyczną nazwę która najlepiej odda wybrany pomysł na aplikację. Jeśli to możliwe, dobrze jest ją poprzedzić kategorią do której się kwalifikuje. Przykłady: 'use-api/movies-library', 'game/tic-tac-toe'. Przedrostek w zasadzie tylko dla porządku, bo na razie nie ma planów dodawania kategorii na portalu.
+Stworzenie własnego brancha
 ```bash
 git checkout -b NAZWA_BRANCHA
 ```
@@ -25,16 +25,15 @@ Instalacja bibliotek i ewentualne uruchomienie serwera na localhost:3000
 npm i
 npm run dev
 ```
-Gdy zakończymy pracę nad kodem, wypychamy nasz roboczy branch na zdalne repozytorium. Można to robić przez wbudowane funkcjonalności edytorów kodu lub poniższą komendą
+Wypchnięcie brancha na zdalne repozytorium
 ```bash
 git push -u origin NAZWA_BRANCHA
 ```
-Wchodzimy na Github i tworzymy Pull Request. Po szybkim review branch zostanie zmergowany z masterem i trafi bezpośrednio na serwer live.
+Następnym krokiem jest stworzenie Pull Requestu na Githubi. Po szybkim review branch zostanie zmergowany z masterem i trafi bezpośrednio na serwer live.
 
 ## Wskazówki dotyczące pisania kodu
-- Tworzymy komponenty funkcyjne z TypeScriptem
+- Konwencja projektu to komponenty funkcyjne z TypeScriptem, style w Chakra UI
 - W projekcie jest skonfigurowany Eslint. Warto zintegrować wtyczkę Eslinta ze swoim IDE 
-- Do stylowania mamy bibliotekę Chakra UI. Polecam poczytac dokumentację bo to świetna i prosta w obsłudze biblioteka :slightly_smiling_face: Design raczej minimalistyczny ale tu duża dowolność
 - Requesty do API możemy tworzyć z wykorzystaniem obecnego już hooka useFetch
 - Pliki komponentów: nazwa.comp.tsx
 - Pliki stylów: nazwa.styles.tsx - w Chakra UI zwykle pisze się style razem z komponentami ale czasem jak jest tego za dużo to można umieścić je w folderze styles tam gdzie jest nasz komponent.
@@ -42,7 +41,7 @@ Wchodzimy na Github i tworzymy Pull Request. Po szybkim review branch zostanie z
 ## Foldery
 - src/assets - obrazki i filmy
 - src/components - większość kodu naszych aplikacji
-- src/hooks - custom hooki jeśli jest taka potrzeba
+- src/hooks - custom hooki
 - src/pages - folder wymagany przez NextJS. Odpowiednik React Routera w CRA
 - W razie potrzeb można jeszcze utworzyć foldery np. utils/services/interfaces
 
