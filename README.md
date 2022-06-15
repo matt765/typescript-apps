@@ -32,7 +32,7 @@ git push -u origin NAZWA_BRANCHA
 Następnym krokiem jest stworzenie Pull Requestu na Githubie. Po szybkim review branch zostanie zmergowany z masterem i trafi bezpośrednio na serwer live.
 
 ## Wskazówki dotyczące pisania kodu
-- Konwencja projektu to komponenty funkcyjne z TypeScriptem, style w Chakra UI
+- Konwencja projektu to komponenty funkcyjne z TypeScriptem, stylowane w Chakra UI
 - W projekcie jest skonfigurowany Eslint. Warto zintegrować wtyczkę Eslinta ze swoim IDE 
 - Requesty do API możemy tworzyć z wykorzystaniem obecnego już hooka useFetch
 - Pliki komponentów: nazwa.comp.tsx
