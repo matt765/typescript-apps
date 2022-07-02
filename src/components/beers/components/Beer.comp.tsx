@@ -1,38 +1,34 @@
-import Link from 'next/link'
-import { Button } from './Buttons.comp'
+import NextLink from 'next/link'
 import Image from 'next/image'
-import { ListItem } from './List.comp'
-import * as React from 'react'
 import { Beer as BeerInterface } from '../interfaces/Beer'
+import {
+  Box, GridItem, Button, Flex, Text
+} from '@chakra-ui/react'
 
 export const BeerComp = ({
   // eslint-disable-next-line camelcase
   name, tagline, image_url, id
 }: BeerInterface) =>
-
-  <ListItem key={name}>
-    <div className="flex flex-col justify-start w-1/2 h-full gap-1">
-      <p
-        className={
-          'relative cursor-pointer text-2xl font-semibold'
-        }
+  <GridItem display={'flex'} justifyContent={'space-between'} boxShadow={'xs'} p={4} borderRadius={2} _hover={{ boxShadow: 'lg' }} transition={'200ms'}>
+    <Flex flexDirection={'column'}>
+      <Text fontSize={'2xl'} lineHeight={1}
       >
         {name}
-      </p>
-      <p>{tagline}</p>
-      <Link href={`/beer/${id}`}>
-        <a className={'mt-auto self-start'}>
-          <Button>Read more</Button>
+      </Text>
+      <Text mt={2} mb={4}>{tagline}</Text>
+      <NextLink href={`/beer/${id}`} passHref>
+        <a>
+          <Button colorScheme={'green'}>Read more</Button>
         </a>
-      </Link>
-    </div>
-    <div className={'relative h-24 w-24 self-center'}>
+      </NextLink>
+    </Flex>
+    <Box className={'relative h-24 w-24 self-center'}>
       <Image
         src={image_url}
         layout={'fill'}
         objectFit={'contain'}
         alt={name}
       />
-    </div>
-  </ListItem>
+    </Box>
+  </GridItem>
 
