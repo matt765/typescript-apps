@@ -1,4 +1,3 @@
-import React from 'react'
 import { Beer } from '../interfaces/Beer'
 import { BeerComp } from './Beer.comp'
 import {
