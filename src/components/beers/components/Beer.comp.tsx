@@ -22,7 +22,7 @@ export const BeerComp = ({
         </a>
       </NextLink>
     </Flex>
-    <Box className={'relative h-24 w-24 self-center'}>
+    <Box position={'relative'} width={24} height={24}>
       <Image
         // eslint-disable-next-line camelcase
         src={image_url}
