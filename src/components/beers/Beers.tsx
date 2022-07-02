@@ -1,18 +1,18 @@
 import * as React from 'react'
 import {
-  Heading1, Paragraph
-} from './components/Typography.comp'
+  Box, Heading
+} from '@chakra-ui/react'
 
 export const Beers = ({
   children, ...rest
 }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>) =>
-  <div className="flex flex-col items-center w-full py-2" {...rest}>
-    <main className={'mx-auto w-[95%] max-w-screen-xl py-10'}>
-      <div className="p-2">
-        <Heading1>View our beers</Heading1>
-        <Paragraph>Choose your beverage and find out the details</Paragraph>
-      </div>
+  <Box as={'main'} {...rest} maxWidth={1200} margin={'0 auto'}>
+    <>
+      <Box as={'header'} mb={10}>
+        <Heading as={'h1'} size={'3xl'} fontWeight={500}>View our beers</Heading>
+        <Heading as={'h2'} size={'xl'} fontWeight={300}>Choose your beverage and find out the details</Heading>
+      </Box >
       {children}
-    </main>
-  </div>
+    </>
+  </Box>
 

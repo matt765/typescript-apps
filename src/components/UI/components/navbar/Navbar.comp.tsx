@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Link from 'next/link'
 import {
-  Link as ChakraLink, Flex, Box
+  Link as ChakraLink, Flex
 } from '@chakra-ui/react'
 import { Github } from '@chakra-icons/bootstrap'
 import {
