@@ -24,6 +24,7 @@ export const BeerComp = ({
     </Flex>
     <Box className={'relative h-24 w-24 self-center'}>
       <Image
+        // eslint-disable-next-line camelcase
         src={image_url}
         layout={'fill'}
         objectFit={'contain'}
