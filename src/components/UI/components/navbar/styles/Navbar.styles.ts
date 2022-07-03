@@ -4,19 +4,20 @@ export const headerLinks = {
   '& a': {
     textDecoration: 'none',
     m: '1rem 1.5rem 1rem 1rem',
-    // color: 'rgb(117, 117, 117)',
-    // backgroundColor: 'rgb(255, 255, 255)',
     p: '0.8rem 2rem 0.8rem 2rem',
     borderRadius: '20px',
     transition: '0.2s',
     borderWidth: '2px',
-    // borderColor: 'rgb(236, 236, 236)',
+    borderColor: 'rgb(236, 236, 236)',
     borderStyle: 'solid',
     fontSize: '0.8rem',
     fontFamily: 'Quicksand',
     fontWeight: '700',
     whiteSpace: 'nowrap',
-    '&:hover': { transition: '0.2s' }
+    '&:hover': {
+      transition: '0.2s',
+      borderColor: '#3178c6'
+    }
   }
 }
 export const headerGitlabIicon = {
@@ -30,7 +31,6 @@ export const headerGitlabIicon = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  // color: 'rgb(153, 152, 152)',
   fontSize: '1.5rem',
   transition: '0.2s',
   boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',

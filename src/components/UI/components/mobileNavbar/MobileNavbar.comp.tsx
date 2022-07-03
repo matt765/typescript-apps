@@ -10,7 +10,7 @@ import { useRouter } from 'next/router'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import {
   mobileNavbarWrapper, mobileNavbar, mobileNavbarList
-} from './styles'
+} from './styles/MobileNavbar.styles'
 
 export const MobileNavbar = () => {
   const { pathname } = useRouter()
