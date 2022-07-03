@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { Form } from './components/Form.comp'
 import { Result } from './components/Result.comp'
 import { useState } from 'react'

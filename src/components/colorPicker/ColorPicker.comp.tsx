@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { useState } from 'react'
 import { ColorCard } from './components/ColorCard.comp'
 import {

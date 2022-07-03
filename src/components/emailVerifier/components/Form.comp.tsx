@@ -48,15 +48,20 @@ export const Form: React.FC<Props> = ({
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Flex h="100%" justifyContent="center" alignItems="center">
-          <FormControl isInvalid={isError} h="6rem">
-            <Flex>
+        <Flex h="100%" justifyContent="center" alignItems="center" >
+          <FormControl isInvalid={isError} h="6rem" >
+            <Flex sx={{ '@media(max-width: 750px)':{
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '.5rem'
+            } }}
+            gap={'1rem'}>
               <Input
                 id="email"
                 type="email"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                mr="2rem"
                 borderRadius="20px"
               />
               <Button
