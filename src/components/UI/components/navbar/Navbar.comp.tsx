@@ -1,18 +1,15 @@
 import * as React from 'react'
 import Link from 'next/link'
+import { Flex } from '@chakra-ui/react'
 import {
-  Link as ChakraLink, Flex
-} from '@chakra-ui/react'
-import { Github } from '@chakra-icons/bootstrap'
-import {
-  headerLinks, headerGitlabIicon, activeLink, link
+  headerLinks, activeLink, link, headerLinksWrapper
 } from './styles/Navbar.styles'
 import { useRouter } from 'next/router'
 
 export const Navbar: React.FC = () => {
   const { pathname } = useRouter()
   return (
-    <Flex justifyContent="center">
+    <Flex justifyContent="center" sx={headerLinksWrapper}>
       <Flex sx={headerLinks}>
         <Link href="/email-verifier"><a style={pathname.includes('email-verifier') ? activeLink : link}>
             E-mail Verifier
@@ -26,11 +23,6 @@ export const Navbar: React.FC = () => {
         <Link href="/beers" ><a style={pathname.includes('beer') ? activeLink : link}>
             Beers
         </a></Link>
-      </Flex>
-      <Flex alignItems="center">
-        <ChakraLink href="https://github.com/matt765/typescript-apps" sx={headerGitlabIicon} isExternal>
-          <Github/>
-        </ChakraLink>
       </Flex>
     </Flex>
   )

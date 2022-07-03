@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   Box, Flex, List, ListItem, Text
 } from '@chakra-ui/react'
@@ -6,9 +5,9 @@ import Image from 'next/image'
 import { Beer } from '../interfaces/Beer'
 
 export const SingleBeer = ({ beer }:{beer: Beer}) =>
-  <Box maxWidth={1200}
+  <Box maxWidth={1200} as={'section'}
   >
-    <Flex justifyContent={'space-between'}>
+    <Flex justifyContent={'space-between'} as={'header'}>
       <Flex flexDirection={'column'}>
         <Text fontSize={'6xl'}>{beer.name}</Text>
         <Text fontSize={'3xl'} fontWeight={300} mt={-2}>{beer.tagline}</Text>
@@ -24,7 +23,7 @@ export const SingleBeer = ({ beer }:{beer: Beer}) =>
         />
       </Box>
     </Flex>
-    <Flex justifyContent={'space-between'}>
+    <Flex justifyContent={'space-between'} as={'main'}>
       <Flex flexDirection={'column'}>
         <Text fontWeight={'600'} fontSize={'3xl'}>Ingredients:</Text>
         <Text fontWeight={'500'}>Malt</Text>

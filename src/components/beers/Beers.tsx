@@ -6,7 +6,7 @@ import {
 export const Beers = ({
   children, ...rest
 }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>) =>
-  <Box as={'main'} {...rest} maxWidth={1200} margin={'0 auto'}>
+  <Box as={'section'} {...rest} maxWidth={1200} margin={'0 auto'}>
     <>
       <Box as={'header'} mb={10}>
         <Heading as={'h1'} size={'3xl'} fontWeight={500}>View our beers</Heading>

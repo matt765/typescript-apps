@@ -5,19 +5,16 @@ import Head from 'next/head'
 import '@fontsource/poppins'
 import '@fontsource/quicksand'
 
-function MyApp({
+const MyApp = ({
   Component, pageProps
-}: AppProps) {
-  return (
-    <>
-      <Head>
-        <title>TypeScript Apps</title>
-      </Head>
-      <ChakraProvider>
-        <Component {...pageProps} h="100vh"/>
-      </ChakraProvider>
-    </>
-  )
-}
+}: AppProps) =>
+  <>
+    <Head>
+      <title>TypeScript Apps</title>
+    </Head>
+    <ChakraProvider>
+      <Component {...pageProps} h="100vh"/>
+    </ChakraProvider>
+  </>
 
 export default MyApp

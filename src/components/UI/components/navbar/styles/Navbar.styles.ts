@@ -15,6 +15,7 @@ export const headerLinks = {
     fontSize: '0.8rem',
     fontFamily: 'Quicksand',
     fontWeight: '700',
+    whiteSpace: 'nowrap',
     '&:hover': {
       transition: '0.2s',
       borderColor: '#3178c6'
@@ -47,12 +48,12 @@ export const activeLink = { borderColor: '#3178c6' }
 export const link = { borderColor: 'rgb(236, 236, 236)' }
 
 export const gitlabIcon = {
-  gridColumn: 2,
-  gridRow: 1
+  justifySelf: 'flex-end',
+  justifyContent: 'flex-end'
 }
 
-export const headerLinksWrapper = { '@media(max-width: 900px)': {
+export const headerLinksWrapper = { '@media(max-width: 1200px)':{
   gridRow: 2,
   gridColumn: 'span 2',
-  width: '100%'
+  '@media(max-width: 900px)': { display: 'none' }
 } }

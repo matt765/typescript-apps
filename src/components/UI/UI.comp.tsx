@@ -1,8 +1,12 @@
-import React, { ReactNode } from 'react'
-import { Flex } from '@chakra-ui/react'
+import { ReactNode } from 'react'
+import {
+  Flex, SimpleGrid
+} from '@chakra-ui/react'
 import { Navbar } from './components/navbar/Navbar.comp'
 import { Logo } from './components/logo/Logo.comp'
 import { Header } from './styles/UI.styles'
+import { GitlabIcon } from './components/GitlabIcon.comp'
+import { MobileNavbar } from './components/mobileNavbar/MobileNavbar.comp'
 
 export const UI = ({ children }: { children: ReactNode }) => {
   return (
@@ -13,6 +17,7 @@ export const UI = ({ children }: { children: ReactNode }) => {
         backgroundColor="#f0f0f0"
         width="100vw"
         height="100%"
+        padding={0}
       >
         <Flex
           alignItems="center"
@@ -23,10 +28,12 @@ export const UI = ({ children }: { children: ReactNode }) => {
           padding="1rem"
           id="app"
         >
-          <Flex sx={Header}>
+          <SimpleGrid sx={Header}>
+            <MobileNavbar/>
             <Logo/>
             <Navbar/>
-          </Flex>
+            <GitlabIcon/>
+          </SimpleGrid>
           <Flex justifyContent="center"
             width="100%"
             height="100%"
