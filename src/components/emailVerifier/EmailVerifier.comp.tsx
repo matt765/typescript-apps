@@ -14,7 +14,7 @@ export const EmailVerifier: React.FC = () => {
         direction="column"
         alignItems="center"
         justifyContent="center"
-        mb={5}
+        height={'80vh'}
       >
         <Form
           setValidationResult={setValidationResult}
