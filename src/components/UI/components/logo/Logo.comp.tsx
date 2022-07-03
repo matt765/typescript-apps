@@ -2,10 +2,12 @@ import * as React from 'react'
 import LogoImage from '../../../../assets/tslogo.png'
 import Image from 'next/image'
 import {
-  Flex, Box
+  Flex, Box, useColorMode
 } from '@chakra-ui/react'
 
 export const Logo: React.FC = () => {
+  const { colorMode } = useColorMode()
+
   return (
     <Flex
       alignItems="center"
@@ -24,7 +26,7 @@ export const Logo: React.FC = () => {
       <Flex
         fontFamily="Poppins"
         fontSize="1.25rem"
-        color="#4a4e53"
+        color={colorMode === 'light' ? '#4a4e53' : '#e2e5e8'}
         fontWeight="700"
         textShadow="1px 2px 1px rgba(0,0,0,0.1)"
         alignItems={'center'}

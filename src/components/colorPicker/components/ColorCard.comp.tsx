@@ -26,7 +26,6 @@ export const ColorCard: React.FC<Props> = ({
         alignItems="center"
         width="10rem"
         height="12rem"
-        color="black"
         _hover={{
           borderRadius: '15px',
           borderStyle: 'solid',

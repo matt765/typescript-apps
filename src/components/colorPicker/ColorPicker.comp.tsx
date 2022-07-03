@@ -12,7 +12,6 @@ export const ColorPicker: React.FC = () => {
     <>
       <Flex direction="column">
         <Box
-          color="black"
           h="2rem"
           mb="2rem"
           textAlign="center"

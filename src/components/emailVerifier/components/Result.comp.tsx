@@ -21,7 +21,7 @@ export const Result: React.FC<Props> = ({
         textAlign="center"
         fontSize="1.3rem"
         fontFamily="Quicksand"
-        color="rgb(82, 82, 82)"
+        // color="rgb(82, 82, 82)"
         mb="3rem"
         w="40vw"
       >
