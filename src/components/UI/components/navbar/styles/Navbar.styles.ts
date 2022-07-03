@@ -41,3 +41,6 @@ export const headerGitlabIicon = {
     borderColor: '#3178c6'
   }
 }
+
+export const activeLink = { borderColor: '#3178c6' }
+export const link = { borderColor: 'rgb(236, 236, 236)' }
