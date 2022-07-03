@@ -48,5 +48,5 @@ export const gitlabIcon = {
 export const headerLinksWrapper = { '@media(max-width: 1200px)':{
   gridRow: 2,
   gridColumn: 'span 2',
-  '@media(max-width: 900px)': { display: 'none' }
+  '@media(max-width: 750px)': { display: 'none' }
 } }
