@@ -1,5 +1,6 @@
 export const headerLinks = {
   justifyContent: 'flex-end',
+  alignItems: 'center',
   '& a': {
     textDecoration: 'none',
     m: '1rem 1.5rem 1rem 1rem',
@@ -44,3 +45,14 @@ export const headerGitlabIicon = {
 
 export const activeLink = { borderColor: '#3178c6' }
 export const link = { borderColor: 'rgb(236, 236, 236)' }
+
+export const gitlabIcon = {
+  gridColumn: 2,
+  gridRow: 1
+}
+
+export const headerLinksWrapper = { '@media(max-width: 900px)': {
+  gridRow: 2,
+  gridColumn: 'span 2',
+  width: '100%'
+} }
