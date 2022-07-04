@@ -2,7 +2,7 @@ import * as React from 'react'
 import {
   Button, Heading, Text, Flex, AlertIcon, Alert
 } from '@chakra-ui/react'
-import { useWeather } from '../hooks/useWeather'
+import { useWeather } from './WeatherMain/hooks/useWeather'
 import { EnvironmentOutlined } from '@ant-design/icons'
 
 export const WeatherHeading = () => {

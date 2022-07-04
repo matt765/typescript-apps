@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { getForecast } from './getForecast'
-import { ForecastInterface } from '../interfaces/Forecast.interface'
-import { ForecaseContextInterface } from '../interfaces/ForecaseContext.interface'
+import { ForecastInterface } from '../../../interfaces/Forecast.interface'
+import { ForecaseContextInterface } from '../../../interfaces/ForecaseContext.interface'
 
 const Weather = React.createContext<ForecaseContextInterface | null>(null)
 
