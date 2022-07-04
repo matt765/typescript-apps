@@ -1,12 +1,10 @@
-import React from 'react'
 import {
-  Badge, Flex, SimpleGrid, Skeleton, Text, useColorMode
+  Badge, Flex, SimpleGrid, Skeleton, Text
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import { useWeather } from '../../hooks/useWeather'
 
 export const DayWeather = () => {
-  const { colorMode } = useColorMode()
   const {
     forecast, position
   } = useWeather()
@@ -31,7 +29,7 @@ export const DayWeather = () => {
     }} textAlign={'center'}>
       {forecast?.forecast?.forecastday[0]?.hour.map((h) =>
         <Flex key={h.time_epoch} flexDirection={'column'} boxShadow={'sm'} p={2} borderRadius={4}
-          _hover={{ boxShadow: colorMode === 'light' ? 'md' : 'outline' }}
+          _hover={{ boxShadow:  'outline' }}
           transition={'200ms'}>
           <Text>{h.time.split(' ')[1]}</Text>
           {h.condition.icon &&

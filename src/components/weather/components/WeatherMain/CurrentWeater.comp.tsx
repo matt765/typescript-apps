@@ -1,13 +1,11 @@
-import React from 'react'
 import {
-  Badge, Flex, Skeleton, Text, useColorMode
+  Badge, Flex, Skeleton, Text
 } from '@chakra-ui/react'
 import { EnvironmentOutlined } from '@ant-design/icons'
 import Image from 'next/image'
 import { useWeather } from '../../hooks/useWeather'
 
 export const CurrentWeather = () => {
-  const { colorMode } = useColorMode()
   const {
     forecast, position
   } = useWeather()
@@ -27,7 +25,7 @@ export const CurrentWeather = () => {
 
   return (
     <Flex alignItems={'center'} flexDirection={'column'} boxShadow={'sm'} p={4} borderRadius={4}
-      _hover={{ boxShadow: colorMode === 'light' ? 'md' : 'outline' }}
+      _hover={{ boxShadow:  'outline' }}
       transition={'200ms'}>
       <Flex alignItems={'center'} gap={'.25rem'} >
         <EnvironmentOutlined />
