@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { getForecast } from './getForecast'
-import { ForecastInterface } from '../../../interfaces/Forecast.interface'
-import { ForecaseContextInterface } from '../../../interfaces/ForecaseContext.interface'
+import { ForecastInterface } from '../interfaces/Forecast.interface'
+import { ForecaseContextInterface } from '../interfaces/ForecaseContext.interface'
 
 const Weather = React.createContext<ForecaseContextInterface | null>(null)
 
 export const WeatherProvider = ({ children }: {children: React.ReactNode}) => {
   const [position, setPosition] = React.useState<GeolocationPosition>()
-  const [error, setError] = React.useState<GeolocationPositionError | Error>()
+  const [error, setError] = React.useState<GeolocationPositionError | Error | null>(null)
   const [forecast, setForecast] = React.useState<ForecastInterface>()
 
   function onSuccess(pos: GeolocationPosition) {
@@ -24,8 +24,19 @@ export const WeatherProvider = ({ children }: {children: React.ReactNode}) => {
     }
   }
 
+  const onSubmit = (e: React.BaseSyntheticEvent<HTMLFormElement>) => {
+    setError(null)
+    e.preventDefault()
+    getForecast(e.target[0].value).then((data) => {
+      setForecast(data)
+    }).catch((error) => {
+      setError(error)
+    })
+  }
+
   React.useMemo(() => {
     if (position) {
+      setError(null)
       const query = `${position.coords.latitude},${position.coords.longitude}`
       getForecast(query).then((data) => {
         setForecast(data)
@@ -36,6 +47,7 @@ export const WeatherProvider = ({ children }: {children: React.ReactNode}) => {
   }, [position])
 
   return <Weather.Provider value={{
+    onSubmit,
     onClick,
     error,
     forecast,

@@ -4,7 +4,7 @@ import {
 } from '@chakra-ui/react'
 import { EnvironmentOutlined } from '@ant-design/icons'
 import Image from 'next/image'
-import { useWeather } from './hooks/useWeather'
+import { useWeather } from '../../hooks/useWeather'
 
 export const CurrentWeather = () => {
   const { colorMode } = useColorMode()
@@ -31,16 +31,18 @@ export const CurrentWeather = () => {
       transition={'200ms'}>
       <Flex alignItems={'center'} gap={'.25rem'} >
         <EnvironmentOutlined />
-        <Text>{`${forecast?.location.name} - 
-          ${forecast?.location.country}`}</Text>
+        <Text>{`${forecast?.location?.name} - 
+          ${forecast?.location?.country}`}</Text>
       </Flex>
-      <Image src={`https:${forecast?.current.condition.icon}`}
-        alt={forecast?.current.condition.text}
-        width={'50px'} height={'50px'}
-        objectFit={'contain'}/>
+      {forecast?.current?.condition?.icon &&
+            <Image src={`https:${forecast?.current?.condition?.icon}`}
+              alt={forecast?.current?.condition?.text}
+              width={'50px'} height={'50px'}
+              objectFit={'contain'}/>
+      }
       <Badge textTransform={'capitalize'} fontSize={'xl'}
-        fontWeight={'400'}>{forecast?.current.condition.text}</Badge>
-      <Text fontSize={'3xl'}>{forecast?.current.temp_c}°C</Text>
+        fontWeight={'400'}>{forecast?.current?.condition.text}</Badge>
+      <Text fontSize={'3xl'}>{forecast?.current?.temp_c}°C</Text>
     </Flex>
   )
 }

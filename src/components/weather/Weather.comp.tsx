@@ -1,6 +1,5 @@
-import React from 'react'
 import { WeatherHeading } from './components/WeatherHeading.comp'
-import { WeatherProvider } from './components/WeatherMain/hooks/useWeather'
+import { WeatherProvider } from './hooks/useWeather'
 import { WeatherMain } from './components/WeatherMain/WeatherMain'
 import { Flex } from '@chakra-ui/react'
 
