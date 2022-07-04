@@ -87,8 +87,8 @@ export interface ForecastInterface{
                 wind_mph: number
                 windchill_c: number
                 windchill_f: number
-            }
-        }
+            }[]
+        }[]
 
     }
     location:{
