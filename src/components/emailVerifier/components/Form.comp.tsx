@@ -10,9 +10,10 @@ import {
 } from '@chakra-ui/react'
 import { Search } from '@chakra-icons/bootstrap'
 import { useFetch } from '../../../hooks/useFetch'
+
 interface Props {
-  setValidationResult: (result: string) => void;
-  setLoading: (loading: boolean) => void;
+    setValidationResult: (result: string) => void;
+    setLoading: (loading: boolean) => void;
 }
 
 export const Form: React.FC<Props> = ({
@@ -47,31 +48,36 @@ export const Form: React.FC<Props> = ({
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Flex h="100%" justifyContent="center" alignItems="center">
-          <FormControl isInvalid={isError} h="6rem">
-            <Flex>
+        <Flex h="100%" justifyContent="center" alignItems="center" >
+          <FormControl isInvalid={isError} h="6rem" >
+            <Flex sx={{ '@media(max-width: 750px)':{
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '.5rem'
+            } }}
+            gap={'1rem'}>
               <Input
                 id="email"
                 type="email"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                mr="2rem"
                 borderRadius="20px"
               />
               <Button
                 variant="solid"
                 colorScheme="twitter"
-                leftIcon={<Search />}
+                leftIcon={<Search/>}
                 type="submit"
                 w="14rem"
                 borderRadius="20px"
                 fontSize="0.9rem"
               >
-    Check E-mail
+                                Check E-mail
               </Button>
             </Flex>
             {isError &&
-          <FormErrorMessage>Email is required.</FormErrorMessage>
+                          <FormErrorMessage>Email is required.</FormErrorMessage>
             }
           </FormControl>
         </Flex>

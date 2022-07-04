@@ -76,4 +76,3 @@ Następnym krokiem jest stworzenie Pull Requestu na Githubie. Po szybkim review 
 
 
 
-

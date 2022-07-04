@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { Form } from './components/Form.comp'
 import { Result } from './components/Result.comp'
 import { useState } from 'react'
@@ -13,13 +14,13 @@ export const EmailVerifier: React.FC = () => {
         direction="column"
         alignItems="center"
         justifyContent="center"
-        mb={5}
+        height={'80vh'}
       >
         <Form
           setValidationResult={setValidationResult}
           setLoading={setLoading}
         />
-        <Result validationResult={validationResult} loading={loading} />
+        <Result validationResult={validationResult} loading={loading}/>
       </Flex>
     </>
   )

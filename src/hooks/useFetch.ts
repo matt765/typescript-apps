@@ -8,7 +8,8 @@ export const useFetch = (url: string) => {
 
   const makeApiCall = () => {
     setLoading(true)
-    axios.get(url)
+    axios
+      .get(url)
       .then((res) => {
         setLoading(false)
         setData(res.data)

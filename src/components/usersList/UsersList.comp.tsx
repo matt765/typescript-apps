@@ -1,4 +1,3 @@
-
 import {
   useEffect, useState
 } from 'react'
@@ -8,11 +7,13 @@ import {
   Flex
 } from '@chakra-ui/react'
 import { Result } from './components/Result.comp'
+
 export interface User {
-  id: number;
-  name: string;
-  email: string;
+    id: number;
+    name: string;
+    email: string;
 }
+
 import { useFetch } from '../../hooks/useFetch'
 
 export const UsersList: React.FC = () => {
@@ -46,7 +47,7 @@ export const UsersList: React.FC = () => {
           fontSize="0.9rem"
           mb="2rem"
         >Fetch users</Button>
-        <Result userData={userData} loading={loading} />
+        <Result userData={userData} loading={loading}/>
       </Flex>
 
     </>

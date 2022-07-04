@@ -5,7 +5,7 @@ import { UI } from '../components/UI/UI.comp'
 const ColorPickerPage: NextPage = () => {
   return (
     <UI>
-      <ColorPicker />
+      <ColorPicker/>
     </UI>
   )
 }
