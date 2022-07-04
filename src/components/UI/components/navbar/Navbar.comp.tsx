@@ -1,6 +1,8 @@
 import * as React from 'react'
-import Link from 'next/link'
-import { Flex } from '@chakra-ui/react'
+import NextLink from 'next/link'
+import {
+  Flex, Link
+} from '@chakra-ui/react'
 import {
   headerLinks, activeLink, link, headerLinksWrapper
 } from './styles/Navbar.styles'
@@ -11,21 +13,21 @@ export const Navbar: React.FC = () => {
   return (
     <Flex justifyContent="center" sx={headerLinksWrapper}>
       <Flex sx={headerLinks}>
-        <Link href="/email-verifier"><a style={pathname.includes('email-verifier') ? activeLink : link}>
+        <NextLink href="/email-verifier" passHref><Link style={pathname.includes('email-verifier') ? activeLink : link} _hover={{ boxShadow: 'outline' }}>
             E-mail Verifier
-        </a></Link>
-        <Link href="/color-picker"><a style={pathname.includes('color-picker') ? activeLink : link}>
+        </Link></NextLink>
+        <NextLink href="/color-picker" passHref><Link style={pathname.includes('color-picker') ? activeLink : link} _hover={{ boxShadow: 'outline' }}>
             Color picker
-        </a></Link>
-        <Link href="/users-list" ><a style={pathname.includes('users-list') ? activeLink : link}>
+        </Link></NextLink>
+        <NextLink href="/users-list" passHref><Link style={pathname.includes('users-list') ? activeLink : link} _hover={{ boxShadow: 'outline' }}>
             List of users
-        </a></Link>
-        <Link href="/beers" ><a style={pathname.includes('beer') ? activeLink : link}>
+        </Link></NextLink>
+        <NextLink href="/beers" passHref><Link style={pathname.includes('beer') ? activeLink : link} _hover={{ boxShadow: 'outline' }}>
             Beers
-        </a></Link>
-        <Link href="/weather" ><a style={pathname.includes('weather') ? activeLink : link}>
+        </Link></NextLink>
+        <NextLink href="/weather" passHref><Link style={pathname.includes('weather') ? activeLink : link} _hover={{ boxShadow: 'outline' }}>
               Weather
-        </a></Link>
+        </Link></NextLink>
       </Flex>
     </Flex>
   )
