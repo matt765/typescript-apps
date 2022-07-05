@@ -1,5 +1,5 @@
 export const Header = {
-  gridTemplateColumns: '60% 30% 10%',
+  gridTemplateColumns: '20% 60% 20%',
   h: '12vh',
   minH: '12vh',
   maxH: '12vh',

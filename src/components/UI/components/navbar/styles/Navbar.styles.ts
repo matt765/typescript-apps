@@ -3,7 +3,7 @@ export const headerLinks = {
   alignItems: 'center',
   '& a': {
     textDecoration: 'none',
-    m: '1rem 1.5rem 1rem 1rem',
+    m: '.5rem',
     p: '0.8rem 2rem 0.8rem 2rem',
     borderRadius: '20px',
     transition: '0.2s',

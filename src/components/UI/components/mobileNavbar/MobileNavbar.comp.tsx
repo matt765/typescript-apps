@@ -35,6 +35,9 @@ export const MobileNavbar = () => {
               <Link href="/beers" ><a style={pathname.includes('beer') ? activeLink : link}>
                 Beers
               </a></Link>
+              <Link href="/weather" ><a style={pathname.includes('weather') ? activeLink : link}>
+                Weather
+              </a></Link>
             </Flex>
           </Flex>
       }
