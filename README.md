@@ -8,9 +8,13 @@ React, NextJS, TypeScript, Chakra UI
 
 ## Aplikacje
 [Beers](src/components/beers)
+
 [Color Picker](src/components/colorPicker)
+
 [Email Verifier](src/components/emailVerifier)
+
 [User List](src/components/usersList)
+
 [Weather](src/components/weather)
 
 
