@@ -39,8 +39,7 @@ export const UsersList: React.FC = () => {
         flexDirection="column"
       >
         <Button
-          variant="solid"
-          colorScheme="twitter"
+          variant="primary"
           onClick={makeApiCall}
           w="14rem"
           borderRadius="20px"

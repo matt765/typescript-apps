@@ -19,7 +19,7 @@ export const Beer = ({
       <Text mt={2} mb={4}>{tagline}</Text>
       <NextLink href={`/beer/${id}`} passHref>
         <a>
-          <Button colorScheme={'twitter'} borderRadius={'2rem'}>Read more</Button>
+          <Button variant={'primary'}>Read more</Button>
         </a>
       </NextLink>
     </Flex>
