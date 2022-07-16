@@ -1,14 +1,12 @@
+import { extendTheme } from '@chakra-ui/react'
 import {
-  extendTheme, type ThemeConfig
-} from '@chakra-ui/react'
-import { StyleFunctionProps } from '@chakra-ui/theme-tools'
-
-const config: ThemeConfig = { initialColorMode: 'light' }
+  mode, StyleFunctionProps
+} from '@chakra-ui/theme-tools'
 
 const theme = extendTheme({
-  config,
-  colors:{ brand: { 500: '#00d2ff' } },
-  components:{ Button: {
+  initialColorMode: 'light',
+  styles: { global: (props: StyleFunctionProps) => ({ body: { bg: mode('#fff', '#111')(props) } }) },
+  components: { Button: {
     // Styles for the base style
     baseStyle: {},
     // Styles for the size variations
@@ -21,15 +19,14 @@ const theme = extendTheme({
       color: '#fff',
       borderRadius: '3rem',
       display: 'flex',
-      alignItems:'center',
-      justifyContent:'center',
-      _hover:{ backgroundSize: '140%' }
+      alignItems: 'center',
+      justifyContent: 'center',
+      _hover: { backgroundSize: '140%' }
     }) },
     // The default `size` or `variant` values
     defaultProps: {}
     //
   } }
-
 })
 
 export { theme }
