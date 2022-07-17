@@ -1,5 +1,5 @@
 export const mobileNavbarWrapper = {
-  '@media(min-width: 750px)':{ display: 'none' },
+  '@media(min-width: 850px)': { display: 'none' },
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center'
@@ -22,7 +22,7 @@ export const mobileNavbar = {
 export const mobileNavbarList = {
   flexDirection: 'column',
   alignItems: 'center',
-  a:{
+  a: {
     textDecoration: 'none',
     m: '.5rem',
     color: 'rgb(117, 117, 117)',

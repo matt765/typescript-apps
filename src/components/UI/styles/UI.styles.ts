@@ -8,13 +8,13 @@ export const Header = {
   pr: '2rem',
   maxWidth: '100vw',
 
-  '@media(max-width: 1200px)':{
+  '@media(max-width: 1300px)': {
     gridTemplateColumns: '70% 30%',
     gridTemplateRows: 'repeat(2, 1fr)',
-    paddingBottom: '1rem'
+    gap: '1rem'
   },
 
-  '@media(max-width: 750px)':{
+  '@media(max-width: 850px)': {
     gridTemplateColumns: '15% 70% 15%',
     gridTemplateRows: '1fr'
   }
