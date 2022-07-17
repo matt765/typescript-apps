@@ -154,7 +154,8 @@ export const useCaloriesCounter = () => {
         age,
         height,
         weight,
-        gender
+        gender,
+        isImperial
       })
 
       const AMR = calcAMR({
