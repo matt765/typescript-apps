@@ -5,7 +5,7 @@ import {
 
 const theme = extendTheme({
   initialColorMode: 'light',
-  styles: { global: (props: StyleFunctionProps) => ({ body: { bg: mode('#fff', '#111')(props) } }) },
+  styles: { global: (props: StyleFunctionProps) => ({ body: { bg: mode('#fff', 'rgb(43,43,43)')(props) } }) },
   components: { Button: {
     // Styles for the base style
     baseStyle: {},
