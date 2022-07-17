@@ -1,7 +1,4 @@
-interface CalcARM {
-    BMR: string
-    activity: string
-}
+import { CalcARM } from '../interface/BMR.interface'
 
 export const calcAMR = ({
   BMR, activity
