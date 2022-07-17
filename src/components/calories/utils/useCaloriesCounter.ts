@@ -2,101 +2,10 @@ import * as React from 'react'
 import { useReducer } from 'react'
 import { calcBMR } from './calcBMR'
 import { calcAMR } from './calcAMR'
-
-interface State {
-    isImperial: boolean
-    age: string
-    gender: Gender
-    height: string
-    weight: string
-    activity: string
-    BMR: string | null
-    AMR: string | null
-    errors: Errors
-}
-
-interface Errors {
-    age: boolean
-    gender: boolean
-    height: boolean
-    weight: boolean
-    activity: boolean
-}
-
-type ErrorKey =
-    | 'age'
-    | 'gender'
-    | 'height'
-    | 'weight'
-    | 'activity'
-
-export type Gender = 'male' | 'female' | ''
-
-type Action =
-    | { type: 'setAge', age: string }
-    | { type: 'setGender', gender: Gender }
-    | { type: 'setHeight', height: string }
-    | { type: 'setWeight', weight: string }
-    | { type: 'setActivity', activity: string }
-    | { type: 'setAMRandBMR', AMR: string, BMR: string }
-    | { type: 'setErrors', errors: Errors }
-    | { type: 'toggleImperial' }
-
-function reducer(state: State, action: Action) {
-  switch (action.type) {
-    case 'setActivity': {
-      return {
-        ...state,
-        activity: action.activity
-      }
-    }
-    case 'setAge': {
-      return {
-        ...state,
-        age: action.age
-      }
-    }
-    case 'setGender': {
-      return {
-        ...state,
-        gender: action.gender
-      }
-    }
-    case 'setHeight': {
-      return {
-        ...state,
-        height: action.height
-      }
-    }
-    case 'setWeight': {
-      return {
-        ...state,
-        weight: action.weight
-      }
-    }
-    case 'setAMRandBMR': {
-      return {
-        ...state,
-        BMR: action.BMR,
-        AMR: action.AMR
-      }
-    }
-    case 'setErrors': {
-      return {
-        ...state,
-        errors: action.errors
-      }
-    }
-    case 'toggleImperial': {
-      return {
-        ...state,
-        isImperial: !state.isImperial
-      }
-    }
-    default:
-      return state
-  }
-}
+import { Errors } from '../interfaces/Errors.interface'
+import { ErrorKey } from '../types/ErrorKey.type'
+import { Gender } from '../types/Gender.type'
+import { caloriesReducer } from '../reducers/caloriesReducer'
 
 export const useCaloriesCounter = () => {
   const initialState = {
@@ -127,7 +36,7 @@ export const useCaloriesCounter = () => {
     errors,
     BMR,
     AMR
-  }, dispatch] = useReducer(reducer, initialState)
+  }, dispatch] = useReducer(caloriesReducer, initialState)
 
   const setAge = (e: React.ChangeEvent<HTMLInputElement>) => {
     setErrors({

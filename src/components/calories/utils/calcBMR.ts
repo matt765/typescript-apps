@@ -1,4 +1,4 @@
-import { Gender } from './useCaloriesCounter'
+import { Gender } from '../types/Gender.type'
 
 interface CalcBMR {
     age: string;
