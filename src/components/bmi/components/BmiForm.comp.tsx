@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react'
 import { calcBMI } from '../utils/calcBMI'
 
-export const BmiForm = () => {
+export const BmiFormComp = () => {
   const [isImperial, setIsImperial] = React.useState(false)
   const [height, setHeight] = React.useState('')
   const [weight, setWeight] = React.useState('')
