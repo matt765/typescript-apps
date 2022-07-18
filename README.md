@@ -2,6 +2,7 @@
 Open source project that is a collection of small applications written in ReactJS and TypeScript.
  
 ## Tech stack
+
 React, NextJS, TypeScript, Chakra UI, Framer Motion
 
 ## Live link
@@ -43,6 +44,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`        | Build your production site           |
 
 ## Ideas for applications
+
 - Currency converter
 - Calculator
 - Anything that retrievs data from the API https://github.com/public-apis/public-apis
