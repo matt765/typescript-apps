@@ -6,26 +6,29 @@ import { Errors } from '../interfaces/Errors.interface'
 import { ErrorKey } from '../types/ErrorKey.type'
 import { Gender } from '../types/Gender.type'
 import { caloriesReducer } from '../reducers/caloriesReducer'
+import { CaloriesContextInterface } from '../interface/CaloriesContext.interface'
 
-export const useCaloriesCounter = () => {
-  const initialState = {
-    errors: {
-      age: false,
-      gender: false,
-      height: false,
-      weight: false,
-      activity: false
-    },
-    AMR: null,
-    BMR: null,
-    isImperial: false,
-    age: '',
-    gender: 'male' as Gender,
-    height: '',
-    weight: '',
-    activity: ''
-  }
+const initialState = {
+  errors: {
+    age: false,
+    gender: false,
+    height: false,
+    weight: false,
+    activity: false
+  },
+  AMR: null,
+  BMR: null,
+  isImperial: false,
+  age: '',
+  gender: 'male' as Gender,
+  height: '',
+  weight: '',
+  activity: ''
+}
 
+const CaloriesContext = React.createContext<CaloriesContextInterface | null>(null)
+
+export const CaloriesProvider = ({ children }: { children: React.ReactNode }) => {
   const [{
     age,
     gender,
@@ -170,22 +173,32 @@ export const useCaloriesCounter = () => {
     }
   }
 
-  return {
-    setAge,
-    setGender,
-    setHeight,
-    setWeight,
-    setActivity,
-    toggleImperial,
-    isImperial,
-    calculate,
-    age,
-    gender,
-    height,
-    weight,
-    activity,
-    errors,
-    BMR,
-    AMR
+  return <CaloriesContext.Provider
+    value={{
+      setAge,
+      setGender,
+      setHeight,
+      setWeight,
+      setActivity,
+      toggleImperial,
+      isImperial,
+      calculate,
+      age,
+      gender,
+      height,
+      weight,
+      activity,
+      errors,
+      BMR,
+      AMR
+    }}>{children}</CaloriesContext.Provider>
+}
+
+export const useCaloriesCounter = () => {
+  const context = React.useContext(CaloriesContext)
+  if (!context) {
+    throw new Error('useCaloriesCounter might using only' +
+            ' withing CaloriesProvider')
   }
+  return context
 }

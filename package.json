@@ -24,12 +24,14 @@
     "@fontsource/poppins": "^4.5.10",
     "@fontsource/quicksand": "^4.5.12",
     "axios": "^1.3.5",
+    "formik": "^2.2.9",
     "framer-motion": "^10.11.2",
     "next": "^13.2.4",
     "npm-check-updates": "^16.10.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
