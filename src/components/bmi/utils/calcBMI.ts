@@ -1,8 +1,4 @@
-interface CalcBMI {
-    height: string
-    weight: string
-    isImperial: boolean
-}
+import { CalcBMI } from '../interfaces/CalcBMI.interface'
 
 export const calcBMI = ({
   height, weight, isImperial
