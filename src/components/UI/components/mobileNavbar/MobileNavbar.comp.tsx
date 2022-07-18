@@ -18,28 +18,39 @@ export const MobileNavbar = () => {
   const handleMenu = () => setIsOpen(!isOpen)
 
   return (
-    <Flex alignItems={'center'} sx={mobileNavbarWrapper} onClick={handleMenu}>
-      <IconButton icon={<HamburgerIcon />} onClick={handleMenu} aria-label={'handle mobile menu'} variant={'outline'} boxShadow={'sm'} />
+    <Flex alignItems={'center'} sx={mobileNavbarWrapper}
+      onClick={handleMenu}>
+      <IconButton icon={<HamburgerIcon/>} onClick={handleMenu}
+        aria-label={'handle mobile menu'} variant={'outline'}
+        boxShadow={'sm'}/>
       {isOpen &&
-          <Flex justifyContent="center" sx={mobileNavbar}>
-            <Flex sx={mobileNavbarList}>
-              <Link href="/email-verifier"><a style={pathname.includes('email-verifier') ? activeLink : link}>
-                E-mail Verifier
-              </a></Link>
-              <Link href="/color-picker"><a style={pathname.includes('color-picker') ? activeLink : link}>
-                Color picker
-              </a></Link>
-              <Link href="/users-list" ><a style={pathname.includes('users-list') ? activeLink : link}>
-                List of users
-              </a></Link>
-              <Link href="/beers" ><a style={pathname.includes('beer') ? activeLink : link}>
-                Beers
-              </a></Link>
-              <Link href="/weather" ><a style={pathname.includes('weather') ? activeLink : link}>
-                Weather
-              </a></Link>
-            </Flex>
-          </Flex>
+                <Flex justifyContent="center" sx={mobileNavbar}>
+                  <Flex sx={mobileNavbarList}>
+                    <Link href="/email-verifier"><a
+                      style={pathname.includes('email-verifier') ? activeLink : link}>
+                            E-mail Verifier
+                    </a></Link>
+                    <Link href="/color-picker"><a
+                      style={pathname.includes('color-picker') ? activeLink : link}>
+                            Color picker
+                    </a></Link>
+                    <Link href="/users-list"><a
+                      style={pathname.includes('users-list') ? activeLink : link}>
+                            List of users
+                    </a></Link>
+                    <Link href="/beers"><a
+                      style={pathname.includes('beer') ? activeLink : link}>
+                            Beers
+                    </a></Link>
+                    <Link href="/weather"><a
+                      style={pathname.includes('weather') ? activeLink : link}>
+                            Weather
+                    </a></Link> <Link href="/health"><a
+                      style={pathname.includes('health') ? activeLink : link}>
+                        Health
+                    </a></Link>
+                  </Flex>
+                </Flex>
       }
     </Flex>
   )

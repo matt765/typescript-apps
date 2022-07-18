@@ -19,11 +19,13 @@
     "@fontsource/poppins": "^4.5.8",
     "@fontsource/quicksand": "^4.5.9",
     "axios": "^0.26.1",
+    "formik": "^2.2.9",
     "framer-motion": "^6.3.16",
     "next": "^12.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "^17.0.23",

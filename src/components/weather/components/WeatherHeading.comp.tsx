@@ -27,7 +27,7 @@ export const WeatherHeading = () => {
         <FormLabel htmlFor="use-geolocation" mb="0" fontWeight={400}>
                 Use geolocation?
         </FormLabel>
-        <Switch id="use-geolocation" colorScheme={'brand'} onChange={handleGeolocation} isChecked={isGeolocation}/>
+        <Switch id="use-geolocation" onChange={handleGeolocation} isChecked={isGeolocation} _checked={{ '> span':{ bgGradient: 'linear(to-l, #00d2ff, #3a7bd5)' } }}/>
       </FormControl>
 
       {isGeolocation
