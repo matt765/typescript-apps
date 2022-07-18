@@ -2,7 +2,7 @@ import {
   Flex, Heading, Text
 } from '@chakra-ui/react'
 
-export const BmiHeading = () => {
+export const BmiHeadingComp = () => {
   return (
     <Flex as={'header'}
       flexDirection={'column'}
