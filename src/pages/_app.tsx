@@ -15,7 +15,7 @@ const MyApp = ({
     <Head>
       <title>TypeScript Apps</title>
     </Head>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <Component {...pageProps} h="100vh"/>
     </ChakraProvider>

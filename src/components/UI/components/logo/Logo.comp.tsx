@@ -14,7 +14,7 @@ export const Logo: React.FC = () => {
     >
       <Box marginRight="0.8rem" sx={{
         display: 'flex',
-        '@media(max-width:750px)': { display:'none' }
+        '@media(max-width:850px)': { display: 'none' }
       }}>
         <Image
           src={LogoImage}
@@ -31,7 +31,7 @@ export const Logo: React.FC = () => {
         textShadow="1px 2px 1px rgba(0,0,0,0.1)"
         alignItems={'center'}
         justifyContent={'center'}
-        sx={{ '@media(max-width: 750px)':{ width: '100%' } }}
+        sx={{ '@media(max-width: 850px)': { width: '100%' } }}
       >
         <Box>TypeScript</Box>
         <Box

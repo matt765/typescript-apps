@@ -27,14 +27,14 @@ export const WeatherHeading = () => {
         <FormLabel htmlFor="use-geolocation" mb="0" fontWeight={400}>
                 Use geolocation?
         </FormLabel>
-        <Switch id="use-geolocation" colorScheme={'twitter'} onChange={handleGeolocation} isChecked={isGeolocation}/>
+        <Switch id="use-geolocation" onChange={handleGeolocation} isChecked={isGeolocation} _checked={{ '> span':{ bgGradient: 'linear(to-l, #00d2ff, #3a7bd5)' } }}/>
       </FormControl>
 
       {isGeolocation
-        ? <Button colorScheme={'twitter'} borderRadius={'3rem'} onClick={onClick} display={'flex'} alignItems={'center'} gap={'.5rem'} mt={2}>Get Location <EnvironmentOutlined /></Button>
+        ? <Button variant={'primary'} onClick={onClick} gap={'.5rem'} mt={2}>Get Location <EnvironmentOutlined /></Button>
         : <FormControl display={'flex'} as={'form'} onSubmit={onSubmit as unknown as React.FormEventHandler<HTMLDivElement>} mt={2}>
           <Input placeholder={'Your City'} borderRadius={'2rem'} required/>
-          <Button colorScheme={'twitter'} borderRadius={'2rem'} px={'2rem'} type={'submit'}>Check</Button>
+          <Button variant={'primary'} px={8} type={'submit'}>Check</Button>
         </FormControl>
       }
       {error &&

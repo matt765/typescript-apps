@@ -45,8 +45,8 @@ export const gitlabIcon = {
   justifyContent: 'flex-end'
 }
 
-export const headerLinksWrapper = { '@media(max-width: 1200px)':{
+export const headerLinksWrapper = { '@media(max-width:1300px)': {
   gridRow: 2,
   gridColumn: 'span 2',
-  '@media(max-width: 750px)': { display: 'none' }
+  '@media(max-width: 850px)': { display: 'none' }
 } }
