@@ -33,7 +33,6 @@ Następnym krokiem jest stworzenie Pull Requestu na Githubie. Po szybkim review 
 
 ## Wskazówki dotyczące pisania kodu
 - Konwencja projektu to komponenty funkcyjne z TypeScriptem, stylowane w Chakra UI
-- W projekcie jest skonfigurowany Eslint. Warto zintegrować wtyczkę Eslinta ze swoim IDE 
 - Requesty do API możemy tworzyć z wykorzystaniem obecnego już hooka useFetch
 - Pliki komponentów: nazwa.comp.tsx
 - Pliki stylów: nazwa.styles.tsx - w Chakra UI zwykle pisze się style razem z komponentami ale czasem jak jest tego za dużo to można umieścić je w folderze styles tam gdzie jest nasz komponent.
