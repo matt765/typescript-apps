@@ -46,6 +46,10 @@ export const UsersList: React.FC = () => {
           borderRadius="20px"
           fontSize="0.9rem"
           mb="2rem"
+          color="coloredButtonText"
+          bg="coloredButtonBg"
+          letterSpacing="1px"
+          fontWeight="600"
         >Fetch users</Button>
         <Result userData={userData} loading={loading}/>
       </Flex>

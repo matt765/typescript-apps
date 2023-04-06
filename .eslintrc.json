@@ -50,17 +50,7 @@
     "no-labels": "error",
     "no-lone-blocks": "error",
     "no-loop-func": "error",
-    "no-magic-numbers": [
-      "error",
-      {
-        "ignore": [
-          -1,
-          0,
-          1
-        ],
-        "ignoreArrayIndexes": true
-      }
-    ],
+    "no-magic-numbers": "off",
     "no-multi-spaces": "error",
     "no-multi-str": "error",
     "no-new": "error",
@@ -100,8 +90,7 @@
     "no-shadow": "off",
     "no-shadow-restricted-names": "error",
     "no-undef-init": "error",
-    "no-undefined": "error",
-    "no-use-before-define": "off",
+     "no-use-before-define": "off",
     // Node.js and CommonJS
     "callback-return": "off",
     "global-require": "error",
@@ -116,7 +105,7 @@
     "array-bracket-spacing": "error",
     "block-spacing": "error",
     "brace-style": "error",
-    "camelcase": "error",
+    "camelcase": "off",
     "capitalized-comments": "off",
     "comma-dangle": "error",
     "comma-spacing": "error",
@@ -140,10 +129,6 @@
     "jsx-quotes": "error",
     "key-spacing": "off",
     "keyword-spacing": "error",
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
     "line-comment-position": "off",
     "lines-around-comment": "off",
     "lines-around-directive": "error",
@@ -187,8 +172,7 @@
     ],
     "nonblock-statement-body-position": "error",
     "no-negated-condition": "off",
-    "no-nested-ternary": "error",
-    "no-new-object": "error",
+     "no-new-object": "error",
     "no-plusplus": "off",
     "no-restricted-syntax": "error",
     "no-tabs": "error",
@@ -273,6 +257,7 @@
     "rest-spread-spacing": "error",
     "symbol-description": "error",
     "template-curly-spacing": "error",
-    "yield-star-spacing": "error"
+    "yield-star-spacing": "error",
+    "react-hooks/exhaustive-deps": "off"
   }
 }

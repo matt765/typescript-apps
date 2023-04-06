@@ -13,7 +13,7 @@ export const BeerList = ({ beers }: {beers: BeerInterface[]| null}) => {
     <SimpleGrid columns={{
       sm: 1,
       md: 3
-    }} gap={8}>
+    }} gap={8} pb="2rem">
       {beers.map((beer) =>
         <Beer key={beer.id} {...beer}/>
       )}

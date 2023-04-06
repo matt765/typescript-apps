@@ -35,7 +35,8 @@ export const CurrentWeather = () => {
       {forecast?.current?.condition?.icon &&
             <Image src={`https:${forecast?.current?.condition?.icon}`}
               alt={forecast?.current?.condition?.text}
-              width={'50px'} height={'50px'}
+              width={50}
+              height={50}
               objectFit={'contain'}/>
       }
       <Badge textTransform={'capitalize'} fontSize={'xl'}

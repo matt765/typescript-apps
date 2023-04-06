@@ -35,7 +35,7 @@ export const DayWeather = () => {
           {h.condition.icon &&
               <Image src={`https:${h.condition.icon}`}
                 alt={h.condition.text}
-                width={'20px'} height={'20px'}
+                width={20} height={20}
                 objectFit={'contain'}/>
           }
           <Badge textTransform={'capitalize'} fontSize={'sm'}

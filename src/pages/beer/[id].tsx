@@ -3,15 +3,14 @@ import {
   GetStaticPaths, GetStaticProps
 } from 'next'
 import axios from 'axios'
-import { UI } from '../../components/UI/UI.comp'
+import { Layout } from '../../layout/Layout'
 import { Beer as BeerInterface } from '../../components/beers/interfaces/Beer'
 import { SingleBeer } from '../../components/beers/components/SingleBeer.comp'
 
-// eslint-disable-next-line no-import-assign
-const Beer = ({ beer }: {beer:BeerInterface}) =>
-  <UI>
-    <SingleBeer beer={beer}/>
-  </UI>
+const Beer = ({ beer }: { beer: BeerInterface }) =>
+  <Layout>
+    <SingleBeer beer={beer} />
+  </Layout>
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await axios.get('https://api.punkapi.com/v2/beers')
@@ -24,7 +23,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps<{beer: BeerInterface}, { id: string }> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<
+  { beer: BeerInterface },
+  { id: string }
+> = async ({ params }) => {
   const res = await axios.get(`https://api.punkapi.com/v2/beers/${params?.id}`)
   const beer: [BeerInterface] = res.data
 

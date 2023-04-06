@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
 import { UsersList } from '../components/usersList/UsersList.comp'
-import { UI } from '../components/UI/UI.comp'
+import { Layout } from '../layout/Layout'
 
 const UsersListPage: NextPage = () => {
   return (
-    <UI>
+    <Layout>
       <UsersList/>
-    </UI>
+    </Layout>
   )
 }
 

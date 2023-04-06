@@ -7,19 +7,38 @@ import {
 
 export const Beer = ({
   // eslint-disable-next-line camelcase
-  name, tagline, image_url, id
+  name,
+  tagline,
+  image_url,
+  id
 }: BeerInterface) =>
-  <GridItem display={'flex'} justifyContent={'space-between'} boxShadow={'xs'} p={4} borderRadius={2}
-    _hover={{ boxShadow:  'outline' }} transition={'200ms'}>
+  <GridItem
+    display={'flex'}
+    justifyContent={'space-between'}
+    boxShadow={'xs'}
+    p={4}
+    borderRadius={2}
+    _hover={{ boxShadow: 'outline' }}
+    transition={'200ms'}
+  >
     <Flex flexDirection={'column'}>
-      <Text fontSize={'2xl'} lineHeight={1}
-      >
+      <Text fontSize={'2xl'} lineHeight={1}>
         {name}
       </Text>
-      <Text mt={2} mb={4}>{tagline}</Text>
+      <Text mt={2} mb={4}>
+        {tagline}
+      </Text>
       <NextLink href={`/beer/${id}`} passHref>
         <a>
-          <Button colorScheme={'twitter'} borderRadius={'2rem'}>Read more</Button>
+          <Button
+            color="coloredButtonText"
+            bg="coloredButtonBg"
+            letterSpacing="1px"
+            fontWeight="600"
+            borderRadius={'2rem'}
+          >
+            Read more
+          </Button>
         </a>
       </NextLink>
     </Flex>

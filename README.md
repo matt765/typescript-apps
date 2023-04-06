@@ -1,77 +1,61 @@
-## Wprowadzenie
-TypeScript Apps to projekt Open Source będący docelowo zbiorem niedużych aplikacji napisanych w ReactJS
+# Introduction
+TypeScript Apps is an open source project that is a collection of small applications written in ReactJS.
  
-https://typescriptapps.netlify.app/
-
 ## Tech stack
-React, NextJS, TypeScript, Chakra UI
+React, NextJS, TypeScript, Chakra UI, Framer Motion
 
-## Instrukcja pracy z repozytorium
+## Live link
+[https://typescriptapps.netlify.app/](https://typescriptapps.netlify.app/)
 
-Pobranie repozytorium na lokalne środowisko 
-```bash
-git clone https://github.com/matt765/typescript-apps.git
-```
-Połączenie IDE ze zdalnym repozytorium
-```bash
-git remote add upstream https://github.com/matt765/typescript-apps.git
-```
-Stworzenie własnego brancha
-```bash
-git checkout -b NAZWA_BRANCHA
-```
-Instalacja bibliotek i ewentualne uruchomienie serwera na localhost:3000
-```bash
-npm i
-npm run dev
-```
-Wypchnięcie brancha na zdalne repozytorium
-```bash
-git push -u origin NAZWA_BRANCHA
-```
-Następnym krokiem jest stworzenie Pull Requestu na Githubie. Po szybkim review branch zostanie zmergowany z masterem i trafi bezpośrednio na serwer live.
+## Collaboration
+Collaborators are welcome to join this project and contribute with merge requests.  
 
-## Wskazówki dotyczące pisania kodu
-- Konwencja projektu to komponenty funkcyjne z TypeScriptem, stylowane w Chakra UI
-- Requesty do API możemy tworzyć z wykorzystaniem obecnego już hooka useFetch.
-- Pliki komponentów: nazwa.comp.tsx
-- Pliki stylów: nazwa.styles.tsx - w Chakra UI zwykle pisze się style razem z komponentami ale czasem jak jest tego za dużo to można umieścić je w folderze styles tam gdzie jest nasz komponent.
+##  Project Structure
 
-## Foldery
-- src/assets - obrazki i filmy
-- src/components - większość kodu naszych aplikacji
-- src/hooks - custom hooki
-- src/pages - folder wymagany przez NextJS. Odpowiednik React Routera w CRA
-- W razie potrzeb można jeszcze utworzyć foldery np. utils/services/interfaces
+```
+├── src/
+│   ├── assets
+│   │   ├── icons
+│   │   └── images
+│   ├── components
+│   │   ├── beers
+│   │   ├── colorPicker
+│   │   ├── emailVerifier
+│   │   ├── usersList
+│   │   └── weather
+│   ├── hooks
+│   ├── layout
+│   │   └── components
+│   ├── pages
+│   ├── styles
+│   └── theme
+└── package.json
+```
 
-## Propozycje pomysłów na aplikacje:
-- Konwerter walut
-- Kalkulator
-- Pobieranie danych z API https://github.com/public-apis/public-apis
-- Organizer zadań
-- Gra Kółko i krzyżyk
-- Prognoza pogody
-- Gra Snake
-- Gra Hangman
-- Stoper / Zegar
+##  How to run
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                | Action                                             |
+| :--------------------- | :------------------------------------------------- |
+| `npm install`          | Installs dependencies                              |
+| `npm run dev`          | Starts local dev server at `localhost:3000`        |
+| `npm run build`        | Build your production site           |
+
+## Ideas for applications
+- Currency converter
+- Calculator
+- Anything that retrievs data from the API https://github.com/public-apis/public-apis
+- Task organizer
+- Tic-tac-toe game
+- Snake game
+- Hangman game
+- Stopwatch / Clock
 - Pomodoro App
-- Edytor tekstu
-- Katalog filmów
-- Katalog książek
-- Licznik kalorii / BMI
-- Skracacz linków
-
-## W planie:
-- wersja mobilna
-- aktualizacja Reacta do v18
-- dodanie trybu nocnego i przełącznika z Chakra UI
-- zabezpieczenia przed spamowaniem requestów do API
-
-## Dokumentacje
-- [Next.js](https://nextjs.org/docs)
-- [React](https://pl.reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/) 
-- [ChakraUI](https://chakra-ui.com/) 
-
+- Text editor
+- Movie catalog
+- Book catalog
+- Calorie/BMI counter
+- URL shortener
 
 

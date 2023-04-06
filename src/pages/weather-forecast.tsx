@@ -1,12 +1,12 @@
 import { NextPage } from 'next'
-import { UI } from '../components/UI/UI.comp'
+import { Layout } from '../layout/Layout'
 import { WeatherComp } from '../components/weather/Weather.comp'
 
 const Weather: NextPage = () => {
   return (
-    <UI>
+    <Layout>
       <WeatherComp/>
-    </UI>
+    </Layout>
   )
 }
 

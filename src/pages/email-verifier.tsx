@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
 import { EmailVerifier } from '../components/emailVerifier/EmailVerifier.comp'
-import { UI } from '../components/UI/UI.comp'
+import { Layout } from '../layout/Layout'
 
 const EmailVerifierPage: NextPage = () => {
   return (
-    <UI>
+    <Layout>
       <EmailVerifier/>
-    </UI>
+    </Layout>
   )
 }
 

@@ -6,17 +6,14 @@ import {
 interface Props {
     hexValue: string;
     rgbValue: string;
+    changeBackground: (color: string) => void;
     setMessage: (message: string) => void
 }
 
 export const ColorCard: React.FC<Props> = ({
-  hexValue, rgbValue, setMessage
+  hexValue, rgbValue, setMessage, changeBackground
 }) => {
   const styles = { colorCardBox: { backgroundColor: hexValue } } as const
-
-  const changeBackground = () => {
-        document.getElementById('app')!.style.backgroundColor = hexValue
-  }
 
   return (
     <>
@@ -47,7 +44,7 @@ export const ColorCard: React.FC<Props> = ({
             transition: '0.2s'
           }}
           style={styles.colorCardBox}
-          onClick={changeBackground}
+          onClick={() => changeBackground(hexValue)}
         />
         <Box
           mt="1rem"

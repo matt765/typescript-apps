@@ -72,6 +72,9 @@ export const Form: React.FC<Props> = ({
                 w="14rem"
                 borderRadius="20px"
                 fontSize="0.9rem"
+                letterSpacing="1px"
+                color="coloredButtonText"
+                bg="coloredButtonBg"
               >
                                 Check E-mail
               </Button>

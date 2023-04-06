@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
 import { ColorPicker } from '../components/colorPicker/ColorPicker.comp'
-import { UI } from '../components/UI/UI.comp'
+import { Layout } from '../layout/Layout'
 
 const ColorPickerPage: NextPage = () => {
   return (
-    <UI>
+    <Layout>
       <ColorPicker/>
-    </UI>
+    </Layout>
   )
 }
 
