@@ -63,6 +63,7 @@ export const Form: React.FC<Props> = ({
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 borderRadius="20px"
+                borderColor="inputBorder"
               />
               <Button
                 variant="solid"

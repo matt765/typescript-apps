@@ -1,5 +1,5 @@
-# Introduction
-TypeScript Apps is an open source project that is a collection of small applications written in ReactJS.
+# TypeScript Apps
+Open source project that is a collection of small applications written in ReactJS and TypeScript.
  
 ## Tech stack
 React, NextJS, TypeScript, Chakra UI, Framer Motion

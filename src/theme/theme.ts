@@ -102,6 +102,10 @@ export const theme = extendTheme({
       default: 'rgb(0,0,0,0.2)',
       _dark: 'rgb(255,255,255,0.15)'
     },
+    inputBorder: {
+      default: 'rgb(0,0,0,0.2)',
+      _dark: 'rgb(255,255,255,0.3)'
+    },
     grayIcon: {
       default: 'rgb(99, 115, 129)',
       _dark: 'rgb(255,255,255,0.5)'

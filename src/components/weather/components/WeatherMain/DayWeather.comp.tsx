@@ -26,7 +26,7 @@ export const DayWeather = () => {
     <SimpleGrid columns={{
       md: 3,
       lg: 4
-    }} textAlign={'center'}>
+    }} textAlign={'center'} pb="3rem">
       {forecast?.forecast?.forecastday[0]?.hour.map((h) =>
         <Flex key={h.time_epoch} flexDirection={'column'} boxShadow={'sm'} p={2} borderRadius={4}
           _hover={{ boxShadow:  'outline' }}

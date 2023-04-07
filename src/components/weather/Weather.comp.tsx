@@ -6,7 +6,7 @@ import { Flex } from '@chakra-ui/react'
 export const WeatherComp = () => {
   return (
     <WeatherProvider>
-      <Flex flexDirection={'column'} alignItems={'center'} gap={'1rem'} pb="3rem">
+      <Flex flexDirection={'column'} gap={'1rem'} h="100%" pt="5rem">
         <WeatherHeading/>
         <WeatherMain/>
       </Flex>

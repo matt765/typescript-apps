@@ -3,7 +3,7 @@ import { CurrentWeather } from './CurrentWeater.comp'
 import { DayWeather } from './DayWeather.comp'
 
 export const WeatherMain = () =>
-  <Flex flexDirection={'column'} >
+  <Flex flexDirection="column">
     <CurrentWeather/>
     <DayWeather/>
   </Flex>

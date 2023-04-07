@@ -2,7 +2,7 @@ import {
   ReactNode, useContext, useEffect, useState
 } from 'react'
 import {
-  Flex, useColorMode
+  Flex, Spinner, useColorMode
 } from '@chakra-ui/react'
 
 import { ThemeToggle } from './components/themeToggle/ThemeToggle'
@@ -11,18 +11,19 @@ import {
   Context, InitialSettings
 } from '../pages/_app'
 import { MobileNavbar } from './components/sideMenu/SideMenuMobile'
+import { useRouter } from 'next/router'
 
 export const Layout = ({ children }: { children: ReactNode }) => {
   const {
     settingsData = InitialSettings, setSettingsData = () => undefined
   } =
     useContext(Context) || {}
-
+  const router = useRouter()
   const {
     isFullScreen, isSideMenuOpen
   } = settingsData
   const [isLoading, setIsLoading] = useState(true)
-
+  const [isRouteChanging, setIsRouteChanging] = useState(false)
   const {
     colorMode, toggleColorMode
   } = useColorMode()
@@ -31,6 +32,21 @@ export const Layout = ({ children }: { children: ReactNode }) => {
     const mode = localStorage.getItem('chakra-ui-color-mode')
     if (mode) {
       setIsLoading(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    const handleRouteChangeStart = () => {
+      setIsRouteChanging(true)
+    }
+    const handleRouteChangeComplete = () => {
+      setIsRouteChanging(false)
+    }
+    router.events.on('routeChangeStart', handleRouteChangeStart)
+    router.events.on('routeChangeComplete', handleRouteChangeComplete)
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChangeStart)
+      router.events.off('routeChangeComplete', handleRouteChangeComplete)
     }
   }, [])
 
@@ -95,7 +111,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
           borderColor="borderMain"
           h="100%"
         >
-          {children}
+          {isRouteChanging ? <Spinner size="xl" /> : children}
         </Flex>
       </Flex>
       <ThemeToggle />

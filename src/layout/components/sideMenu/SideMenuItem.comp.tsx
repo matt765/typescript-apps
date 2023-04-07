@@ -2,7 +2,7 @@ import {
   Box, Flex, Icon
 } from '@chakra-ui/react'
 import {
-  FunctionComponent, ReactNode, useEffect, useState
+  FunctionComponent, useEffect, useState
 } from 'react'
 import { useRouter } from 'next/router'
 
@@ -20,7 +20,10 @@ export const SideMenuItem = ({
   const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
-    if (path === router.pathname) {
+    if (
+      path === router.pathname ||
+      router.pathname === '/' && title === 'E-mail verifier'
+    ) {
       setIsActive(true)
     }
   }, [])
@@ -45,13 +48,11 @@ export const SideMenuItem = ({
       borderRadius="10px"
       mb="0.1rem"
     >
-      {/* exo, jost, alegreya sans sc */}
       <Box
         height="20px"
         mr="1.3rem"
         sx={{ '& path': { fill: isActive ? 'coloredText' : 'grayIcon' } }}
       >
-        {/* {icon} */}
         <Icon as={icon} boxSize={6} />
       </Box>
       {isSideMenuOpen &&

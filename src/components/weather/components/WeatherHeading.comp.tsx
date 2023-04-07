@@ -68,7 +68,7 @@ export const WeatherHeading = () => {
           }
           mt={2}
         >
-          <Input placeholder={'Your City'} borderRadius={'2rem'} required />
+          <Input placeholder={'Your City'} borderRadius={'2rem'} required borderColor="inputBorder"/>
           <Button
             color="coloredButtonText"
             bg="coloredButtonBg"

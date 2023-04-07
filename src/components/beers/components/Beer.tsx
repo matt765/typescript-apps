@@ -29,17 +29,15 @@ export const Beer = ({
         {tagline}
       </Text>
       <NextLink href={`/beer/${id}`} passHref>
-        <a>
-          <Button
-            color="coloredButtonText"
-            bg="coloredButtonBg"
-            letterSpacing="1px"
-            fontWeight="600"
-            borderRadius={'2rem'}
-          >
-            Read more
-          </Button>
-        </a>
+        <Button
+          color="coloredButtonText"
+          bg="coloredButtonBg"
+          letterSpacing="1px"
+          fontWeight="600"
+          borderRadius={'2rem'}
+        >
+          Read more
+        </Button>
       </NextLink>
     </Flex>
     <Box position={'relative'} width={24} height={24}>
