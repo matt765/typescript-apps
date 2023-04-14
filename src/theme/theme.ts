@@ -54,6 +54,14 @@ export const theme = extendTheme({
       default: '#25272a',
       _dark: 'white'
     },
+    primaryLink: {
+      default: '#25272a',
+      _dark: 'rgb(255,255,255, 0.9)'
+    },
+    primaryLinkHover: {
+      default: '#25272a',
+      _dark: 'rgb(255,255,255)'
+    },
     secondaryText: {
       default: 'rgb(0,0,0,0.4)',
       _dark: 'rgb(255,255,255,0.7)'
@@ -82,9 +90,13 @@ export const theme = extendTheme({
       default: 'rgba(45, 53, 80, 0)',
       _dark: 'rgba(45, 53, 80, 0)'
     },
-    transparentButtoBgHover: {
+    transparentButtonHover: {
       default: 'rgb(255,255,255,0.1)',
-      _dark: 'rgb(255,255,255,0.1)'
+      _dark: 'rgb(255,255,255,0.05)'
+    },
+    transparentButtonBorder: {
+      default: '#3784c8',
+      _dark: '#3784c8'
     },
     titleColor: {
       default: 'rgb(255,255,255,0.1)',

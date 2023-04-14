@@ -1,5 +1,5 @@
 import { Flex } from '@chakra-ui/react'
-import { CurrentWeather } from './CurrentWeater.comp'
+import { CurrentWeather } from './CurrentWeather.comp'
 import { DayWeather } from './DayWeather.comp'
 
 export const WeatherMain = () =>

@@ -12,6 +12,7 @@ import { WeatherForecastIcon } from '../../../assets/icons/WeatherForecastIcon'
 import { GithubIcon } from '../../../assets/icons/GithubIcon'
 import { Logo } from '../logo/Logo.comp'
 import { SideMenuItem } from './SideMenuItem.comp'
+import { HealthIcon } from '../../../assets/icons/HealthIcon'
 
 interface SideMenuProps {
   isFullScreen: boolean;
@@ -157,5 +158,10 @@ const menuItemsData = [
     icon: WeatherForecastIcon,
     title: 'Weather forecast',
     path: '/weather-forecast'
+  },
+  {
+    icon: HealthIcon,
+    title: 'Health calculators',
+    path: '/health'
   }
 ]

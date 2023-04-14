@@ -79,7 +79,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
         bgAttachment="fixed"
         bgSize="cover"
         bg={colorMode === 'light' ? '' : 'secondaryBg'}
-        overflow="hidden"
+        overflow="scroll"
       >
         <SideMenu
           isFullScreen={isFullScreen}
@@ -93,7 +93,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
           flex="1"
           justifyContent="center"
           alignItems="center"
-          p="3rem"
+          p="2rem"
           ml={{
             base: 0,
             xl: '1.6rem'

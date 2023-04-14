@@ -43,6 +43,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`        | Build your production site           |
 
 ## Ideas for applications
+
 - Currency converter
 - Calculator
 - Anything that retrievs data from the API https://github.com/public-apis/public-apis

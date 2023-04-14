@@ -66,8 +66,7 @@ export const Form: React.FC<Props> = ({
                 borderColor="inputBorder"
               />
               <Button
-                variant="solid"
-                colorScheme="twitter"
+                variant="primary"
                 leftIcon={<Search/>}
                 type="submit"
                 w="14rem"
