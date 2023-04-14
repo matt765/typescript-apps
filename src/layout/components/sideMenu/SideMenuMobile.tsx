@@ -75,6 +75,11 @@ export const MobileNavbar = () => {
       text: 'Weather forecast',
       path: '/weather-forecast',
       onClick: () => setIsOpen(false)
+    },
+    {
+      text: 'Health calculators',
+      path: '/health',
+      onClick: () => setIsOpen(false)
     }
   ]
   return (
@@ -100,6 +105,7 @@ export const MobileNavbar = () => {
         borderStyle="solid"
         borderColor="mobileNavbarBorder"
         maxW="100vw"
+
       >
         <Flex py="0.5rem">
           <Logo isSideMenuOpen isMobile />
@@ -153,6 +159,8 @@ export const MobileNavbar = () => {
             }}
             zIndex="99"
             backdropFilter="blur(24px)"
+            overflow="scroll"
+
           >
             {mobileNavItems.map((mobileNavItem, index) =>
               <MobileNavbarItem
@@ -181,6 +189,8 @@ export const MobileNavbar = () => {
               mt="1rem"
               href="https://github.com/matt765/typescript-apps"
               isExternal
+              mb="8rem"
+              py="1rem"
             >
               <Icon as={GithubIcon} boxSize={3} />
               <Flex

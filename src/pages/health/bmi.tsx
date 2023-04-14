@@ -1,11 +1,11 @@
-import { UI } from '../../components/UI/UI.comp'
 import { Bmi } from '../../components/bmi/Bmi.comp'
+import { Layout } from '../../layout/Layout'
 
 const BMI = () => {
   return (
-    <UI>
-      <Bmi/>
-    </UI>
+    <Layout>
+      <Bmi />
+    </Layout>
   )
 }
 

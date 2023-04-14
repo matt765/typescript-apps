@@ -16,7 +16,7 @@ export const CaloriesResult = () => {
 
   return (
     <Flex flexDirection={'column'}
-      alignItems={'center'}>
+      alignItems={'center'} pb="3rem" pt="1rem">
       <Text fontSize={'4xl'}>Your
                 results</Text>
       <Flex flexDirection={'column'}
