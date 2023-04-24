@@ -40,7 +40,6 @@ export const Calculator = () => {
 
   const addToValue = (value: string) => {
     const lastChar = screenValue.slice(-1)
-
     if (screenValue.length >= 20 && !isNaN(parseFloat(lastChar))) {
       return
     }
@@ -48,11 +47,11 @@ export const Calculator = () => {
       clear()
     }
     if (valueCheck === 1) {
-      setScreenValue(screenValue + value)
-      setFirstValue(firstValue + value)
+      setScreenValue((prevScreenValue) => prevScreenValue + value)
+      setFirstValue((prevFirstValue) => prevFirstValue + value)
     } else {
-      setSecondValue(secondValue + value)
-      setScreenValue(screenValue + value)
+      setSecondValue((prevSecondValue) => prevSecondValue + value)
+      setScreenValue((prevScreenValue) => prevScreenValue + value)
     }
   }
 
@@ -70,23 +69,27 @@ export const Calculator = () => {
 
     if (isNaN(parseFloat(lastChar))) {
       if (operator === '.' && lastChar !== '.') {
-        setScreenValue(screenValue + operator)
+        setScreenValue((prevScreenValue) => prevScreenValue + operator)
       } else if (operator !== '.') {
-        setScreenValue(screenValue.slice(0, -1) + operator)
+        setScreenValue(
+          (prevScreenValue) => prevScreenValue.slice(0, -1) + operator
+        )
       }
     } else if (valueCheck === 1 && operator !== '.') {
-      setScreenValue(screenValue + operator)
+      setScreenValue((prevScreenValue) => prevScreenValue + operator)
       setValueCheck(2)
       setCurrentOperator(operator)
     } else if (valueCheck === 2 && operator !== '.') {
       calculate()
-    } else if (isNaN(parseFloat(screenValue.slice(-1)))) {
-    } else if (valueCheck === 1 && !firstValue.includes('.')) {
-      setScreenValue(screenValue + operator)
-      setFirstValue(firstValue + operator)
-    } else if (valueCheck === 2 && !secondValue.includes('.')) {
-      setScreenValue(screenValue + operator)
-      setSecondValue(secondValue + operator)
+    } else if (!isNaN(parseFloat(screenValue.slice(-1)))) {
+      const isFirstValue = valueCheck === 1
+      const valueToUpdate = isFirstValue ? firstValue : secondValue
+      const setValue = isFirstValue ? setFirstValue : setSecondValue
+
+      if (!valueToUpdate.includes('.')) {
+        setScreenValue((prevScreenValue) => prevScreenValue + operator)
+        setValue((prevValue) => prevValue + operator)
+      }
     }
 
     // Fix for when the last character is a dot and is replaced with an operator
@@ -96,39 +99,35 @@ export const Calculator = () => {
     }
   }
 
+  type OperationsType = {
+    [key: string]: (a: number, b: number) => number;
+  };
+
+  const operations: OperationsType = {
+    '+': (a, b) => a + b,
+    '-': (a, b) => a - b,
+    '*': (a, b) => a * b,
+    '÷': (a, b) => a / b
+  }
+
   const calculate = () => {
     if (secondValue !== '') {
-      let calculation
       const prev = parseFloat(firstValue)
       const current = parseFloat(secondValue)
-
       const operator = screenValue.slice(
         firstValue.length,
         firstValue.length + 1
       )
 
-      switch (operator) {
-        case '+':
-          calculation = prev + current
-          break
-        case '-':
-          calculation = prev - current
-          break
-        case '*':
-          calculation = prev * current
-          break
-        case '÷':
-          calculation = prev / current
-          break
-        default:
-          return
-      }
+      if (operator in operations) {
+        const operation = operations[operator]
+        const result = Math.round(operation(prev, current) * 100) / 100
 
-      const result = Math.round(calculation * 100) / 100
-      setScreenValue(result.toString())
-      setFirstValue(result.toString())
-      setSecondValue('')
-      setValueCheck(1)
+        setScreenValue(result.toString())
+        setFirstValue(result.toString())
+        setSecondValue('')
+        setValueCheck(1)
+      }
     }
   }
 
@@ -140,17 +139,19 @@ export const Calculator = () => {
   }
 
   const deleteLast = () => {
+    const updateScreenValue = (prevScreenValue: string) =>
+      prevScreenValue.slice(0, -1)
     if (valueCheck === 0) {
-      setScreenValue(screenValue.slice(0, -1))
-      setFirstValue(screenValue.slice(0, -1))
+      setScreenValue(updateScreenValue)
+      setFirstValue(updateScreenValue)
       setSecondValue('')
       setValueCheck(1)
     } else if (valueCheck === 1) {
-      setScreenValue(screenValue.slice(0, -1))
-      setFirstValue(firstValue.slice(0, -1))
+      setScreenValue(updateScreenValue)
+      setFirstValue((prevFirstValue) => prevFirstValue.slice(0, -1))
     } else if (valueCheck === 2) {
-      setScreenValue(screenValue.slice(0, -1))
-      setSecondValue(secondValue.slice(0, -1))
+      setScreenValue(updateScreenValue)
+      setSecondValue((prevSecondValue) => prevSecondValue.slice(0, -1))
     }
   }
 
