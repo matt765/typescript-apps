@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Form } from './components/Form.comp'
-import { Result } from './components/Result.comp'
+import { Form } from './components/Form'
+import { Result } from './components/Result'
 import { useState } from 'react'
 import { Flex } from '@chakra-ui/react'
 

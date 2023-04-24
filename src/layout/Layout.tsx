@@ -6,7 +6,7 @@ import {
 } from '@chakra-ui/react'
 
 import { ThemeToggle } from './components/themeToggle/ThemeToggle'
-import { SideMenu } from './components/sideMenu/SideMenu.comp'
+import { SideMenu } from './components/sideMenu/SideMenu'
 import {
   Context, InitialSettings
 } from '../pages/_app'

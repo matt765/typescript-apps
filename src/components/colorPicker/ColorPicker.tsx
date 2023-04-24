@@ -1,7 +1,7 @@
 import {
   useState, useRef
 } from 'react'
-import { ColorCard } from './components/ColorCard.comp'
+import { ColorCard } from './components/ColorCard'
 import {
   Flex, Box, SimpleGrid
 } from '@chakra-ui/react'
@@ -62,7 +62,7 @@ export const ColorPicker: React.FC = () => {
   }
   return (
     <>
-      <Flex w="100%" h="100%" justify="center" alignItems="center" ref={bgRef}>
+      <Flex w="100%" h="100%" justify="center" alignItems="center" ref={bgRef} pb="2rem">
         <Flex direction="column">
           <Box
             h="2rem"

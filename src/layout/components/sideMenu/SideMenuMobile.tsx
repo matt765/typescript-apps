@@ -1,6 +1,5 @@
 import {
-  Box,
-  Flex, Icon, Link, Text
+  Box, Flex, Icon, Link, Text
 } from '@chakra-ui/react'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -80,6 +79,16 @@ export const MobileNavbar = () => {
       text: 'Health calculators',
       path: '/health',
       onClick: () => setIsOpen(false)
+    },
+    {
+      text: 'Tic Tac Toe',
+      path: '/tictactoe',
+      onClick: () => setIsOpen(false)
+    },
+    {
+      text: 'Calculator',
+      path: '/calculator',
+      onClick: () => setIsOpen(false)
     }
   ]
   return (
@@ -105,7 +114,6 @@ export const MobileNavbar = () => {
         borderStyle="solid"
         borderColor="mobileNavbarBorder"
         maxW="100vw"
-
       >
         <Flex py="0.5rem">
           <Logo isSideMenuOpen isMobile />
@@ -160,7 +168,6 @@ export const MobileNavbar = () => {
             zIndex="99"
             backdropFilter="blur(24px)"
             overflow="scroll"
-
           >
             {mobileNavItems.map((mobileNavItem, index) =>
               <MobileNavbarItem
@@ -201,7 +208,7 @@ export const MobileNavbar = () => {
                 letterSpacing="1px"
                 color="primaryText"
               >
-              Github
+                Github
               </Flex>
             </Link>
           </Flex>

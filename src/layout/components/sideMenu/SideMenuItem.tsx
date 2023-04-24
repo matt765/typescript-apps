@@ -18,15 +18,17 @@ export const SideMenuItem = ({
 }: Props) => {
   const router = useRouter()
   const [isActive, setIsActive] = useState(false)
-
   useEffect(() => {
     if (
-      path === router.pathname ||
-      router.pathname === '/' && title === 'E-mail verifier'
+      router.pathname.includes(path) ||
+      router.pathname === '/' && title === 'E-mail verifier' ||
+      title === 'Beers Hub' && router.pathname.startsWith('/beer/')
     ) {
       setIsActive(true)
+    } else {
+      setIsActive(false)
     }
-  }, [])
+  }, [router.pathname])
 
   const handleClick = () => {
     router.push(path)

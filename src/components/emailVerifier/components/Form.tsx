@@ -70,7 +70,7 @@ export const Form: React.FC<Props> = ({
                 minW="26rem"
                 height="3rem"
                 mr="0.5rem"
-                backgroundColor="rgb(255,255,255,0.00)"
+                backgroundColor="inputBg"
                 placeholder="Enter e-mail address"
               />
 

@@ -34,6 +34,7 @@ export const TransparentButton = ({
     _hover={{ bg: 'transparentButtonHover' }}
     leftIcon={leftIcon}
     onClick={onClick}
+    minH="3rem"
   >
     {text}
   </Button>

@@ -5,7 +5,7 @@ import {
 import {
   Button, Flex
 } from '@chakra-ui/react'
-import { Result } from './components/Result.comp'
+import { Result } from './components/Result'
 
 export interface User {
   id: number;
@@ -39,8 +39,10 @@ export const UsersList: React.FC = () => {
         justify="flex-start"
         flexDirection="column"
         h="100%"
-        pt="4rem"
+        pt="3rem"
         gap="1.2rem"
+        px="2rem"
+        overflow="auto"
       >
         <TransparentButton onClick={makeApiCall} text="Fetch users" />
         {userData.length > 0 &&

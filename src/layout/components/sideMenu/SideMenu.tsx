@@ -11,8 +11,10 @@ import { UserListIcon } from '../../../assets/icons/UserListIcon'
 import { WeatherForecastIcon } from '../../../assets/icons/WeatherForecastIcon'
 import { GithubIcon } from '../../../assets/icons/GithubIcon'
 import { Logo } from '../logo/Logo.comp'
-import { SideMenuItem } from './SideMenuItem.comp'
+import { SideMenuItem } from './SideMenuItem'
 import { HealthIcon } from '../../../assets/icons/HealthIcon'
+import { TicTacToeIcon } from '../../../assets/icons/TicTacToeIcon'
+import { CalculatorIcon } from '../../../assets/icons/CalculatorIcon'
 
 interface SideMenuProps {
   isFullScreen: boolean;
@@ -150,6 +152,11 @@ const menuItemsData = [
     path: '/users-list'
   },
   {
+    icon: HealthIcon,
+    title: 'Health calculators',
+    path: '/health'
+  },
+  {
     icon: BeerHubIcon,
     title: 'Beers Hub',
     path: '/beers-hub'
@@ -160,8 +167,13 @@ const menuItemsData = [
     path: '/weather-forecast'
   },
   {
-    icon: HealthIcon,
-    title: 'Health calculators',
-    path: '/health'
+    icon: TicTacToeIcon,
+    title: 'Tic Tac Toe',
+    path: '/tictactoe'
+  },
+  {
+    icon: CalculatorIcon,
+    title: 'Calculator',
+    path: '/calculator'
   }
 ]

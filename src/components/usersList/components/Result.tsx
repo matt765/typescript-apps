@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { User } from '../UsersList.comp'
+import { User } from '../UsersList'
 import { LoadingOutlined } from '@ant-design/icons'
 import {
   Table,
@@ -89,24 +89,41 @@ export const Result: React.FC<Props> = ({
     if (filteredData.length > 0) {
       return (
         <TableContainer
-          sx={{ '& *': { fontSize: '1.15rem !important' } }}
-          minW="35rem"
-          pl="3rem"
+          sx={{
+            '& *': {
+              fontSize: '1rem !important',
+              fontFamily: 'Jost',
+              fontWeight: '200',
+              letterSpacing: '1px'
+
+            },
+            '& th, td': {
+              borderStyle: 'solid',
+              borderWidth: '1px',
+              borderColor: 'borderGray'
+            }
+          }}
+          pl="1rem"
+          mt="1rem"
+          mb="3rem"
         >
-          <Table size="sm" minW="35rem">
-            <Thead>
-              <Tr>
+          <Table size="sm" variant="unstyled">
+            <Thead borderRadius="30px">
+              <Tr display="block">
                 <Th
                   pt="0.8rem"
                   pb="0.8rem"
                   onClick={() => handleSort('id')}
                   cursor="pointer"
+                  w="4rem"
+                  maxW="4rem"
+                  display="inline-block"
                 >
-                  Id{' '}
+                  Id
                   {sortColumn === 'id'
                     ? sortDirection === 'asc'
-                      ? '↑'
-                      : '↓'
+                      ? ' ↑'
+                      : ' ↓'
                     : ''}
                 </Th>
                 <Th
@@ -114,12 +131,15 @@ export const Result: React.FC<Props> = ({
                   pb="0.8rem"
                   onClick={() => handleSort('name')}
                   cursor="pointer"
+                  w="15rem"
+                  minW="15rem"
+                  display="inline-block"
                 >
-                  Name{' '}
+                  Name
                   {sortColumn === 'name'
                     ? sortDirection === 'asc'
-                      ? '↑'
-                      : '↓'
+                      ? ' ↑'
+                      : ' ↓'
                     : ''}
                 </Th>
                 <Th
@@ -127,12 +147,14 @@ export const Result: React.FC<Props> = ({
                   pb="0.8rem"
                   onClick={() => handleSort('email')}
                   cursor="pointer"
+                  w="17rem"
+                  display="inline-block"
                 >
-                  E-mail{' '}
+                  E-mail
                   {sortColumn === 'email'
                     ? sortDirection === 'asc'
-                      ? '↑'
-                      : '↓'
+                      ? ' ↑'
+                      : ' ↓'
                     : ''}
                 </Th>
               </Tr>
@@ -145,6 +167,7 @@ export const Result: React.FC<Props> = ({
                       key={e.id}
                       draggableId={`user-${e.id}`.toString()}
                       index={index}
+
                     >
                       {(provided) =>
                         <Tr
@@ -152,12 +175,17 @@ export const Result: React.FC<Props> = ({
                           {...provided.draggableProps}
                           {...provided.dragHandleProps}
                           w="100%"
-                          left="270px !important"
-
+                          top="auto !important"
+                          left="auto !important"
+                          minW="36rem"
+                          maxW="36rem"
+                          display="block"
                         >
-                          <Td minW="4.6rem" maxW="4.6rem">{e.id}</Td>
-                          <Td>{e.name}</Td>
-                          <Td>{e.email}</Td>
+                          <Td w="4rem">
+                            {e.id}
+                          </Td>
+                          <Td w="15rem" >{e.name}</Td>
+                          <Td w="17rem">{e.email}</Td>
                         </Tr>
                       }
                     </Draggable>
@@ -185,6 +213,7 @@ export const Result: React.FC<Props> = ({
             mx="auto"
             minW="22rem"
             w="22rem"
+            mt="1rem"
           />
         </Flex>
 

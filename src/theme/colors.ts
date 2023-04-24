@@ -101,7 +101,11 @@ export const colors = {
   },
   inputBorder: {
     default: 'rgb(0,0,0,0.2)',
-    _dark: 'rgb(255,255,255,0.3)'
+    _dark: 'rgba(167, 167, 167, 0.3)'
+  },
+  inputBg: {
+    default: 'rgb(0,0,0,0.2)',
+    _dark: 'rgba(107, 169, 225, 0.04)'
   },
   grayIcon: {
     default: 'rgb(99, 115, 129)',
@@ -110,5 +114,21 @@ export const colors = {
   hamburgerIcon: {
     default: 'rgba(168, 176, 183, 0.8)',
     _dark: 'rgb(255,255,255,0.4)'
+  },
+  ticTacToeBg: {
+    default: '#d9b8ff',
+    _dark: 'rgb(255,255,255,0)'
+  },
+  ticTacToeHoverBg: {
+    default: '#c7a3f1',
+    _dark: 'rgb(255,255,255,0.02)'
+  },
+  ticTacToeBorder: {
+    default: 'rgb(0,0,0,0.01)',
+    _dark:  'rgb(255,255,255,0.2)'
+  },
+  ticTacToeHoverBorder: {
+    default: 'rgb(0,0,0,0)',
+    _dark: '#7eb3e5'
   }
 }

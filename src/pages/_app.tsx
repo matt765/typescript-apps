@@ -11,6 +11,7 @@ import '@fontsource/inter'
 import '@fontsource/amatic-sc'
 import '@fontsource/jost'
 import '@fontsource/exo'
+import '@fontsource/oswald'
 import { theme } from '../theme/theme'
 import {
   createContext, useEffect, useState
