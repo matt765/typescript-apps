@@ -41,10 +41,14 @@ export const ColorCard: React.FC<Props> = ({
           transition="0.2s"
           _hover={{
             boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
-            transition: '0.2s'
+            transition: '0.2s',
+            transform: 'scale(1.1)'
           }}
           style={styles.colorCardBox}
-          onClick={() => changeBackground(hexValue)}
+          onClick={() => {
+            navigator.clipboard.writeText(rgbValue)
+            setMessage(rgbValue)
+          }}
         />
         <Box
           mt="1rem"

@@ -10,10 +10,11 @@ import {
 } from '@chakra-ui/react'
 import { Search } from '@chakra-icons/bootstrap'
 import { useFetch } from '../../../hooks/useFetch'
+import { TransparentButton } from '../../buttons/TransparentButton'
 
 interface Props {
-    setValidationResult: (result: string) => void;
-    setLoading: (loading: boolean) => void;
+  setValidationResult: (result: string) => void;
+  setLoading: (loading: boolean) => void;
 }
 
 export const Form: React.FC<Props> = ({
@@ -48,44 +49,42 @@ export const Form: React.FC<Props> = ({
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Flex h="100%" justifyContent="center" alignItems="center" >
-          <FormControl isInvalid={isError} h="6rem" >
-            <Flex sx={{ '@media(max-width: 750px)':{
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '.5rem'
-            } }}
-            gap={'1rem'}>
+        <Flex h="100%" justifyContent="center" alignItems="center">
+          <FormControl isInvalid={isError} h="2rem">
+            <Flex
+              sx={{ '@media(max-width: 750px)': {
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '.5rem'
+              } }}
+              gap="1rem"
+            >
               <Input
                 id="email"
                 type="email"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                borderRadius="20px"
+                borderRadius="10px"
                 borderColor="inputBorder"
+                minW="26rem"
+                height="3rem"
+                mr="0.5rem"
+                backgroundColor="rgb(255,255,255,0.00)"
+                placeholder="Enter e-mail address"
               />
-              <Button
-                variant="primary"
-                leftIcon={<Search/>}
+
+              <TransparentButton
+                leftIcon={<Search />}
+                text="Check E-mail"
                 type="submit"
-                w="14rem"
-                borderRadius="20px"
-                fontSize="0.9rem"
-                letterSpacing="1px"
-                color="coloredButtonText"
-                bg="coloredButtonBg"
-              >
-                                Check E-mail
-              </Button>
+
+              />
             </Flex>
-            {isError &&
-                          <FormErrorMessage>Email is required.</FormErrorMessage>
-            }
+            {isError && <FormErrorMessage>Email is required.</FormErrorMessage>}
           </FormControl>
         </Flex>
       </form>
     </>
   )
 }
-

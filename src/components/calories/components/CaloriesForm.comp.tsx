@@ -92,6 +92,7 @@ export const CaloriesForm = () => {
         </InputGroup>
       </FormControl>
       <FormControl as="fieldset">
+
         <FormLabel as="legend">Weight</FormLabel>
         <InputGroup>
           <Input

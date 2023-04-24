@@ -3,25 +3,27 @@ import {
 } from 'react'
 
 import {
-  Button,
-  Flex
+  Button, Flex
 } from '@chakra-ui/react'
 import { Result } from './components/Result.comp'
 
 export interface User {
-    id: number;
-    name: string;
-    email: string;
+  id: number;
+  name: string;
+  email: string;
 }
 
 import { useFetch } from '../../hooks/useFetch'
+import { TransparentButton } from '../buttons/TransparentButton'
 
 export const UsersList: React.FC = () => {
   const [userData, setUserData] = useState<User[]>([])
 
   const {
     data, loading, makeApiCall
-  } = useFetch('https://jsonplaceholder.typicode.com/users')
+  } = useFetch(
+    'https://jsonplaceholder.typicode.com/users'
+  )
 
   useEffect(() => {
     if (data) {
@@ -31,29 +33,20 @@ export const UsersList: React.FC = () => {
 
   return (
     <>
-
       <Flex
         w="100%"
         alignItems="center"
-
+        justify="flex-start"
         flexDirection="column"
+        h="100%"
+        pt="4rem"
+        gap="1.2rem"
       >
-        <Button
-          variant="primary"
-          onClick={makeApiCall}
-          w="14rem"
-          borderRadius="20px"
-          fontSize="0.9rem"
-          mb="2rem"
-          color="coloredButtonText"
-          bg="coloredButtonBg"
-          letterSpacing="1px"
-          fontWeight="600"
-        >Fetch users</Button>
-        <Result userData={userData} loading={loading}/>
+        <TransparentButton onClick={makeApiCall} text="Fetch users" />
+        {userData.length > 0 &&
+          <Result userData={userData} loading={loading} />
+        }
       </Flex>
-
     </>
   )
 }
-
