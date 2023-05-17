@@ -88,6 +88,10 @@ export const colors = {
     default: '#3784c8',
     _dark: 'rgb(55, 118, 173)'
   },
+  transparentButtonDisabledText: {
+    default: '#3784c8',
+    _dark: 'rgb(255,255,255,0.6)'
+  },
   titleColor: {
     default: 'rgb(255,255,255,0.1)',
     _dark: 'rgb(255,255,255,0.1)'

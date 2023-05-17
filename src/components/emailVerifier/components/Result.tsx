@@ -1,6 +1,7 @@
 import {
-  Box, Spinner
+  Box, Flex, Spinner
 } from '@chakra-ui/react'
+import { Loader } from '../../loader/Loader'
 
 interface ResultProps {
     validationResult: string;
@@ -12,16 +13,18 @@ export const Result = ({
 }: ResultProps) => {
   return (
     <>
-      <Box
+      <Flex
         h="3rem"
         textAlign="center"
         fontSize="1.3rem"
         fontFamily="Quicksand"
         mb="3rem"
         w="20rem"
+        justify="center"
+        alignItems="center"
       >
-        {loading ? <Spinner size="lg" data-testid="spinner" /> : validationResult}
-      </Box>
+        {loading ? <Loader data-testid="spinner" size="lg" /> : validationResult}
+      </Flex>
 
     </>
   )

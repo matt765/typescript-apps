@@ -27,6 +27,7 @@
     "@fontsource/poppins": "^4.5.10",
     "@fontsource/quicksand": "^4.5.12",
     "axios": "^1.3.5",
+    "babel-jest": "^29.5.0",
     "formik": "^2.2.9",
     "framer-motion": "^10.11.2",
     "next": "^13.2.4",
@@ -60,5 +61,12 @@
     "postcss": "^8.4.21",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.3"
+  },
+  "transformIgnorePatterns": [
+    "node_modules/(?!(<package-name>|<second-package-name>)/)"
+  ],
+  "transform": {
+    "^.+\\.ts?$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest"
   }
 }
