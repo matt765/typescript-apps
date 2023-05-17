@@ -6,7 +6,7 @@ interface TransparentButtonProps {
   type?: 'button' | 'submit' | 'reset' | undefined;
   leftIcon?: ReactElement;
   onClick?: () => void;
-  isDisabled?: boolean;
+  isLoading?: boolean;
 }
 
 export const TransparentButton = ({
@@ -14,7 +14,7 @@ export const TransparentButton = ({
   type,
   leftIcon,
   onClick,
-  isDisabled
+  isLoading
 }: TransparentButtonProps) =>
   <Button
     borderWidth="1px"
@@ -32,14 +32,14 @@ export const TransparentButton = ({
     _hover={{ bg: 'transparentButtonHoverBg' }}
     _active={{ bg: 'transparentButtonActiveBg' }}
     leftIcon={leftIcon}
-    onClick={onClick}
+    onClick={isLoading ? () => {} : onClick}
     minH="3rem"
-    disabled={isDisabled}
     fontFamily="Quicksand"
     letterSpacing="0.5px"
     fontWeight="600"
     fontSize="1rem"
     pr="1.3rem"
+    isDisabled={isLoading}
   >
     {text}
   </Button>

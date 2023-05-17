@@ -1,30 +1,28 @@
 import { useState } from 'react'
 import { useMutation } from 'react-query'
 
-import { makeApiCall } from '../../utils/makeApiCall'
-
 export const useEmailVerifier = (
   setValidationResult: (result: string) => void,
   setLoading: (value: boolean) => void
 ) => {
   const [address, setAddress] = useState('')
   const [isError, setIsError] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [disableSubmit, setDisableSubmit] = useState(false)
 
   const validateEmail = async (address: string) => {
-    const myHeaders = new Headers()
-    myHeaders.append('Content-Type', 'application/json')
-    myHeaders.append(
-      'Apikey',
-      process.env.NEXT_PUBLIC_EMAIL_VERIFIER_API_KEY as string
-    )
+    const response = await fetch('/api/emailVerifier', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ address })
+    })
 
-    const url = 'https://api.cloudmersive.com/validate/email/address/full'
-    const method = 'POST'
-    const body = address
+    if (!response.ok) {
+      throw new Error('Email verification failed')
+    }
 
-    const response = await makeApiCall(url, method, myHeaders, body)
-
-    return response
+    return response.json()
   }
 
   const mutation = useMutation(validateEmail, {
@@ -33,6 +31,8 @@ export const useEmailVerifier = (
     },
     onSuccess: (data) => {
       setLoading(false)
+      setIsSubmitting(false)
+      setIsSubmitted(false)
       if (data.Valid_Syntax && data.Valid_Domain && data.Valid_SMTP) {
         setValidationResult('This email address is valid.')
       } else if (data.Valid_Syntax && data.Valid_Domain && !data.Valid_SMTP) {
@@ -45,16 +45,25 @@ export const useEmailVerifier = (
     },
     onError: () => {
       setLoading(false)
+      setIsSubmitting(false)
+      setIsSubmitted(false)
       setValidationResult('There was an error validating this email address.')
     }
   })
 
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault()
-    if (address) {
+    if (address && !isSubmitting && !disableSubmit) {
       setIsError(false)
+      setIsSubmitting(true)
+      setIsSubmitted(true)
+      setDisableSubmit(true)
       mutation.mutate(address)
-    } else {
+
+      setTimeout(() => {
+        setDisableSubmit(false)
+      }, 2000)
+    } else if (!address && !isSubmitting && !isSubmitted) {
       setIsError(true)
     }
   }
@@ -64,6 +73,8 @@ export const useEmailVerifier = (
     setAddress,
     isError,
     setIsError,
-    handleSubmit
+    handleSubmit,
+    setIsSubmitted,
+    disableSubmit
   }
 }

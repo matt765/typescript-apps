@@ -23,7 +23,8 @@ export const Form = ({
     setAddress,
     isError,
     setIsError,
-    handleSubmit
+    handleSubmit,
+    setIsSubmitted
   } = useEmailVerifier(setValidationResult, setLoading)
 
   return (
@@ -31,7 +32,7 @@ export const Form = ({
       <form onSubmit={handleSubmit}>
         <Flex h="100%" justifyContent="center" alignItems="center" mb={{
           base: '15.5rem',
-          md: '7rem'
+          md: '6.5rem'
         }}
         >
           <FormControl isInvalid={isError} h="2rem">
@@ -54,6 +55,7 @@ export const Form = ({
                 onChange={(e) => {
                   setAddress(e.target.value)
                   setIsError(false)
+                  setIsSubmitted(false) // Reset isSubmitted when the input value changes
                 }}
                 borderRadius="10px"
                 borderColor="inputBorder"
@@ -79,7 +81,7 @@ export const Form = ({
                   leftIcon={<Search />}
                   text="Check E-mail"
                   type="submit"
-                  isDisabled={loading}
+                  isLoading={loading}
                 />
               </Flex>
             </Flex>

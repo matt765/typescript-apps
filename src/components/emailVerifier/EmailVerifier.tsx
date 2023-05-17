@@ -19,6 +19,7 @@ export const EmailVerifier = () => {
           md: 'center'
         }}
         height="100%"
+        pb="3rem"
       >
         <Form
           setValidationResult={setValidationResult}
