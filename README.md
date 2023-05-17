@@ -2,7 +2,7 @@
 Open source project that is a collection of small applications written in ReactJS and TypeScript.
  
 ## Tech stack
-React, NextJS, TypeScript, Chakra UI, Framer Motion
+React, NextJS, TypeScript, Chakra UI, React Query, Framer Motion, React Testing Library
 
 ## Live link
 [https://typescriptapps.netlify.app/](https://typescriptapps.netlify.app/)
@@ -48,8 +48,6 @@ All commands are run from the root of the project, from a terminal:
 - Calculator
 - Anything that retrievs data from the API https://github.com/public-apis/public-apis
 - Task organizer
-- Tic-tac-toe game
-- Snake game
 - Hangman game
 - Stopwatch / Clock
 - Pomodoro App

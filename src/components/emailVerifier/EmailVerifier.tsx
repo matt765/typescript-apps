@@ -1,24 +1,29 @@
 import * as React from 'react'
-import { Form } from './components/Form'
-import { Result } from './components/Result'
 import { useState } from 'react'
 import { Flex } from '@chakra-ui/react'
 
-export const EmailVerifier: React.FC = () => {
+import { Form } from './components/Form'
+import { Result } from './components/Result'
+
+export const EmailVerifier = () => {
   const [validationResult, setValidationResult] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState<boolean>(false)
 
   return (
     <>
       <Flex
         direction="column"
         alignItems="center"
-        justifyContent="center"
+        justifyContent={{
+          base: 'flex-start',
+          md: 'center'
+        }}
         height="100%"
       >
         <Form
           setValidationResult={setValidationResult}
           setLoading={setLoading}
+          loading={loading}
         />
         <Result validationResult={validationResult} loading={loading}/>
       </Flex>

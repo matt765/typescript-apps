@@ -71,17 +71,22 @@ export const colors = {
     default: '#3784c8',
     _dark: 'rgb(37, 116, 114)'
   },
+  // Transparent button
   transparentButtonBg: {
     default: 'rgba(45, 53, 80, 0)',
     _dark: 'rgba(45, 53, 80, 0)'
   },
-  transparentButtonHover: {
+  transparentButtonHoverBg: {
     default: 'rgb(255,255,255,0.1)',
-    _dark: 'rgb(255,255,255,0.05)'
+    _dark: 'rgb(107, 169, 225, 0.1)'
+  },
+  transparentButtonActiveBg: {
+    default: 'rgb(255,255,255,0.2)',
+    _dark: 'rgba(107, 169, 225, 0.18)'
   },
   transparentButtonBorder: {
     default: '#3784c8',
-    _dark: '#3784c8'
+    _dark: 'rgb(55, 118, 173)'
   },
   titleColor: {
     default: 'rgb(255,255,255,0.1)',

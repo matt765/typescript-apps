@@ -1,19 +1,15 @@
-import { LoadingOutlined } from '@ant-design/icons'
-import { Box } from '@chakra-ui/react'
+import {
+  Box, Spinner
+} from '@chakra-ui/react'
 
-interface Props {
+interface ResultProps {
     validationResult: string;
     loading: boolean;
 }
 
-export const Result: React.FC<Props> = ({
+export const Result = ({
   validationResult, loading
-}) => {
-  const renderResult = () => {
-    if (validationResult) {
-      return validationResult
-    }
-  }
+}: ResultProps) => {
   return (
     <>
       <Box
@@ -21,11 +17,10 @@ export const Result: React.FC<Props> = ({
         textAlign="center"
         fontSize="1.3rem"
         fontFamily="Quicksand"
-        // color="rgb(82, 82, 82)"
         mb="3rem"
-        w="40vw"
+        w="20rem"
       >
-        {!loading ? renderResult() : <LoadingOutlined/>}
+        {loading ? <Spinner size="lg" data-testid="spinner" /> : validationResult}
       </Box>
 
     </>

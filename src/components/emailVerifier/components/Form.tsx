@@ -1,85 +1,87 @@
-import React, {
-  useState, useEffect
-} from 'react'
 import {
   Input,
   FormControl,
   FormErrorMessage,
-  Button,
   Flex
 } from '@chakra-ui/react'
 import { Search } from '@chakra-icons/bootstrap'
-import { useFetch } from '../../../hooks/useFetch'
-import { TransparentButton } from '../../buttons/TransparentButton'
 
-interface Props {
+import { TransparentButton } from '../../buttons/TransparentButton'
+import { useEmailVerifier } from '../useEmailVerifier'
+
+interface FormProps {
   setValidationResult: (result: string) => void;
-  setLoading: (loading: boolean) => void;
+  setLoading: (value: boolean) => void;
+  loading: boolean;
 }
 
-export const Form: React.FC<Props> = ({
-  setValidationResult, setLoading
-}) => {
-  const [address, setAddress] = useState('')
-  const [isError, setIsError] = useState(false)
-  const corsProxy = 'https://mycorsproxy765.herokuapp.com/'
-  const apikey = process.env.NEXT_PUBLIC_EMAIL_VERIFIER_API_KEY
-  const endpoint = `https://api.email-validator.net/api/verify?EmailAddress=${address}&APIKey=${apikey}`
+export const Form = ({
+  setValidationResult, setLoading, loading
+}: FormProps) => {
   const {
-    data, loading, makeApiCall
-  } = useFetch(`${corsProxy}${endpoint}`)
-
-  useEffect(() => {
-    setLoading(loading)
-    if (data) {
-      setValidationResult(data.details)
-    }
-  }, [data, loading])
-
-  const handleSubmit = (event: React.SyntheticEvent) => {
-    event.preventDefault()
-    if (address) {
-      setIsError(false)
-      makeApiCall()
-    } else {
-      setIsError(true)
-    }
-  }
+    address,
+    setAddress,
+    isError,
+    setIsError,
+    handleSubmit
+  } = useEmailVerifier(setValidationResult, setLoading)
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Flex h="100%" justifyContent="center" alignItems="center">
+        <Flex h="100%" justifyContent="center" alignItems="center" mb={{
+          base: '15.5rem',
+          md: '7rem'
+        }}
+        >
           <FormControl isInvalid={isError} h="2rem">
             <Flex
-              sx={{ '@media(max-width: 750px)': {
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '.5rem'
-              } }}
-              gap="1rem"
+              flexDirection={{
+                base: 'column',
+                md: 'row'
+              }}
+              justifyContent="center"
+              alignItems="center"
+              gap={{
+                base: '2rem',
+                md: '1rem'
+              }}
             >
               <Input
                 id="email"
                 type="email"
                 value={address}
-                onChange={(e) => setAddress(e.target.value)}
+                onChange={(e) => {
+                  setAddress(e.target.value)
+                  setIsError(false)
+                }}
                 borderRadius="10px"
                 borderColor="inputBorder"
-                minW="26rem"
+                minW={{
+                  base: '18rem',
+                  sm: '20rem',
+                  md: '26rem'
+                }}
                 height="3rem"
                 mr="0.5rem"
                 backgroundColor="inputBg"
                 placeholder="Enter e-mail address"
               />
-
-              <TransparentButton
-                leftIcon={<Search />}
-                text="Check E-mail"
-                type="submit"
-
-              />
+              <Flex minW={{
+                base: '18rem',
+                sm: '20rem',
+                md: '14rem'
+              }}
+              justify="center"
+              alignItems="center"
+              >
+                <TransparentButton
+                  leftIcon={<Search />}
+                  text="Check E-mail"
+                  type="submit"
+                  isDisabled={loading}
+                />
+              </Flex>
             </Flex>
             {isError && <FormErrorMessage>Email is required.</FormErrorMessage>}
           </FormControl>
