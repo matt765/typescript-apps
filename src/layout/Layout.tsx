@@ -71,7 +71,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
         }}
         px={{
           base: '0rem',
-          xl: '4rem',
+          xl: '6rem',
           '2xl': '10rem'
         }}
         bgImage={colorMode === 'light' ? 'url(lightbg.jpg)' : ''}
@@ -80,20 +80,21 @@ export const Layout = ({ children }: { children: ReactNode }) => {
         bgSize="cover"
         bg={colorMode === 'light' ? '' : 'secondaryBg'}
         overflow="scroll"
+
       >
         <SideMenu
           isFullScreen={isFullScreen}
           isSideMenuOpen={isSideMenuOpen}
           setIsSideMenuOpen={handleSideMenu}
         />
-        <MobileNavbar />
+
         <Flex
           backdropFilter="blur(20px)"
           bg={colorMode === 'light' ? 'rgb(255,255,255,0.3)' : 'contentBg'}
           flex="1"
           justifyContent="center"
           alignItems="center"
-          p="2rem"
+          px="1rem"
           ml={{
             base: 0,
             xl: '1.6rem'
@@ -103,32 +104,20 @@ export const Layout = ({ children }: { children: ReactNode }) => {
             xl: '15px'
           }}
           boxShadow={settingsData.isFullScreen ? 'none' : 'xl'}
-          overflow="auto"
+          overflow="scroll"
           overflowX="hidden"
           transition="0s"
           borderWidth="0px"
           borderStyle="solid"
           borderColor="borderMain"
           h="100%"
+
         >
           {isRouteChanging ? <Spinner size="xl" /> : children}
         </Flex>
       </Flex>
+      <MobileNavbar />
       <ThemeToggle />
-      {/* <Button
-        onClick={() => handleFullScreen()}
-        position="fixed"
-        cursor="pointer"
-        right="2.5rem"
-        bottom="5.5rem"
-        width="3rem"
-        fill="primaryText"
-      >
-        {settingsData.isFullScreen
-          ? <FullScreenIcon />
-          : <FullScreenExitIcon />
-        }
-      </Button> */}
     </>
   )
 }

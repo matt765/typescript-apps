@@ -3,6 +3,8 @@ import {
 } from 'next'
 import { makeApiCall } from '../../utils/makeApiCall'
 
+// The purpose for this api route is to hide api key in the browser
+
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     if (req.method !== 'POST') {
@@ -28,13 +30,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const response = await makeApiCall(url, method, myHeaders, body)
 
-    // Ensure that the response has the expected format
     if (!response || typeof response !== 'object') {
       return res.status(500).json({ error: 'Unexpected response from email verification API' })
     }
     res.status(200).json(response)
   } catch (error) {
-    console.error(error) // Log the error
     res.status(500).json({ error: `Internal Server Error: ${error}` })
   }
 }

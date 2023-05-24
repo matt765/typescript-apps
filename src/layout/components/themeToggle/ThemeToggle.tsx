@@ -15,11 +15,11 @@ export const ThemeToggle = () => {
       position="fixed"
       bottom={{
         base: '1rem',
-        '2xl': '2rem'
+        '2xl': '1.5rem'
       }}
       right={{
         base: '1rem',
-        '2xl': '2.5rem'
+        '2xl': '1.5rem'
       }}
       zIndex="99999"
     >
