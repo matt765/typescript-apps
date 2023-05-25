@@ -34,7 +34,7 @@ export const WeatherProvider = ({ children }: {children: React.ReactNode}) => {
     })
   }
 
-  React.useMemo(() => {
+  React.useEffect(() => {
     if (position) {
       setError(null)
       const query = `${position.coords.latitude},${position.coords.longitude}`
