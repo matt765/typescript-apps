@@ -42,7 +42,7 @@ export const WeatherHeading = () => {
         </FormLabel>
         <Switch
           id="use-geolocation"
-          colorScheme={'twitter'}
+          color="coloredButtonBg"
           onChange={handleGeolocation}
           isChecked={isGeolocation}
         />
@@ -50,7 +50,9 @@ export const WeatherHeading = () => {
 
       {isGeolocation
         ? <Button
-          colorScheme={'twitter'}
+          color="coloredButtonText"
+          bg="coloredButtonBg"
+          _hover={{ bg:'coloredButtonBgHover' }}
           borderRadius={'3rem'}
           onClick={onClick}
           display={'flex'}
@@ -75,6 +77,7 @@ export const WeatherHeading = () => {
             letterSpacing="1px"
             fontWeight="600"
             borderRadius={'2rem'}
+            _hover={{ bg:'coloredButtonBgHover' }}
             px={'2rem'}
             type={'submit'}
             ml="1rem"
