@@ -1,13 +1,13 @@
 import type { NextPage } from 'next'
-import { UsersList } from '../components/usersList/UsersList'
+import { UserList } from '../components/userList/UserList'
 import { Layout } from '../layout/Layout'
 
-const UsersListPage: NextPage = () => {
+const UserListPage: NextPage = () => {
   return (
     <Layout>
-      <UsersList/>
+      <UserList/>
     </Layout>
   )
 }
 
-export default UsersListPage
+export default UserListPage

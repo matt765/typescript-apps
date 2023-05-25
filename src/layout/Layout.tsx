@@ -94,7 +94,10 @@ export const Layout = ({ children }: { children: ReactNode }) => {
           flex="1"
           justifyContent="center"
           alignItems="center"
-          px="1rem"
+          px={{
+            base: '0',
+            xl: '1rem'
+          }}
           ml={{
             base: 0,
             xl: '1.6rem'
@@ -111,7 +114,6 @@ export const Layout = ({ children }: { children: ReactNode }) => {
           borderStyle="solid"
           borderColor="borderMain"
           h="100%"
-
         >
           {isRouteChanging ? <Spinner size="xl" /> : children}
         </Flex>

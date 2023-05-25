@@ -15,6 +15,7 @@ export const theme = extendTheme({
     md: '48em', // 768px
     lg: '62em', // 992px
     xl: '80em', // 1280px
+    '1xl': '88.75em', // 1420px
     '2xl': '102em', // 1632px
     '3xl': '110em' // 1760px
   },

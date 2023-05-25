@@ -49,7 +49,7 @@ export const ColorPicker = () => {
           fontSize="1.5rem"
           fontFamily="Quicksand"
         >
-          {message ? `Copied: ${message}` : 'Click color to copy its code'}
+          {message ? `Copied: ${message}` : 'Click a color to copy its code'}
         </Box>
         <SimpleGrid
           columns={{

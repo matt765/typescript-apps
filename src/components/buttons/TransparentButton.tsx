@@ -1,5 +1,9 @@
-import { Button } from '@chakra-ui/react'
-import { ReactElement } from 'react'
+import {
+  Button, Icon
+} from '@chakra-ui/react'
+import {
+  FunctionComponent, ReactElement
+} from 'react'
 
 interface TransparentButtonProps {
   text: string;
@@ -7,6 +11,8 @@ interface TransparentButtonProps {
   leftIcon?: ReactElement;
   onClick?: () => void;
   isLoading?: boolean;
+  h?: string;
+  icon?: FunctionComponent<React.SVGProps<SVGSVGElement>>;
 }
 
 export const TransparentButton = ({
@@ -14,7 +20,9 @@ export const TransparentButton = ({
   type,
   leftIcon,
   onClick,
-  isLoading
+  isLoading,
+  h = '3rem',
+  icon
 }: TransparentButtonProps) =>
   <Button
     borderWidth="1px"
@@ -23,7 +31,7 @@ export const TransparentButton = ({
     w="100%"
     justifyContent="center"
     alignItems="center"
-    h="3rem"
+    h={h}
     borderRadius="10px"
     type={type}
     cursor="pointer"
@@ -33,14 +41,19 @@ export const TransparentButton = ({
     _active={{ bg: 'transparentButtonActiveBg' }}
     leftIcon={leftIcon}
     onClick={isLoading ? () => {} : onClick}
-    minH="3rem"
+    minH={h}
     fontFamily="Quicksand"
     letterSpacing="0.5px"
     fontWeight="600"
     fontSize="1rem"
     pr="1.3rem"
     isDisabled={isLoading}
+    sx={{ '& svg': {
+      width: '15px !important',
+      height: '15px !important',
+      fill: 'rgb(255,255,255,0.7)'
+    } }}
   >
-    {text}
+    {icon ? <Icon as={icon} boxSize={7} /> : text}
   </Button>
 

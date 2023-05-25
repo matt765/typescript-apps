@@ -2,8 +2,8 @@ import * as React from 'react'
 import { useState } from 'react'
 import { Flex } from '@chakra-ui/react'
 
-import { Form } from './components/Form'
-import { Result } from './components/Result'
+import { Form } from './components/EmailVerifierForm'
+import { Result } from './components/EmailVerifierResult'
 
 export const EmailVerifier = () => {
   const [validationResult, setValidationResult] = useState('')

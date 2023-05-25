@@ -4,11 +4,16 @@ export const makeApiCall = async (
   headers: Headers,
   body: any
 ) => {
-  const response = await fetch(url, {
+  const options: RequestInit = {
     method,
-    headers,
-    body: JSON.stringify(body)
-  })
+    headers
+  }
+
+  if (body && (method === 'POST' || method === 'PUT' || method === 'PATCH')) {
+    options.body = JSON.stringify(body)
+  }
+
+  const response = await fetch(url, options)
 
   if (!response.ok) {
     throw new Error('Network response was not ok')
