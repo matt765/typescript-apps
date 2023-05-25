@@ -1,10 +1,9 @@
 import { Flex } from '@chakra-ui/react'
 import * as React from 'react'
 import { CaloriesProvider } from './utils/useCaloriesCounter'
-import { CaloriesHeading } from './components/CaloriesHeading.comp'
 import { CaloriesForm } from './components/CaloriesForm.comp'
 import { CaloriesResult } from './components/CaloriesResult.comp'
-import { Layout } from '../../layout/Layout'
+import { HealthHeading } from '../health/HealthHeading.comp'
 
 export const CaloriesComp = () => {
   return (
@@ -22,7 +21,7 @@ export const CaloriesComp = () => {
         }}
         pb="3rem"
       >
-        <CaloriesHeading />
+        <HealthHeading title={'Calories Calculator'} description={'Input your measures and get your daily calorie'}/>
         <CaloriesForm />
         <CaloriesResult />
       </Flex>

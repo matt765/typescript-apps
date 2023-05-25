@@ -2,14 +2,21 @@ import {
   Flex, Heading, Text
 } from '@chakra-ui/react'
 
-export const BmiHeadingComp = () => {
+type Props = {
+    title: string
+    description: string
+}
+
+export const HealthHeading = ({
+  title, description
+}: Props) => {
   return (
     <Flex as={'header'} flexDirection={'column'} alignItems={'center'}>
       <Heading as={'h1'} fontWeight={300} fontSize={'5xl'}>
-        BMI Calculator
+        {title}
       </Heading>
       <Text fontSize={'lg'} textAlign={'center'} mt="1rem" mb="0.5rem">
-        Input your measures and get your BMI
+        {description}
       </Text>
     </Flex>
   )

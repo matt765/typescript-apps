@@ -1,6 +1,6 @@
-import { BmiHeadingComp } from './components/BmiHeading.comp'
 import { BmiFormComp } from './components/BmiForm.comp'
 import { Flex } from '@chakra-ui/react'
+import { HealthHeading } from '../health/HealthHeading.comp'
 
 export const Bmi = () => {
   return (
@@ -12,7 +12,7 @@ export const Bmi = () => {
       h="100%"
       pt="3%"
     >
-      <BmiHeadingComp />
+      <HealthHeading title={'BMI Calculator'} description={'Input your measures and get your BMI'}/>
       <BmiFormComp />
     </Flex>
   )
