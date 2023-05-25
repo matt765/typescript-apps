@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { getForecast } from './getForecast'
 import { ForecastInterface } from '../interfaces/Forecast.interface'
-import { ForecaseContextInterface } from '../interfaces/ForecaseContext.interface'
+import { ForecastContextInterface } from '../interfaces/ForecastContext.interface'
 import { useMemo } from 'react'
 
-const Weather = React.createContext<ForecaseContextInterface | null>(null)
+const Weather = React.createContext<ForecastContextInterface | null>(null)
 
 export const WeatherProvider = ({ children }: {children: React.ReactNode}) => {
   const [position, setPosition] = React.useState<GeolocationPosition>()
