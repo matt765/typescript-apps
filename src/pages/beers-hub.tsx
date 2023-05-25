@@ -8,7 +8,9 @@ import { Beers } from '../components/beers/Beers'
 
 const Home: NextPage<{beers: Beer[]}> = ({ beers }: {beers: Beer[]}) =>
   <Layout>
-    <Beers/>
+    <Beers>
+      <BeerList beers={beers}/>
+    </Beers>
   </Layout>
 
 export const getStaticProps = async () => {
