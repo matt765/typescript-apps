@@ -47,10 +47,9 @@ export const Beer = ({
     </Flex>
     <Box position={'relative'} width={24} height={24}>
       <Image
-        // eslint-disable-next-line camelcase
+        style={{ objectFit:'contain' }}
         src={image_url}
-        layout={'fill'}
-        objectFit={'contain'}
+        fill
         alt={name}
       />
     </Box>
