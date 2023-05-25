@@ -17,9 +17,11 @@ export const SingleBeer = ({ beer }:{beer: Beer}) =>
         <Image
           src={beer.image_url}
           alt={beer.name}
-          layout={'fill'}
-          objectFit={'contain'}
-          objectPosition={'top'}
+          style={{
+            objectFit:'contain',
+            objectPosition: 'top'
+          }}
+          fill
         />
       </Box>
     </Flex>
