@@ -2,6 +2,7 @@ import * as React from 'react'
 import { getForecast } from './getForecast'
 import { ForecastInterface } from '../interfaces/Forecast.interface'
 import { ForecaseContextInterface } from '../interfaces/ForecaseContext.interface'
+import { useMemo } from 'react'
 
 const Weather = React.createContext<ForecaseContextInterface | null>(null)
 
@@ -46,13 +47,15 @@ export const WeatherProvider = ({ children }: {children: React.ReactNode}) => {
     }
   }, [position])
 
-  return <Weather.Provider value={{
+  const contextValue = useMemo(() => ({
     onSubmit,
     onClick,
     error,
     forecast,
     position
-  }}>{children}</Weather.Provider>
+  }), [])
+
+  return <Weather.Provider value={contextValue}>{children}</Weather.Provider>
 }
 
 export const useWeather = () => {
