@@ -1,5 +1,6 @@
-import { State } from '../interfaces/State.interface'
-import { Action } from '../types/Action.type'
+import {
+  Action, State
+} from '../types/types'
 
 export function caloriesReducer(state: State, action: Action) {
   switch (action.type) {

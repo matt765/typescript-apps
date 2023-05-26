@@ -47,7 +47,6 @@ export const ColorPicker = () => {
           mb="2rem"
           textAlign="center"
           fontSize="1.5rem"
-          fontFamily="Quicksand"
         >
           {message ? `Copied: ${message}` : 'Click a color to copy its code'}
         </Box>
@@ -79,7 +78,6 @@ export const ColorPicker = () => {
           alignItems="center"
           fontSize="1.3rem"
           mt="1.2rem"
-          fontFamily="Quicksand"
           h="1.4rem"
           mb="2rem"
         >

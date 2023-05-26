@@ -1,6 +1,7 @@
 import { Flex } from '@chakra-ui/react'
 import React from 'react'
-import { CaloriesComp } from '../../components/calories/Calories.comp'
+
+import { CaloriesComp } from '../../components/calories/Calories'
 import { Layout } from '../../layout/Layout'
 
 const Calories = () => {

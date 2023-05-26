@@ -10,7 +10,7 @@ export const Bmi = () => {
       alignItems="center"
       w="100%"
       h="100%"
-      pt="3%"
+      pt="7%"
     >
       <BmiHeadingComp />
       <BmiFormComp />

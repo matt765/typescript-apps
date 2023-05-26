@@ -75,7 +75,6 @@ export const ColorCard = ({
             cursor="pointer"
             transition="0.2s"
             fontWeight="500"
-            fontFamily="Quicksand"
             _hover={{
               color: '#3178c6',
               transform: 'scale(1.05)'
@@ -90,7 +89,6 @@ export const ColorCard = ({
             cursor="pointer"
             transition="0.2s"
             fontWeight="500"
-            fontFamily="Quicksand"
             _hover={{
               color: '#3178c6',
               transform: 'scale(1.05)'

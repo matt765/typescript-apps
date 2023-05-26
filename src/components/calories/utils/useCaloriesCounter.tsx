@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { useReducer } from 'react'
+
 import { calcBMR } from './calcBMR'
 import { calcAMR } from './calcAMR'
-import { Errors } from '../interfaces/Errors.interface'
-import { ErrorKey } from '../types/ErrorKey.type'
-import { Gender } from '../types/Gender.type'
 import { caloriesReducer } from '../reducers/caloriesReducer'
-import { CaloriesContextInterface } from '../interface/CaloriesContext.interface'
+import {
+  CaloriesContextInterface, ErrorKey, Errors, Gender
+} from '../types/types'
 
 const initialState = {
   errors: {
@@ -96,6 +96,7 @@ export const CaloriesProvider = ({ children }: { children: React.ReactNode }) =>
       activity: e.target.value
     })
   }
+
   const setAMRandBMR = ({
     AMR, BMR
   }: { AMR: string, BMR: string }) => dispatch({
@@ -103,10 +104,12 @@ export const CaloriesProvider = ({ children }: { children: React.ReactNode }) =>
     AMR,
     BMR
   })
+
   const setErrors = (errors: Errors) => dispatch({
     type: 'setErrors',
     errors
   })
+
   const toggleImperial = () => dispatch({ type: 'toggleImperial' })
 
   const calculate = (e: React.FormEvent) => {
@@ -130,14 +133,12 @@ export const CaloriesProvider = ({ children }: { children: React.ReactNode }) =>
       }
     })
 
-    // eslint-disable-next-line no-magic-numbers
     if (Number(age) < 1 || Number(age) > 105) {
       setErrors({
         ...errors,
         age: true
       })
     }
-    // eslint-disable-next-line no-magic-numbers
     if (Number(height) < 1 || Number(height) > 220) {
       setErrors({
         ...errors,

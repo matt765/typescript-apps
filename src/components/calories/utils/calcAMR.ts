@@ -1,6 +1,6 @@
-import { CalcARM } from '../interface/BMR.interface'
+import { CalcAMR } from '../types/types'
 
 export const calcAMR = ({
   BMR, activity
-}: CalcARM) => (Number(BMR) * Number(activity)).toFixed(0)
+}: CalcAMR) => (Number(BMR) * Number(activity)).toFixed(0)
 

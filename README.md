@@ -1,5 +1,5 @@
 # TypeScript Apps
-Open source project that is a collection of small applications written in ReactJS and TypeScript.
+Open source collection of small applications written in ReactJS and TypeScript.
  
 ## Tech stack
 React, NextJS, TypeScript, Chakra UI, React Query, Framer Motion, React Testing Library

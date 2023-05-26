@@ -1,4 +1,4 @@
-import { Bmi } from '../../components/bmi/Bmi.comp'
+import { Bmi } from '../../components/bmi/Bmi'
 import { Layout } from '../../layout/Layout'
 
 const BMI = () => {

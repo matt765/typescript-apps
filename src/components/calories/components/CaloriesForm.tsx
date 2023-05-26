@@ -1,5 +1,5 @@
 import {
-  Button,
+  Center,
   Flex,
   FormControl,
   FormLabel,
@@ -10,8 +10,10 @@ import {
   Radio,
   RadioGroup,
   Select,
-  Switch
+  Switch,
+  Text
 } from '@chakra-ui/react'
+
 import { TransparentButton } from '../../buttons/TransparentButton'
 import { useCaloriesCounter } from '../utils/useCaloriesCounter'
 
@@ -35,30 +37,30 @@ export const CaloriesForm = () => {
 
   return (
     <Flex
-      flexDirection={'column'}
+      flexDirection="column"
       gap={4}
-      w={'100%'}
-      mx={'auto'}
+      w="100%"
+      mx="auto"
       my={4}
-      as={'form'}
+      as="form"
       pb="2rem"
       onSubmit={calculate}
     >
-      <Flex alignItems={'center'} mx={'auto'} gap={2}>
-        metric
+      <Flex alignItems="center" mx="auto" gap={2}>
+        Metric
         <Switch
           id="use-geolocation"
           isChecked={isImperial}
           onChange={toggleImperial}
-          _checked={{ '> span': { bgGradient: 'linear(to-l, #00d2ff, #3a7bd5)' } }}
+          _checked={{ '> span': { bg: 'blue.400' } }}
         />
-        imperial
+        Imperial
       </Flex>
       <FormControl as="fieldset">
         <FormLabel as="legend">Age</FormLabel>
         <Input
-          type={'number'}
-          placeholder={'Input your age'}
+          type="number"
+          placeholder="Input your age"
           onChange={setAge}
           value={age}
           isInvalid={errors.age}
@@ -68,7 +70,7 @@ export const CaloriesForm = () => {
       </FormControl>
       <FormControl as="fieldset">
         <FormLabel as="legend">Gender</FormLabel>
-        <RadioGroup value={gender} onChange={setGender} defaultValue={'male'}>
+        <RadioGroup value={gender} onChange={setGender} defaultValue="male">
           <HStack spacing="24px">
             <Radio value="male">Male</Radio>
             <Radio value="female">Female</Radio>
@@ -79,10 +81,10 @@ export const CaloriesForm = () => {
         <FormLabel as="legend">Height</FormLabel>
         <InputGroup>
           <Input
-            placeholder={'Input your height'}
+            placeholder="Input your height"
             onChange={setHeight}
             value={height}
-            type={'number'}
+            type="number"
             isInvalid={errors.height}
             required
             borderColor="inputBorder"
@@ -92,14 +94,13 @@ export const CaloriesForm = () => {
         </InputGroup>
       </FormControl>
       <FormControl as="fieldset">
-
         <FormLabel as="legend">Weight</FormLabel>
         <InputGroup>
           <Input
-            placeholder={'Input your weight'}
+            placeholder="Input your weight"
             value={weight}
             onChange={setWeight}
-            type={'number'}
+            type="number"
             isInvalid={errors.weight}
             required
             borderColor="inputBorder"
@@ -136,6 +137,13 @@ export const CaloriesForm = () => {
       <Flex w="100%" justify="center" mt="1rem">
         <TransparentButton text="Calculate" type="submit" />
       </Flex>
+      {Object.values(errors).some((value) => value === true) &&
+        <Center>
+          <Text color="red.300" mt="1rem">
+            Some of the values are invalid
+          </Text>
+        </Center>
+      }
     </Flex>
   )
 }
