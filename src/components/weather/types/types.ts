@@ -1,4 +1,12 @@
-export interface ForecastInterface{
+export interface ForecastContextInterface {
+    onClick: () => void
+    onSubmit: (e: React.BaseSyntheticEvent<HTMLFormElement>) => void
+    error: GeolocationPositionError | Error | null
+    forecast: ForecastInterface | undefined
+    position: GeolocationPosition | undefined
+}
+
+export interface ForecastInterface {
     current: {
         cloud: number
         condition: {text: string, icon: string, code: number}
@@ -102,3 +110,4 @@ export interface ForecastInterface{
         tz_id: string
     }
 }
+

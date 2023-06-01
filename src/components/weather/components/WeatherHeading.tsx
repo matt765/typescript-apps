@@ -10,8 +10,9 @@ import {
   FormLabel,
   Input
 } from '@chakra-ui/react'
-import { useWeather } from '../hooks/useWeather'
 import { EnvironmentOutlined } from '@ant-design/icons'
+
+import { useWeather } from '../utils/useWeather'
 
 export const WeatherHeading = () => {
   const {
@@ -23,18 +24,18 @@ export const WeatherHeading = () => {
 
   return (
     <Flex
-      as={'header'}
-      flexDirection={'column'}
-      alignItems={'center'}
-      justifyContent={'center'}
+      as="header"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
     >
-      <Heading as={'h1'} fontSize={'6xl'} fontWeight={300} mb="1rem">
+      <Heading as="h1" fontSize="6xl" fontWeight={300} mb="1rem">
         Weather
       </Heading>
       <FormControl
         display="flex"
         alignItems="center"
-        justifyContent={'center'}
+        justifyContent="center"
         mb={4}
       >
         <FormLabel htmlFor="use-geolocation" mb="0" fontWeight={400}>
@@ -42,41 +43,40 @@ export const WeatherHeading = () => {
         </FormLabel>
         <Switch
           id="use-geolocation"
-          colorScheme={'twitter'}
+          colorScheme="twitter"
           onChange={handleGeolocation}
           isChecked={isGeolocation}
         />
       </FormControl>
-
       {isGeolocation
         ? <Button
-          colorScheme={'twitter'}
-          borderRadius={'3rem'}
+          colorScheme="twitter"
+          borderRadius="3rem"
           onClick={onClick}
-          display={'flex'}
-          alignItems={'center'}
-          gap={'.5rem'}
+          display="flex"
+          alignItems="center"
+          gap=".5rem"
           mt={2}
         >
           Get Location <EnvironmentOutlined />
         </Button>
         : <FormControl
-          display={'flex'}
-          as={'form'}
+          display="flex"
+          as="form"
           onSubmit={
             onSubmit as unknown as React.FormEventHandler<HTMLDivElement>
           }
           mt={2}
         >
-          <Input placeholder={'Your City'} borderRadius={'2rem'} required borderColor="inputBorder"/>
+          <Input placeholder="Your City" borderRadius="2rem" required borderColor="inputBorder"/>
           <Button
             color="coloredButtonText"
             bg="coloredButtonBg"
             letterSpacing="1px"
             fontWeight="600"
-            borderRadius={'2rem'}
-            px={'2rem'}
-            type={'submit'}
+            borderRadius="2rem"
+            px="2rem"
+            type="submit"
             ml="1rem"
           >
             Check
