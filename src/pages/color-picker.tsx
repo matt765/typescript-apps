@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+
 import { ColorPicker } from '../components/colorPicker/ColorPicker'
 import { Layout } from '../layout/Layout'
 

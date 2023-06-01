@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+
 import { UserList } from '../components/userList/UserList'
 import { Layout } from '../layout/Layout'
 

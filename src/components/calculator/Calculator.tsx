@@ -4,8 +4,8 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 
-import { CalculatorButton } from './CalculatorButton'
-import { CalculatorHeader } from './CalculatorHeader'
+import { CalculatorButton } from './components/CalculatorButton'
+import { CalculatorHeader } from './components/CalculatorHeader'
 import { useCalculator } from './useCalculator'
 
 export const Calculator = () => {

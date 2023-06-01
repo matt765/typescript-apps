@@ -1,9 +1,17 @@
-import '../styles/globals.css'
+
 import type { AppProps } from 'next/app'
 import {
   ChakraProvider, Flex, Spinner
 } from '@chakra-ui/react'
 import Head from 'next/head'
+import {
+  createContext, useEffect, useState
+} from 'react'
+import { motion } from 'framer-motion'
+import {
+  QueryClient, QueryClientProvider
+} from 'react-query'
+
 import '@fontsource/poppins'
 import '@fontsource/dm-sans'
 import '@fontsource/inter'
@@ -19,13 +27,7 @@ import '@fontsource/quicksand/500.css'
 import '@fontsource/quicksand/400.css'
 import '@fontsource/quicksand/300.css'
 import { theme } from '../theme/theme'
-import {
-  createContext, useEffect, useState
-} from 'react'
-import { motion } from 'framer-motion'
-import {
-  QueryClient, QueryClientProvider
-} from 'react-query'
+import '../styles/globals.css'
 
 export interface SettingsDataType {
   isFullScreen: boolean;
