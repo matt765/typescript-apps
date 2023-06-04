@@ -1,7 +1,7 @@
 import {
   Flex, Icon, Link, useColorMode
 } from '@chakra-ui/react'
-import { useState } from 'react'
+
 import { ArrowsLeftIcon } from '../../../assets/icons/ArrowsLeftIcon'
 import { ArrowsRightIcon } from '../../../assets/icons/ArrowsRightIcon'
 import { BeerHubIcon } from '../../../assets/icons/BeerHubIcon'
@@ -10,7 +10,7 @@ import { EmailVerifierIcon } from '../../../assets/icons/EmailVerifierIcon'
 import { UserListIcon } from '../../../assets/icons/UserListIcon'
 import { WeatherForecastIcon } from '../../../assets/icons/WeatherForecastIcon'
 import { GithubIcon } from '../../../assets/icons/GithubIcon'
-import { Logo } from '../logo/Logo.comp'
+import { Logo } from '../logo/Logo'
 import { SideMenuItem } from './SideMenuItem'
 import { HealthIcon } from '../../../assets/icons/HealthIcon'
 import { TicTacToeIcon } from '../../../assets/icons/TicTacToeIcon'
@@ -27,7 +27,6 @@ export const SideMenu = ({
   isSideMenuOpen,
   setIsSideMenuOpen
 }: SideMenuProps) => {
-  const [activeItem, setActiveItem] = useState()
   const { colorMode } = useColorMode()
 
   return (
@@ -45,18 +44,20 @@ export const SideMenu = ({
       direction="column"
       justify="space-between"
       backdropFilter="blur(10px)"
-      bg={colorMode === 'light' ? 'rgb(255,255,255,0.4)' : 'primaryBg'}
+      bg={colorMode === 'light' ? '#ffffff70' : 'primaryBg'}
       display={{
         base: 'none',
         xl: 'flex'
       }}
     >
-      <Flex direction="column">
+      <Flex direction="column" height="calc(100% - 5rem)" >
         <Logo isSideMenuOpen={isSideMenuOpen} />
         <Flex
           direction="column"
           pt="1.6rem"
-          px={isSideMenuOpen ? '1rem' : '0.25rem'}
+          px={isSideMenuOpen ? '1rem' : '0rem'}
+          ml={isSideMenuOpen ? 'unset' : '0.3rem'}
+          overflow="scroll"
         >
           {menuItemsData.map((item, index) =>
             <SideMenuItem
@@ -70,7 +71,7 @@ export const SideMenu = ({
         </Flex>
       </Flex>
       <Flex
-        h="4rem"
+        h="5rem"
         w="100%"
         alignItems="center"
         justify={isSideMenuOpen ? 'space-between' : 'center'}
@@ -142,6 +143,11 @@ const menuItemsData = [
     path: '/email-verifier'
   },
   {
+    icon: TicTacToeIcon,
+    title: 'Tic Tac Toe',
+    path: '/tictactoe'
+  },
+  {
     icon: ColorPickerIcon,
     title: 'Color picker',
     path: '/color-picker'
@@ -165,11 +171,6 @@ const menuItemsData = [
     icon: WeatherForecastIcon,
     title: 'Weather forecast',
     path: '/weather-forecast'
-  },
-  {
-    icon: TicTacToeIcon,
-    title: 'Tic Tac Toe',
-    path: '/tictactoe'
   },
   {
     icon: CalculatorIcon,

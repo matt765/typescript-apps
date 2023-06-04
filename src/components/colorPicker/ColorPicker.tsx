@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import {
-  Flex, Box, SimpleGrid
+  Flex, Box, SimpleGrid, Text
 } from '@chakra-ui/react'
 
 import { ColorCard } from './components/ColorCard'
@@ -42,14 +42,15 @@ export const ColorPicker = () => {
       }}
     >
       <Flex direction="column" justify="space-between" >
-        <Box
+        <Text
           h="2rem"
           mb="2rem"
           textAlign="center"
-          fontSize="1.5rem"
+          variant="h3"
+          as="h3"
         >
           {message ? `Copied: ${message}` : 'Click a color to copy its code'}
-        </Box>
+        </Text>
         <SimpleGrid
           columns={{
             base: 3,
@@ -57,7 +58,7 @@ export const ColorPicker = () => {
             xl: 6
           }}
           ml={{
-            base: '-1rem',
+            base: '0rem',
             sm: 'unset'
           }}
         >
@@ -72,17 +73,18 @@ export const ColorPicker = () => {
             />
           )}
         </SimpleGrid>
-        <Flex
+        <Text
+          display="flex"
           w="100%"
-          justify="center"
+          justifyContent="center"
           alignItems="center"
-          fontSize="1.3rem"
-          mt="1.2rem"
+          mt="1.4rem"
           h="1.4rem"
           mb="2rem"
+          variant="primaryText"
         >
           {hoveredColorName}
-        </Flex>
+        </Text>
       </Flex>
     </Flex>
   )

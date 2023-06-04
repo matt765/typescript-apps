@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 import axios from 'axios'
 
 import { Layout } from '../layout/Layout'
-import { Beer } from '../components/beers/interfaces/Beer'
+import { Beer } from '../components/beers/types/types'
 import { BeerList } from '../components/beers/components/BeerList'
 import { Beers } from '../components/beers/Beers'
 

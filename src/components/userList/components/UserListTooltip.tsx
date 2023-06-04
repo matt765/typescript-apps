@@ -25,10 +25,10 @@ export const UserListTooltip = () =>
       }}
       mx="auto"
       sx={{ '& svg': {
-        fill: 'rgb(255,255,255,0.3)',
+        fill: 'hamburgerIcon',
         transition: '0.3s'
       } }}
-      _hover={{ '& svg': { fill: 'rgb(255,255,255,0.5)' } }}
+      _hover={{ '& svg': { fill: 'hamburgerIcon' } }}
       transition="0.2s"
     >
       <Icon as={InfoIcon} />

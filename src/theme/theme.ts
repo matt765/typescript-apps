@@ -1,7 +1,10 @@
 import {
   extendTheme, type ThemeConfig
 } from '@chakra-ui/react'
+
 import { colors } from './colors'
+import { Text } from './components/text'
+import { Input } from './components/input'
 
 const config: ThemeConfig = {
   initialColorMode: 'dark',
@@ -19,9 +22,41 @@ export const theme = extendTheme({
     '2xl': '102em', // 1632px
     '3xl': '110em' // 1760px
   },
-  styles: { global: { body: {
-    fontFamily: 'Jost',
-    backgroundColor: 'spinnerBg'
-  } } },
-  semanticTokens: { colors }
+  styles: { global: {
+    body: {
+      fontFamily: 'Jost',
+      backgroundColor: 'spinnerBg'
+    },
+    '*': {
+      scrollbarWidth: 'thin',
+      scrollbarColor: 'red',
+      '&::-webkit-scrollbar': { width: '10px' },
+      '&::-webkit-scrollbar-thumb': {
+        background: 'rgb(255,255,255,0.1)',
+        _hover: { background: 'rgb(255,255,255,0.1)' },
+        borderRadius: '30px',
+        border: 'none'
+      },
+      '&::-webkit-scrollbar-track': { background: 'transparent' }
+    },
+    ':root': {
+      scrollbarColor: 'rgb(255,255,255,0.1) rgba(255, 255, 255, 0.0)',
+      scrollbarWidth: 'thin'
+    },
+    '::-webkit-scrollbar-corner': { background: 'rgba(0,0,0,0)' },
+    '::-webkit-input-placeholder': { color: 'rgb(255,255,255,0.4) !important' },
+    'option, optgroup': { '-webkit-appearance': 'none !important' }
+  } },
+  components: {
+    Text,
+    Input
+  },
+  semanticTokens: { colors },
+  layerStyles: { transparentInput: {
+    backgroundColor: 'inputBg',
+    borderWidth: '2px',
+    borderRadius: '10px',
+    borderColor: 'rgb(0,0,0) !important',
+    borderStyle: 'solid'
+  } }
 })

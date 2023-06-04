@@ -15,12 +15,28 @@ export const Calculator = () => {
 
   return (
     <Container
-      backgroundColor="#3a4655"
+      backgroundColor="calculatorBg"
       borderRadius="md"
       boxShadow="xl"
+      py="0"
+      mx={{
+        base: '0rem',
+        md: '0'
+      }}
+      maxW={{
+        base: '21.5rem',
+        md: '22.5rem'
+      }}
+      mt={{
+        base: '1rem',
+        md: '-2rem'
+      }}
+      mb={{
+        base: '2rem',
+        md: 'unset'
+      }}
       px="0"
-      maxW="22rem"
-      mt="-2rem"
+
     >
       <CalculatorHeader
         screenValue={screenValue}

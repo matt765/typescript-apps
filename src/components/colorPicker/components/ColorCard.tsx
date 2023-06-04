@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {
-  Flex, Box
+  Flex, Box, Text
 } from '@chakra-ui/react'
 
 interface ColorCardProps {
@@ -26,7 +26,8 @@ export const ColorCard = ({
         justifyContent="center"
         alignItems="center"
         width={{
-          base: '8rem',
+          base: '7rem',
+          md: '8rem',
           '2xl': '9rem'
         }}
         height={{
@@ -71,33 +72,33 @@ export const ColorCard = ({
           mt="0.8rem"
           fontSize="1.2rem"
         >
-          <Box
+          <Text
             cursor="pointer"
             transition="0.2s"
-            fontWeight="500"
             _hover={{
               color: '#3178c6',
               transform: 'scale(1.05)'
             }}
             onClick={() => copyToClipboardAndSetMessage(hexValue)}
             mr="0.3rem"
+            variant="primaryTextLarge"
           >
             Hex
-          </Box>
-          <Box color="rgb(255,255,255,0.6)" mx="0.1rem">|</Box>
-          <Box
+          </Text>
+          <Box color="secondaryText" mx="0.1rem">|</Box>
+          <Text
             cursor="pointer"
             transition="0.2s"
-            fontWeight="500"
             _hover={{
               color: '#3178c6',
               transform: 'scale(1.05)'
             }}
             onClick={() => copyToClipboardAndSetMessage(rgbValue)}
             ml="0.25rem"
+            variant="primaryTextLarge"
           >
             Rgb
-          </Box>
+          </Text>
         </Flex>
       </Flex>
     </>

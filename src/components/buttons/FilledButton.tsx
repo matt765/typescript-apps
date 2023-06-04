@@ -5,7 +5,7 @@ import {
   FunctionComponent, ReactElement
 } from 'react'
 
-interface TransparentButtonProps {
+interface FilledButtonProps {
   text: string;
   type?: 'button' | 'submit' | 'reset' | undefined;
   leftIcon?: ReactElement;
@@ -15,7 +15,7 @@ interface TransparentButtonProps {
   icon?: FunctionComponent<React.SVGProps<SVGSVGElement>>;
 }
 
-export const TransparentButton = ({
+export const FilledButton = ({
   text,
   type,
   leftIcon,
@@ -23,15 +23,12 @@ export const TransparentButton = ({
   isLoading,
   h = '3rem',
   icon
-}: TransparentButtonProps) => {
+}: FilledButtonProps) => {
   const {
     colorMode, toggleColorMode
   } = useColorMode()
   return (
     <Button
-      borderWidth="1px"
-      borderStyle="solid"
-      borderColor="transparentButtonBorder"
       w="100%"
       justifyContent="center"
       alignItems="center"
@@ -40,9 +37,10 @@ export const TransparentButton = ({
       type={type}
       cursor="pointer"
       display="flex"
-      bg="transparentButtonBg"
-      _hover={{ bg: 'transparentButtonHoverBg' }}
-      _active={{ bg: 'transparentButtonActiveBg' }}
+      color="coloredButtonText"
+      bg="coloredButtonBg"
+      _hover={{ bg: 'coloredButtonHoverBg' }}
+      _active={{ bg: 'coloredButtonActiveBg' }}
       leftIcon={leftIcon}
       onClick={isLoading ? () => {} : onClick}
       minH={h}
@@ -58,7 +56,6 @@ export const TransparentButton = ({
         height: '15px !important',
         fill: 'rgb(255,255,255,0.7)'
       } }}
-      color="white"
     >
       {icon ? <Icon as={icon} boxSize={7} /> : text}
     </Button>

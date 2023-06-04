@@ -3,9 +3,10 @@ import {
   GetStaticPaths, GetStaticProps
 } from 'next'
 import axios from 'axios'
+
 import { Layout } from '../../layout/Layout'
-import { Beer as BeerInterface } from '../../components/beers/interfaces/Beer'
-import { SingleBeer } from '../../components/beers/components/SingleBeer.comp'
+import { Beer as BeerInterface } from '../../components/beers/types/types'
+import { SingleBeer } from '../../components/beers/components/SingleBeer'
 
 const Beer = ({ beer }: { beer: BeerInterface }) =>
   <Layout>

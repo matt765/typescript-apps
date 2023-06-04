@@ -57,28 +57,38 @@ export const Form = ({
                   setIsError(false)
                   setIsSubmitted(false) // Reset isSubmitted when the input value changes
                 }}
-                borderRadius="10px"
-                borderColor="inputBorder"
                 minW={{
                   base: '18rem',
                   sm: '20rem',
                   md: '26rem'
                 }}
+                w={{
+                  base: '18rem',
+                  md: 'unset'
+                }}
                 height="3rem"
                 mr="0.5rem"
-                backgroundColor="inputBg"
                 placeholder="Enter e-mail address"
+                variant="outline"
+                _placeholder={{ color: 'secondaryText' }}
               />
               <Flex minW={{
                 base: '18rem',
                 sm: '20rem',
                 md: '14rem'
               }}
+              w={{
+                base: '18rem',
+                md: 'unset'
+              }}
               justify="center"
               alignItems="center"
+              pr={{
+                base: '0.3rem',
+                md: 'unset'
+              }}
               >
                 <TransparentButton
-                  leftIcon={<Search />}
                   text="Check E-mail"
                   type="submit"
                   isLoading={loading}

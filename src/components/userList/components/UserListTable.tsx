@@ -6,7 +6,8 @@ import {
   Th,
   Td,
   TableContainer,
-  Flex
+  Flex,
+  useColorMode
 } from '@chakra-ui/react'
 import {
   DragDropContext, Droppable, Draggable
@@ -37,6 +38,7 @@ export const UserListTable = ({
     columnWidths,
     filteredData
   } = useUserListTable(userData, searchText)
+  const { colorMode } = useColorMode()
 
   const renderData = () => {
     if (filteredData.length > 0) {
@@ -55,17 +57,20 @@ export const UserListTable = ({
             '& th, td': {
               borderStyle: 'solid',
               borderWidth: '1px',
-              borderColor: 'borderGray',
+              borderColor: 'userListTableBorder',
               transition: '0.25s',
-              '&:hover': { backgroundColor: 'rgb(255,255,255,0.05)' }
+              '&:hover': { backgroundColor: 'rgba(164, 185, 204, 0.09)' }
             }
           }}
           pl="1rem"
           mt="1rem"
           mb="3rem"
           w="100%"
+          color="primaryText"
         >
-          <Table size="sm" variant="unstyled" w="100%">
+          <Table size="sm" variant="unstyled" w="100%" bg="userListBg" borderStyle="solid"
+            borderWidth="1px"
+            borderColor="borderGray">
             <Thead borderRadius="30px">
               <Tr display="flex">
                 {headers.map(({
@@ -79,6 +84,7 @@ export const UserListTable = ({
                     cursor="pointer"
                     w={width}
                     role="columnheader"
+                    bg="userListHeaderBg"
                   >
                     {name}
                     {sortColumn === key
@@ -116,15 +122,27 @@ export const UserListTable = ({
                               xl: '0.85rem !important',
                               '2xl': '0.95rem !important'
                             },
-                            backgroundColor: 'rgb(255,255,255,0) !important'
+                            backgroundColor: 'rgb(255,255,255,0) !important',
+                            fontWeight:  colorMode === 'light' ? '400' : '400'
                           } }}
                           _hover={{ backgroundColor: 'rgb(255,255,255,0.05)' }}
+
                         >
-                          <Td w={columnWidths.id} role="cell">{e.id}</Td>
-                          <Td w={columnWidths.name} role="cell">{e.name}</Td>
-                          <Td w={columnWidths.email} role="cell">{e.email}</Td>
-                          <Td w={columnWidths.phone} role="cell">{e.phone}</Td>
-                          <Td w={columnWidths.company} role="cell">{e.company.name}</Td>
+                          <Td w={columnWidths.id} role="cell" >
+                            {e.id}
+                          </Td>
+                          <Td w={columnWidths.name} role="cell">
+                            {e.name}
+                          </Td>
+                          <Td w={columnWidths.email} role="cell">
+                            {e.email}
+                          </Td>
+                          <Td w={columnWidths.phone} role="cell">
+                            {e.phone}
+                          </Td>
+                          <Td w={columnWidths.company} role="cell">
+                            {e.company.name}
+                          </Td>
                         </Tr>
                       }
                     </Draggable>

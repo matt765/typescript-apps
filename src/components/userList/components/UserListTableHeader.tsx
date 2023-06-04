@@ -46,6 +46,8 @@ export const UserListTableHeader = ({
             md: '22rem'
           }}
           mt="1rem"
+          variant="outline"
+          _placeholder={{ color: 'secondaryText' }}
         />
         <Flex
           display={{

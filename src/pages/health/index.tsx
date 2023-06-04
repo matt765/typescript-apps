@@ -18,10 +18,14 @@ const Health = () => {
         fontSize="4xl"
         justifyContent="center"
         pb="8rem"
-        sx={{ '& a': { '&:hover': { textDecoration: 'underline' } } }}
+        sx={{ '& a': {
+          color: 'primaryText',
+          fontWeight: '400',
+          '&:hover': { textDecoration: 'underline' }
+        } }}
       >
         <Box>
-          <NextLink href="/health/calories" passHref>
+          <NextLink href="/health/calories" passHref >
             Calories calculator
           </NextLink>
         </Box>

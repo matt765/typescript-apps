@@ -1,5 +1,5 @@
 import {
-  Box, Flex, Icon
+  Box, Flex, Icon, useColorMode
 } from '@chakra-ui/react'
 import {
   FunctionComponent, useEffect, useState
@@ -18,6 +18,8 @@ export const SideMenuItem = ({
 }: Props) => {
   const router = useRouter()
   const [isActive, setIsActive] = useState(false)
+  const { colorMode } = useColorMode()
+
   useEffect(() => {
     if (
       router.pathname.includes(path) ||
@@ -60,7 +62,7 @@ export const SideMenuItem = ({
       {isSideMenuOpen &&
         <Box
           color={isActive ? 'coloredText' : 'primaryText'}
-          fontWeight="500"
+          fontWeight={ colorMode === 'light' ? '500' : '400' }
           fontFamily="Jost"
           whiteSpace="nowrap"
           letterSpacing="1px"

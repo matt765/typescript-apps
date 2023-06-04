@@ -1,10 +1,11 @@
-import { Beer as BeerInterface } from '../interfaces/Beer'
-import { Beer } from './Beer'
 import {
   SimpleGrid, Spinner
 } from '@chakra-ui/react'
 
-export const BeerList = ({ beers }: {beers: BeerInterface[]| null}) => {
+import { Beer as BeerInterface } from '../types/types'
+import { Beer } from './Beer'
+
+export const BeerList = ({ beers }: { beers: BeerInterface[]| null }) => {
   if (!beers) {
     return <Spinner color="green.500" />
   }

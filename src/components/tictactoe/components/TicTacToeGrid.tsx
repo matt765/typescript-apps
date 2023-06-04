@@ -55,14 +55,15 @@ export const TicTacToeGrid = ({
           borderColor="ticTacToeBorder"
           boxShadow="md"
           transition="0.2s"
+
         >
-          {cell === 'x' && <CloseIcon boxSize={10} color="white" />}
+          {cell === 'x' && <CloseIcon boxSize={10} color="ticTacToeIcon" />}
           {cell === 'circle' &&
              <Flex
                w="3rem"
                h="3rem"
                borderStyle="solid"
-               borderColor="white"
+               borderColor="ticTacToeIcon"
                borderWidth="3px"
                borderRadius="100%"
                boxShadow="md"

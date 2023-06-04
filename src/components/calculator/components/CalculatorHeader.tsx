@@ -20,14 +20,14 @@ export const CalculatorHeader = ({
           type="text"
           value={screenValue}
           readOnly
-          backgroundColor="#556475"
+          backgroundColor="calculatorResultBg"
           color="white"
           textAlign="center"
           p={2}
           variant="unstyled"
           _focus={{ outline: 'none' }}
           h="6rem"
-          fontSize="1.5rem"
+          fontSize="1.7rem"
           borderRadius="5px 5px 0 0"
         />
       </Box>
@@ -38,9 +38,10 @@ export const CalculatorHeader = ({
           h="5rem"
           fontSize="1.5rem"
           borderRadius={0}
-          bg="rgb(0,0,0,0)"
+          bg="calculatorHeaderBg"
           color="white"
-          _hover={{ backgroundColor: '#455262' }}
+          _hover={{ backgroundColor: 'calculatorHeaderHoverBg' }}
+          fontWeight="300"
         >
           C
         </Button>
@@ -49,10 +50,11 @@ export const CalculatorHeader = ({
           w="50%"
           h="5rem"
           fontSize="1.5rem"
-          color="rgb(65, 138, 167)"
+          color="calculatorDeleteIcon"
           borderRadius={0}
-          bg="rgb(0,0,0,0)"
-          _hover={{ backgroundColor: '#455262' }}
+          bg="calculatorHeaderBg"
+          _hover={{ backgroundColor: 'calculatorHeaderHoverBg' }}
+          fontWeight="300"
         >
           ⌫
         </Button>

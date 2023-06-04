@@ -14,10 +14,11 @@ export const CalculatorButton = ({
     w="100%"
     h="5rem"
     fontSize="2rem"
-    backgroundColor="#425062"
+    backgroundColor="calculatorButtonBg"
     color="white"
-    _hover={{ backgroundColor: '#5d6a7a' }}
+    _hover={{ backgroundColor: 'calculatorButtonHoverBg' }}
     borderRadius="5px"
+    fontWeight="300"
   >
     {label}
   </Button>

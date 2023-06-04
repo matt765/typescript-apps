@@ -8,11 +8,14 @@ import {
   Switch,
   FormControl,
   FormLabel,
-  Input
+  Input,
+  Text,
+  Box
 } from '@chakra-ui/react'
 import { EnvironmentOutlined } from '@ant-design/icons'
 
 import { useWeather } from '../utils/useWeather'
+import { FilledButton } from '../../buttons/FilledButton'
 
 export const WeatherHeading = () => {
   const {
@@ -29,14 +32,14 @@ export const WeatherHeading = () => {
       alignItems="center"
       justifyContent="center"
     >
-      <Heading as="h1" fontSize="6xl" fontWeight={300} mb="1rem">
+      <Text as="h1" mb="1.2rem" variant="h1">
         Weather
-      </Heading>
+      </Text>
       <FormControl
         display="flex"
         alignItems="center"
         justifyContent="center"
-        mb={4}
+        mb="1.2rem"
       >
         <FormLabel htmlFor="use-geolocation" mb="0" fontWeight={400}>
           Use geolocation?
@@ -49,38 +52,44 @@ export const WeatherHeading = () => {
         />
       </FormControl>
       {isGeolocation
-        ? <Button
-          colorScheme="twitter"
-          borderRadius="3rem"
-          onClick={onClick}
-          display="flex"
-          alignItems="center"
-          gap=".5rem"
-          mt={2}
-        >
-          Get Location <EnvironmentOutlined />
-        </Button>
+        ? <Box mt="1rem" w="12rem">
+          <FilledButton onClick={onClick} text="Get Location" />
+        </Box>
         : <FormControl
           display="flex"
           as="form"
           onSubmit={
             onSubmit as unknown as React.FormEventHandler<HTMLDivElement>
           }
-          mt={2}
+          mt="1rem"
+          flexDirection={{
+            base: 'column',
+            md: 'row'
+          }}
+          alignItems={{
+            base: 'center',
+            md: 'unset'
+          }}
         >
-          <Input placeholder="Your City" borderRadius="2rem" required borderColor="inputBorder"/>
-          <Button
-            color="coloredButtonText"
-            bg="coloredButtonBg"
-            letterSpacing="1px"
-            fontWeight="600"
-            borderRadius="2rem"
-            px="2rem"
-            type="submit"
+          <Input
+            placeholder="Your City"
+            required
+            variant="outline"
+            w="18rem"
+            maxW="18rem"
+            _placeholder={{ color: 'secondaryText' }}
+          />
+          <Flex
             ml="1rem"
+            w="10rem"
+            maxW="10rem"
+            mt={{
+              base: '1.5rem',
+              md: 'unset'
+            }}
           >
-            Check
-          </Button>
+            <FilledButton type="submit" text="Check" h="2.5rem" />
+          </Flex>
         </FormControl>
       }
       {error &&

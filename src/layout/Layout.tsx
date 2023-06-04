@@ -1,60 +1,21 @@
+import { ReactNode } from 'react'
 import {
-  ReactNode, useContext, useEffect, useState
-} from 'react'
-import {
-  Flex, Spinner, useColorMode
+  Flex, Spinner
 } from '@chakra-ui/react'
 
 import { ThemeToggle } from './components/themeToggle/ThemeToggle'
 import { SideMenu } from './components/sideMenu/SideMenu'
-import {
-  Context, InitialSettings
-} from '../pages/_app'
 import { MobileNavbar } from './components/sideMenu/SideMenuMobile'
-import { useRouter } from 'next/router'
+import useLayout from './useLayout'
 
 export const Layout = ({ children }: { children: ReactNode }) => {
   const {
-    settingsData = InitialSettings, setSettingsData = () => undefined
-  } =
-    useContext(Context) || {}
-  const router = useRouter()
-  const {
-    isFullScreen, isSideMenuOpen
-  } = settingsData
-  const [isLoading, setIsLoading] = useState(true)
-  const [isRouteChanging, setIsRouteChanging] = useState(false)
-  const {
-    colorMode, toggleColorMode
-  } = useColorMode()
-
-  useEffect(() => {
-    const mode = localStorage.getItem('chakra-ui-color-mode')
-    if (mode) {
-      setIsLoading(false)
-    }
-  }, [])
-
-  useEffect(() => {
-    const handleRouteChangeStart = () => {
-      setIsRouteChanging(true)
-    }
-    const handleRouteChangeComplete = () => {
-      setIsRouteChanging(false)
-    }
-    router.events.on('routeChangeStart', handleRouteChangeStart)
-    router.events.on('routeChangeComplete', handleRouteChangeComplete)
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChangeStart)
-      router.events.off('routeChangeComplete', handleRouteChangeComplete)
-    }
-  }, [])
-
-  const handleSideMenu = () => {
-    const modifiedSettings = { ...settingsData }
-    modifiedSettings.isSideMenuOpen = !isSideMenuOpen
-    setSettingsData(modifiedSettings)
-  }
+    isFullScreen,
+    isSideMenuOpen,
+    isRouteChanging,
+    colorMode,
+    handleSideMenu
+  } = useLayout()
 
   return (
     <>
@@ -79,24 +40,22 @@ export const Layout = ({ children }: { children: ReactNode }) => {
         bgAttachment="fixed"
         bgSize="cover"
         bg={colorMode === 'light' ? '' : 'secondaryBg'}
-        overflow="scroll"
-
+        overflow="auto"
       >
         <SideMenu
           isFullScreen={isFullScreen}
           isSideMenuOpen={isSideMenuOpen}
           setIsSideMenuOpen={handleSideMenu}
         />
-
         <Flex
-          backdropFilter="blur(20px)"
-          bg={colorMode === 'light' ? 'rgb(255,255,255,0.3)' : 'contentBg'}
+          backdropFilter="blur(10px)"
+          bg={colorMode === 'light' ? '#efeef8a3' : 'contentBg'}
           flex="1"
           justifyContent="center"
           alignItems="center"
           px={{
             base: '0',
-            xl: '1rem'
+            xl: '0.5rem'
           }}
           ml={{
             base: 0,
@@ -106,16 +65,25 @@ export const Layout = ({ children }: { children: ReactNode }) => {
             base: '0',
             xl: '15px'
           }}
-          boxShadow={settingsData.isFullScreen ? 'none' : 'xl'}
-          overflow="scroll"
-          overflowX="hidden"
+          boxShadow={isFullScreen ? 'none' : 'xl'}
+          overflow="hidden"
           transition="0s"
           borderWidth="0px"
           borderStyle="solid"
           borderColor="borderMain"
           h="100%"
         >
-          {isRouteChanging ? <Spinner size="xl" /> : children}
+          <Flex
+            flex="1"
+            w="100%"
+            h="100%"
+            justifyContent="center"
+            alignItems="center"
+            overflowY="scroll"
+            overflowX="hidden"
+          >
+            {isRouteChanging ? <Spinner size="xl" mb="2rem" /> : children}
+          </Flex>
         </Flex>
       </Flex>
       <MobileNavbar />

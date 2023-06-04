@@ -57,19 +57,19 @@ export const CurrentWeather = () => {
                 width={50} height={50}
                 objectFit="contain"/>
           }
-          <Badge textTransform="capitalize" fontSize="xl"
+          <Badge textTransform="capitalize" fontSize="xl" bg=""
             fontWeight="400">{forecast?.current?.condition.text}</Badge>
           <Text fontSize="3xl">{forecast?.current?.temp_c}°C</Text>
         </Flex>
         <Flex flexDirection="column" alignItems="flex-start" gap={2}>
-          <Badge {...forecastBridgeStyles} textTransform="lowercase"><BsCloudy/>
+          <Badge {...forecastBridgeStyles} textTransform="lowercase" bg=""><BsCloudy/>
             {forecast?.current?.cloud} %</Badge>
-          <Badge {...forecastBridgeStyles} textTransform="lowercase">
+          <Badge {...forecastBridgeStyles} textTransform="lowercase" bg="">
             <WiHumidity/>
             {forecast?.current?.humidity} %</Badge>
-          <Badge {...forecastBridgeStyles} textTransform="lowercase"><BsWind/>
+          <Badge {...forecastBridgeStyles} textTransform="lowercase" bg=""><BsWind/>
             {forecast?.current?.wind_kph} km/h</Badge>
-          <Badge {...forecastBridgeStyles} textTransform="lowercase">
+          <Badge {...forecastBridgeStyles} textTransform="lowercase" bg="">
             <BsSpeedometer2/>
             {forecast?.current?.pressure_mb} mbar </Badge>
         </Flex>

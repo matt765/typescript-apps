@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 
-import { Logo } from '../logo/Logo.comp'
+import { Logo } from '../logo/Logo'
 import { GithubIcon } from '../../../assets/icons/GithubIcon'
 
 interface NavbarItemProps {
@@ -35,7 +35,7 @@ const MobileNavbarItem = ({
           fontWeight="400"
           letterSpacing="3px"
           fontSize="1.3rem"
-          color={color}
+          color="primaryText"
           _hover={{ color: 'coloredText' }}
           cursor="pointer"
           transition="0.2s"

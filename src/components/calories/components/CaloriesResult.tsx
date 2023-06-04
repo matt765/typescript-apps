@@ -16,16 +16,16 @@ export const CaloriesResult = () => {
 
   return (
     <Flex flexDirection="column" alignItems="center" pb="3rem" pt="1rem">
-      <Text fontSize="4xl">Your results</Text>
+      <Text fontSize="4xl" color="primaryText">Your results</Text>
       <Flex flexDirection="column" alignItems="center" mt={4} gap={2}>
-        <Badge textTransform="capitalize">
+        <Badge textTransform="capitalize" color="primaryText">
           Total daily energy expenditure rete:
         </Badge>
-        <Text display="flex" alignItems="center" fontSize="2xl">
+        <Text display="flex" alignItems="center" fontSize="2xl" color="primaryText">
           {AMR} Kcal
         </Text>
-        <Badge textTransform="capitalize">Base metabolic rete: </Badge>
-        <Text display="flex" alignItems="center" fontSize="2xl">
+        <Badge textTransform="capitalize" color="primaryText">Base metabolic rete: </Badge>
+        <Text display="flex" alignItems="center" fontSize="2xl" color="primaryText">
           {BMR} Kcal
         </Text>
       </Flex>

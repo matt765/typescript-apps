@@ -19,7 +19,7 @@ export const TicTacToe = () => {
   return (
     <Box>
       <TicTacToeGrid cells={cells} play={play} />
-      <Flex w="100%" justify="center" mt="1rem">
+      <Flex w="100%" justify="center" mt="1rem" >
         <IconButton
           aria-label="Reset game"
           icon={<RepeatIcon boxSize={7} />}
@@ -28,7 +28,7 @@ export const TicTacToe = () => {
           w="4rem"
           h="4rem"
           bgColor="ticTacToeBg"
-          color="white"
+          color="ticTacToeIcon"
           borderStyle="solid"
           borderWidth="1px"
           borderColor="ticTacToeBorder"
