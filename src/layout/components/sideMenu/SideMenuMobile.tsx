@@ -56,6 +56,11 @@ export const MobileNavbar = () => {
       onClick: () => setIsOpen(false)
     },
     {
+      text: 'Tic Tac Toe',
+      path: '/tictactoe',
+      onClick: () => setIsOpen(false)
+    },
+    {
       text: 'Color picker',
       path: '/color-picker',
       onClick: () => setIsOpen(false)
@@ -78,11 +83,6 @@ export const MobileNavbar = () => {
     {
       text: 'Health calculators',
       path: '/health',
-      onClick: () => setIsOpen(false)
-    },
-    {
-      text: 'Tic Tac Toe',
-      path: '/tictactoe',
       onClick: () => setIsOpen(false)
     },
     {

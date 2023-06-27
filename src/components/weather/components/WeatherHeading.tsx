@@ -70,6 +70,7 @@ export const WeatherHeading = () => {
             base: 'center',
             md: 'unset'
           }}
+          justifyContent="center"
         >
           <Input
             placeholder="Your City"

@@ -40,15 +40,13 @@ export const ColorPicker = () => {
         base: '3rem',
         lg: '5rem'
       }}
+      overflow={{
+        base: 'unset',
+        '1xl': 'hidden'
+      }}
     >
-      <Flex direction="column" justify="space-between" >
-        <Text
-          h="2rem"
-          mb="2rem"
-          textAlign="center"
-          variant="h3"
-          as="h3"
-        >
+      <Flex direction="column" justify="space-between">
+        <Text h="2rem" mb="2rem" textAlign="center" variant="h3" as="h3">
           {message ? `Copied: ${message}` : 'Click a color to copy its code'}
         </Text>
         <SimpleGrid

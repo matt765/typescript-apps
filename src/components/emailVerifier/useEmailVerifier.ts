@@ -47,7 +47,7 @@ export const useEmailVerifier = (
       setLoading(false)
       setIsSubmitting(false)
       setIsSubmitted(false)
-      setValidationResult('There was an error validating this email address.')
+      setValidationResult('API server currently does not respond. Please try again later')
     }
   })
 

@@ -6,7 +6,7 @@ import { Layout } from '../layout/Layout'
 const Home: NextPage = () => {
   return (
     <Layout>
-      <EmailVerifier/>
+      <EmailVerifier />
     </Layout>
   )
 }

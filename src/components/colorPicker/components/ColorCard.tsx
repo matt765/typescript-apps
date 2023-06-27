@@ -31,7 +31,7 @@ export const ColorCard = ({
           '2xl': '9rem'
         }}
         height={{
-          base: '9.5rem',
+          base: '9rem',
           '2xl': '10.5rem'
         }}
         _hover={{

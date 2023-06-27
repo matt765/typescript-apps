@@ -25,22 +25,22 @@ export const theme = extendTheme({
   styles: { global: {
     body: {
       fontFamily: 'Jost',
-      backgroundColor: 'spinnerBg'
+      backgroundColor: 'black'
     },
     '*': {
       scrollbarWidth: 'thin',
       scrollbarColor: 'red',
       '&::-webkit-scrollbar': { width: '10px' },
       '&::-webkit-scrollbar-thumb': {
-        background: 'rgb(255,255,255,0.1)',
+        background: 'green',
         _hover: { background: 'rgb(255,255,255,0.1)' },
         borderRadius: '30px',
         border: 'none'
       },
-      '&::-webkit-scrollbar-track': { background: 'transparent' }
+      '&::-webkit-scrollbar-track': { background: 'red' }
     },
     ':root': {
-      scrollbarColor: 'rgb(255,255,255,0.1) rgba(255, 255, 255, 0.0)',
+      scrollbarColor: 'red blue',
       scrollbarWidth: 'thin'
     },
     '::-webkit-scrollbar-corner': { background: 'rgba(0,0,0,0)' },
@@ -56,7 +56,7 @@ export const theme = extendTheme({
     backgroundColor: 'inputBg',
     borderWidth: '2px',
     borderRadius: '10px',
-    borderColor: 'rgb(0,0,0) !important',
+    borderColor: 'red !important',
     borderStyle: 'solid'
   } }
 })
