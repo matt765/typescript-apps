@@ -29,18 +29,18 @@ export const theme = extendTheme({
     },
     '*': {
       scrollbarWidth: 'thin',
-      scrollbarColor: 'red',
+      scrollbarColor: 'rgb(255,255,255,0.1)',
       '&::-webkit-scrollbar': { width: '10px' },
       '&::-webkit-scrollbar-thumb': {
-        background: 'green',
+        background: 'rgb(255,255,255,0.1)',
         _hover: { background: 'rgb(255,255,255,0.1)' },
         borderRadius: '30px',
         border: 'none'
       },
-      '&::-webkit-scrollbar-track': { background: 'red' }
+      '&::-webkit-scrollbar-track': { background: 'rgb(255,255,255,0)' }
     },
     ':root': {
-      scrollbarColor: 'red blue',
+      scrollbarColor: 'rgb(255,255,255,0.1) rgb(255,255,255,0.1)',
       scrollbarWidth: 'thin'
     },
     '::-webkit-scrollbar-corner': { background: 'rgba(0,0,0,0)' },
