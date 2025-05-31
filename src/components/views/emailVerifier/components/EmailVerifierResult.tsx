@@ -1,7 +1,7 @@
 import {
   Box, Flex, Spinner, Text
 } from '@chakra-ui/react'
-import { Loader } from '../../loader/Loader'
+import { Loader } from '../../../loader/Loader'
 
 interface ResultProps {
   validationResult: string;

@@ -2,7 +2,7 @@ import {
   Flex, Icon, Tooltip
 } from '@chakra-ui/react'
 
-import { InfoIcon } from '../../../assets/icons/InfoIcon'
+import { InfoIcon } from '../../../../assets/icons/InfoIcon'
 
 export const UserListTooltip = () =>
   <Tooltip

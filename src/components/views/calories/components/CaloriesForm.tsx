@@ -14,7 +14,7 @@ import {
   Text
 } from '@chakra-ui/react'
 
-import { TransparentButton } from '../../buttons/TransparentButton'
+import { TransparentButton } from '../../../buttons/TransparentButton'
 import { useCaloriesCounter } from '../utils/useCaloriesCounter'
 
 export const CaloriesForm = () => {

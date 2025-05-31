@@ -15,7 +15,7 @@ import {
 import { EnvironmentOutlined } from '@ant-design/icons'
 
 import { useWeather } from '../utils/useWeather'
-import { FilledButton } from '../../buttons/FilledButton'
+import { FilledButton } from '../../../buttons/FilledButton'
 
 export const WeatherHeading = () => {
   const {

@@ -1,9 +1,9 @@
 import {
   Flex, Input
 } from '@chakra-ui/react'
-import { RefreshIcon } from '../../../assets/icons/RefreshIcon'
+import { RefreshIcon } from '../../../../assets/icons/RefreshIcon'
 
-import { TransparentButton } from '../../buttons/TransparentButton'
+import { TransparentButton } from '../../../buttons/TransparentButton'
 import { UserListTooltip } from './UserListTooltip'
 
 interface UserListTableHeaderProps {

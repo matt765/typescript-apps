@@ -6,7 +6,7 @@ import {
 } from '@chakra-ui/react'
 import { Search } from '@chakra-icons/bootstrap'
 
-import { TransparentButton } from '../../buttons/TransparentButton'
+import { TransparentButton } from '../../../buttons/TransparentButton'
 import { useEmailVerifier } from '../useEmailVerifier'
 
 interface FormProps {

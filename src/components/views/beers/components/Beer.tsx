@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react'
 
 import { Beer as BeerInterface } from '../types/types'
-import { FilledButton } from '../../buttons/FilledButton'
+import { FilledButton } from '../../../buttons/FilledButton'
 
 export const Beer = ({
   name,

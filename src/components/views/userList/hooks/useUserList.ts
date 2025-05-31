@@ -2,7 +2,7 @@ import {
   useEffect, useState
 } from 'react'
 import { useQuery } from 'react-query'
-import { makeApiCall } from '../../../utils/makeApiCall'
+import { makeApiCall } from '../../../../utils/makeApiCall'
 
 export interface User {
   id: number;

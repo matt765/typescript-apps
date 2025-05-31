@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 
 import { calcBMI } from '../utils/calcBMI'
-import { TransparentButton } from '../../buttons/TransparentButton'
+import { TransparentButton } from '../../../buttons/TransparentButton'
 
 export const BmiFormComp = () => {
   const [isImperial, setIsImperial] = React.useState(false)

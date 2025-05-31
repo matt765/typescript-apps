@@ -1,7 +1,7 @@
 import { Flex } from '@chakra-ui/react'
 
 import { UserListTable } from './components/UserListTable'
-import { Loader } from '../loader/Loader'
+import { Loader } from '../../loader/Loader'
 import { UserListTableHeader } from './components/UserListTableHeader'
 import { useUserList } from './hooks/useUserList'
 
