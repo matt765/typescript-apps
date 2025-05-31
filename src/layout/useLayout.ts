@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 
 import {
   Context, InitialSettings
-} from '../pages/_app'
+} from '../pages8/_app'
 
 const useLayout = () => {
   const {
