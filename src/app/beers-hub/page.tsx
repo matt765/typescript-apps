@@ -3,7 +3,7 @@ import * as React from 'react'
 import type { NextPage } from 'next'
 // import axios from 'axios' // Data fetching will be handled differently
 
-import { Layout } from '../../layout/Layout'
+// import { Layout } from '../../layout/Layout'
 import { Beer } from '../../components/views/beers/types/types'
 import { BeerList } from '../../components/views/beers/components/BeerList'
 import { Beers } from '../../components/views/beers/Beers'
@@ -31,11 +31,9 @@ const BeersHubPage: NextPage = () => {
   }, []);
 
   return (
-    <Layout>
-      <Beers>
-        <BeerList beers={beers} />
-      </Beers>
-    </Layout>
+    <Beers>
+      <BeerList beers={beers} />
+    </Beers>
   )
 }
 

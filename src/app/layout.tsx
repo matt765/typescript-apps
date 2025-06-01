@@ -26,6 +26,7 @@ import "../styles/globals.css";
 import "../styles/theme-light.scss"; // Changed to scss
 import "../styles/theme-dark.scss"; // Changed to scss
 import { Providers } from "../services/Providers"; // Added Providers
+import { Layout } from "../layout/Layout"; // Corrected Layout import
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -67,7 +68,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 overflow: "hidden",
               }}
             >
-              {children}
+              <Layout>{children}</Layout>
             </motion.div>
           )}
         </Providers>

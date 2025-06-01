@@ -1,5 +1,6 @@
 import { FunctionComponent, useEffect, useState, SVGProps } from 'react'
-import { useRouter, usePathname } from 'next/navigation' // Changed from 'next/router'
+import { usePathname } from 'next/navigation' // Changed from 'next/router'
+import Link from 'next/link'; // Added Link import
 import styles from '../../styles/SideMenuItem.module.scss'
 import useLayout from '../../useLayout' // Corrected path
 
@@ -11,7 +12,6 @@ type Props = {
 };
 
 export const SideMenuItem = ({ icon: IconComponent, title, path, isSideMenuOpen }: Props) => {
-  const router = useRouter()
   const pathname = usePathname() // Added usePathname hook
   const [isActive, setIsActive] = useState(false)
   const { colorMode } = useLayout() // 'light' or 'dark'
@@ -28,10 +28,6 @@ export const SideMenuItem = ({ icon: IconComponent, title, path, isSideMenuOpen 
     }
   }, [pathname, path, title])
 
-  const handleClick = () => {
-    router.push(path)
-  }
-
   const itemClasses = [
     styles.menuItem,
     isActive ? styles.active : '',
@@ -44,14 +40,7 @@ export const SideMenuItem = ({ icon: IconComponent, title, path, isSideMenuOpen 
   ].join(' ').trim()
 
   return (
-    <div
-      className={itemClasses}
-      onClick={handleClick}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleClick()}
-      title={title} // Accessibility: provide title for the div acting as a button
-    >
+    <Link href={path} className={itemClasses} title={title}>
       <div className={styles.iconContainer}>
         <IconComponent className={styles.icon} /> {/* Apply styles.icon if needed for sizing/spacing */}
       </div>
@@ -60,6 +49,6 @@ export const SideMenuItem = ({ icon: IconComponent, title, path, isSideMenuOpen 
           {title}
         </span>
       }
-    </div>
+    </Link>
   )
 }

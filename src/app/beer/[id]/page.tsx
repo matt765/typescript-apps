@@ -3,7 +3,6 @@ import * as React from 'react'
 // import { GetStaticPaths, GetStaticProps } from 'next' // Not used in App Router in the same way
 // import axios from 'axios' // Data fetching will be handled differently
 
-import { Layout } from '../../../layout/Layout'
 import { Beer as BeerInterface } from '../../../components/views/beers/types/types' // Adjusted path
 import { SingleBeer } from '../../../components/views/beers/components/SingleBeer' // Adjusted path
 
@@ -49,17 +48,15 @@ export default function BeerPage({ params }: BeerPageProps) {
   }, [params]);
 
   if (loading) {
-    return <Layout><div>Loading...</div></Layout>; // Or a spinner component
+    return <div>Loading...</div>; // Or a spinner component
   }
 
   if (!beer) {
-    return <Layout><div>Beer not found.</div></Layout>; // Or a 404 component
+    return <div>Beer not found.</div>; // Or a 404 component
   }
 
   return (
-    <Layout>
-      <SingleBeer beer={beer} />
-    </Layout>
+    <SingleBeer beer={beer} />
   )
 }
 
