@@ -1,0 +1,50 @@
+.logoContainer {
+  display: flex;
+  align-items: center;
+  border-style: solid;
+  border-color: var(--border-main);
+}
+
+.logoContainerDefault {
+  height: 7rem;
+  border-width: 0 0 1px 0;
+  justify-content: flex-start;
+}
+
+.logoContainerMobile {
+  height: 100%;
+  border-width: 0;
+  margin-left: -1rem; 
+  justify-content: flex-start; 
+}
+
+.logoOpen {
+  padding-left: 1.8rem;
+}
+
+.logoClosed {
+  padding-left: 1rem;
+}
+
+.imageContainer {
+  margin-right: 0.8rem;
+  display: flex; 
+  width: 2rem;
+  height: auto; 
+}
+
+.logoTextContainer {
+  display: flex;
+  font-family: 'Exo', sans-serif;
+  font-size: 1.4rem;
+  color: var(--primary-text);
+  font-weight: 700;
+  text-shadow: 1px 2px 1px rgba(0,0,0,0.1);
+  align-items: center;
+  justify-content: center;
+}
+
+.logoTextApps {
+  color: var(--colored-text-light);
+  margin-left: 0.3rem;
+}

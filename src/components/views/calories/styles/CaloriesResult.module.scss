@@ -1,0 +1,38 @@
+.resultsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3rem;
+  padding-top: 1rem;
+}
+
+.resultsTitle {
+  font-size: 2.25rem; 
+  color: var(--primary-text);
+  margin-bottom: 1rem; 
+}
+
+.resultsGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem; 
+  gap: 0.5rem; 
+}
+
+.badge {
+  text-transform: capitalize;
+  color: var(--primary-text);
+  background-color: var(--badge-bg); 
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem; 
+  font-weight: 500; 
+}
+
+.resultValue {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem; 
+  color: var(--primary-text);
+}

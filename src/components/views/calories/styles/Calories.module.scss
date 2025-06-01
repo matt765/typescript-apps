@@ -1,0 +1,22 @@
+.caloriesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 95%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @media (min-width: 48em) { 
+    width: 25rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @media (min-width: 80em) { 
+    width: 27rem;
+  }
+}

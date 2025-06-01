@@ -1,0 +1,32 @@
+.resetButton {
+    margin-top: 1rem;
+    width: 4rem;
+    height: 4rem;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    background-color: var(--tic-tac-toe-bg);
+    color: var(--tic-tac-toe-icon);
+    border-color: var(--tic-tac-toe-border);
+
+    &:hover {
+        background-color: var(--tic-tac-toe-hover-bg);
+        border-color: var(--tic-tac-toe-hover-border);
+    }
+}
+
+.resetIcon {
+    width: 1.75rem; 
+    height: 1.75rem;
+}
+
+.flexCenter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}

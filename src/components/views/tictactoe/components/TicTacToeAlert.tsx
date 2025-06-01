@@ -1,19 +1,11 @@
 import React, { RefObject } from 'react'
-import {
-  AlertDialog,
-  AlertDialogOverlay,
-  AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogBody,
-  AlertDialogFooter,
-  Button
-} from '@chakra-ui/react'
+import styles from '../styles/TicTacToeAlert.module.scss'
 
 interface TicTacToeAlertProps {
   isAlertDialogOpen: boolean;
   alertDialogText: string;
   onCloseAlertDialog: () => void;
-  leastDestructiveRef: RefObject<HTMLButtonElement>;
+  leastDestructiveRef: RefObject<HTMLButtonElement | null>; 
 }
 
 export const TicTacToeAlert = ({
@@ -22,25 +14,23 @@ export const TicTacToeAlert = ({
   onCloseAlertDialog,
   leastDestructiveRef
 }: TicTacToeAlertProps) => {
+  if (!isAlertDialogOpen) {
+    return null;
+  }
+
   return (
-    <AlertDialog
-      isOpen={isAlertDialogOpen}
-      leastDestructiveRef={leastDestructiveRef}
-      onClose={onCloseAlertDialog}
-    >
-      <AlertDialogOverlay>
-        <AlertDialogContent mt="10rem">
-          <AlertDialogHeader fontSize="lg" fontWeight="bold">
-            Game Result
-          </AlertDialogHeader>
-          <AlertDialogBody>{alertDialogText}</AlertDialogBody>
-          <AlertDialogFooter>
-            <Button colorScheme="blue" onClick={onCloseAlertDialog}>
-              Close
-            </Button>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialogOverlay>
-    </AlertDialog>
+    <div className={styles.alertDialogOverlay}>
+      <div className={styles.alertDialogContent}>
+        <div className={styles.alertDialogHeader}>
+          Game Result
+        </div>
+        <div className={styles.alertDialogBody}>{alertDialogText}</div>
+        <div className={styles.alertDialogFooter}>
+          <button ref={leastDestructiveRef} className={styles.closeButton} onClick={onCloseAlertDialog}>
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
   )
 }

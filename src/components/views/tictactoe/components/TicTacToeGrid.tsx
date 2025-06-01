@@ -1,9 +1,6 @@
 import React from 'react'
-import {
-  Grid, GridItem, Flex
-} from '@chakra-ui/react'
-
-import { CloseIcon } from '@chakra-ui/icons'
+import { CrossIcon } from '../../../../assets/icons/CrossIcon';
+import styles from '../styles/TicTacToeGrid.module.scss'
 
 interface TicTacToeGridProps {
   cells: string[];
@@ -14,63 +11,19 @@ export const TicTacToeGrid = ({
   cells, play
 }: TicTacToeGridProps) => {
   return (
-    <Grid
-      templateColumns={{
-        base: 'repeat(3, 6rem)',
-        md: 'repeat(3, 7.5rem)'
-      }}
-      templateRows={{
-        base: 'repeat(3, 6rem)',
-        md: 'repeat(3, 7.5rem)'
-      }}
-      gap={2}
-      borderWidth="0px"
-      borderRadius="md"
-      p={2}
-    >
+    <div className={styles.grid}>
       {cells.map((cell, index) =>
-        <GridItem
+        <div
           key={index}
-          w={{
-            base: '5.5rem',
-            md: '6.8rem'
-          }}
-          h={{
-            base: '5.5rem',
-            md: '6.8rem'
-          }}
-          bgColor="ticTacToeBg"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
+          className={styles.gridItem}
           onClick={() => play(index)}
-          borderRadius="5px"
-          cursor="pointer"
-          _hover={{
-            backgroundColor: 'ticTacToeHoverBg',
-            borderColor: 'ticTacToeHoverBorder'
-          }}
-          borderStyle="solid"
-          borderWidth="1px"
-          borderColor="ticTacToeBorder"
-          boxShadow="md"
-          transition="0.2s"
-
         >
-          {cell === 'x' && <CloseIcon boxSize={10} color="ticTacToeIcon" />}
+          {cell === 'x' && <CrossIcon className={styles.closeIcon} />}
           {cell === 'circle' &&
-             <Flex
-               w="3rem"
-               h="3rem"
-               borderStyle="solid"
-               borderColor="ticTacToeIcon"
-               borderWidth="3px"
-               borderRadius="100%"
-               boxShadow="md"
-             />
+             <div className={styles.circle} />
           }
-        </GridItem>
+        </div>
       )}
-    </Grid>
+    </div>
   )
 }

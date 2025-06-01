@@ -1,0 +1,77 @@
+.colorCardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 7rem; 
+  height: 9rem; 
+  
+
+  &:hover {
+    
+    
+    
+    
+  }
+
+  @media (min-width: 48em) { 
+    width: 8rem;
+  }
+  @media (min-width: 90em) { 
+    width: 9rem;
+    height: 10.5rem;
+  }
+}
+
+.colorBox {
+  width: 5rem; 
+  height: 5rem; 
+  border-radius: 15px;
+  
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    box-shadow: var(--card-hover-shadow, rgba(0, 0, 0, 0.35) 0px 5px 15px); 
+    transform: scale(1.1);
+  }
+
+  @media (min-width: 90em) { 
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+.linksContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.8rem;
+  font-size: 1.2rem; 
+}
+
+.linkText {
+  cursor: pointer;
+  transition: 0.2s;
+  color: var(--primary-text); 
+  font-weight: 600; 
+
+  &:hover {
+    color: var(--link-hover-color, #3178c6); 
+    transform: scale(1.05);
+  }
+}
+
+.hexLink {
+  margin-right: 0.3rem;
+}
+
+.rgbLink {
+  margin-left: 0.25rem;
+}
+
+.separator {
+  color: var(--secondary-text);
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+}

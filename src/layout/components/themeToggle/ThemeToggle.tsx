@@ -1,29 +1,37 @@
-import {
-  Button, useColorMode
-} from '@chakra-ui/react'
-import {
-  MoonIcon, SunIcon
-} from '@chakra-ui/icons'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
+import styles from '../../styles/ThemeToggle.module.scss'
+import { SunIcon } from '../../../assets/icons/SunIcon' // Adjusted path
+import { MoonIcon } from '../../../assets/icons/MoonIcon' // Adjusted path
 
 export const ThemeToggle = () => {
-  const {
-    colorMode, toggleColorMode
-  } = useColorMode()
+  const { setTheme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  // useEffect only runs on the client, so we can safely show the UI
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+  }
+
   return (
-    <Button
-      onClick={toggleColorMode}
-      position="fixed"
-      bottom={{
-        base: '1rem',
-        '2xl': '1.5rem'
-      }}
-      right={{
-        base: '1rem',
-        '2xl': '1.5rem'
-      }}
-      zIndex="99999"
+    <button
+      onClick={toggleTheme}
+      className={styles.themeToggleButton}
+      aria-label={resolvedTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-    </Button>
+      {resolvedTheme === 'dark' ? (
+        <SunIcon className={styles.icon} />
+      ) : (
+        <MoonIcon className={styles.icon} />
+      )}
+    </button>
   )
 }

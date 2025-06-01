@@ -29,21 +29,24 @@ async function getBeer(id: string): Promise<BeerInterface | null> {
 // For simplicity, making it a client component that fetches data.
 
 interface BeerPageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-const BeerPage = ({ params }: BeerPageProps) => {
+export default function BeerPage({ params }: BeerPageProps) {
   const [beer, setBeer] = React.useState<BeerInterface | null>(null);
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    if (params.id) {
-      getBeer(params.id).then(data => {
-        setBeer(data);
-        setLoading(false);
-      });
-    }
-  }, [params.id]);
+    params.then(({ id }) => {
+      if (id) {
+        getBeer(id).then(data => {
+          setBeer(data);
+          setLoading(false);
+        });
+      }
+    });
+  }, [params]);
 
   if (loading) {
     return <Layout><div>Loading...</div></Layout>; // Or a spinner component
@@ -59,8 +62,6 @@ const BeerPage = ({ params }: BeerPageProps) => {
     </Layout>
   )
 }
-
-export default BeerPage
 
 // Note: getStaticPaths and getStaticProps are not used in the App Router directly for page components.
 // Dynamic segments are handled by the folder structure `[id]`.

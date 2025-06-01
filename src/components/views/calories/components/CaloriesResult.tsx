@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-  Badge, Flex, Text
-} from '@chakra-ui/react'
+import styles from '../styles/CaloriesResult.module.scss' // Added
 
 import { useCaloriesCounter } from '../utils/useCaloriesCounter'
 
@@ -11,24 +9,24 @@ export const CaloriesResult = () => {
   } = useCaloriesCounter()
 
   if (!AMR && !BMR) {
-    return <></>
+    return null // Changed from <></> to null for clarity
   }
 
   return (
-    <Flex flexDirection="column" alignItems="center" pb="3rem" pt="1rem">
-      <Text fontSize="4xl" color="primaryText">Your results</Text>
-      <Flex flexDirection="column" alignItems="center" mt={4} gap={2}>
-        <Badge textTransform="capitalize" color="primaryText">
-          Total daily energy expenditure rete:
-        </Badge>
-        <Text display="flex" alignItems="center" fontSize="2xl" color="primaryText">
+    <div className={styles.resultsContainer}> {/* Changed from Flex */}
+      <p className={styles.resultsTitle}>Your results</p> {/* Changed from Text */}
+      <div className={styles.resultsGroup}> {/* Changed from Flex */}
+        <span className={styles.badge}> {/* Changed from Badge */}
+          Total daily energy expenditure rate:
+        </span>
+        <p className={styles.resultValue}> {/* Changed from Text */}
           {AMR} Kcal
-        </Text>
-        <Badge textTransform="capitalize" color="primaryText">Base metabolic rete: </Badge>
-        <Text display="flex" alignItems="center" fontSize="2xl" color="primaryText">
+        </p>
+        <span className={styles.badge}>Base metabolic rate: </span> {/* Changed from Badge */}
+        <p className={styles.resultValue}> {/* Changed from Text */}
           {BMR} Kcal
-        </Text>
-      </Flex>
-    </Flex>
+        </p>
+      </div>
+    </div>
   )
 }

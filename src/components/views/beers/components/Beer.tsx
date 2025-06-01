@@ -1,8 +1,6 @@
 import NextLink from 'next/link'
 import Image from 'next/image'
-import {
-  Box, GridItem, Button, Flex, Text
-} from '@chakra-ui/react'
+import styles from './styles/Beer.module.scss'
 
 import { Beer as BeerInterface } from '../types/types'
 import { FilledButton } from '../../../buttons/FilledButton'
@@ -12,40 +10,31 @@ export const Beer = ({
   tagline,
   image_url,
   id
-}: BeerInterface) =>
-  <GridItem
-    display="flex"
-    justifyContent="space-between"
-    boxShadow="xs"
-    p={4}
-    borderRadius={2}
-    _hover={{ boxShadow: 'outline' }}
-    transition="200ms"
-  >
-    <Flex flexDirection="column">
-      <Text fontSize="2xl" lineHeight={1}>
+}: BeerInterface) => (
+  <div className={styles.gridItem}>
+    <div className={styles.contentFlex}>
+      <p className={styles.beerName}>
         {name}
-      </Text>
-      <Text mt={2} mb={4}>
+      </p>
+      <p className={styles.tagline}>
         {tagline}
-      </Text>
+      </p>
       <NextLink href={`/beer/${id}`} passHref>
-        <Flex w="100%" maxW="8rem">
+        <div className={styles.readMoreLinkContainer}>
           <FilledButton
             text="Read more"
-            h="2.5rem"
           />
-        </Flex>
-
+        </div>
       </NextLink>
-    </Flex>
-    <Box position="relative" width={24} height={24}>
+    </div>
+    <div className={styles.imageContainer}>
       <Image
         src={image_url}
         layout="fill"
-        objectFit="contain"
+        className={styles.beerImage}
         alt={name}
       />
-    </Box>
-  </GridItem>
+    </div>
+  </div>
+)
 

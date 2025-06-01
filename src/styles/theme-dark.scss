@@ -1,0 +1,111 @@
+/* src/styles/theme-dark.scss */
+
+html.dark {
+  // Backgrounds
+  --primary-bg: #3f4450;
+  --primary-bg-full-screen: #3f4450;
+  --secondary-bg: #2f323a;
+  --mobile-navbar-bg: #383d47;
+  --content-bg: #3f4450;
+  --spinner-bg: #2f323a;
+  --content-full-screen-bg: #3f4450;
+  --active-bg: rgb(107, 169, 225, 0.1);
+  --gray-hover-bg: rgb(107, 169, 225, 0.07);
+
+  // Text & links
+  --primary-text: rgb(255,255,255,0.95);
+  --primary-link: rgb(255,255,255, 0.9);
+  --primary-link-hover: rgb(255,255,255);
+  --secondary-text: rgb(255,255,255,0.7);
+  --colored-text: #7eb3e5;
+  --colored-text-light: #5ca2e2;
+  --header-text: var(--primary-text);
+
+  // Transparent button
+  --button-transparent-bg: rgba(107, 169, 225, 0.04);
+  --button-transparent-hover-bg: rgb(107, 169, 225, 0.1);
+  --button-transparent-active-bg: rgba(107, 169, 225, 0.18);
+  --button-transparent-border-color: rgb(55, 118, 173);
+  --button-transparent-text: var(--colored-text);
+  --button-transparent-disabled-text: rgb(255,255,255,0.6);
+  --button-icon-fill-transparent: var(--colored-text);
+
+  // Filled/Colored button
+  --button-filled-bg: #3784c8;
+  --button-filled-text: rgb(255,255,255,0.9);
+  --button-filled-hover-bg: #589ad5;
+  --button-filled-active-bg: #589ad5;
+  --button-filled-shadow: none;
+  --button-icon-fill: rgba(0, 0, 0, 0.7);
+  --button-filled-disabled-text: rgb(255,255,255,0.6);
+
+  // Borders
+  --border-gray: rgb(255,255,255,0.15);
+  --gray-border-light: #444850;
+  --border-main: rgb(255,255,255,0.15);
+
+  // Input
+  --input-border: rgba(167, 167, 167, 0.3);
+  --input-border-hover: rgb(126, 179, 229, 0.6);
+  --input-bg: rgba(107, 169, 225, 0.04);
+  --input-label: var(--secondary-text);
+  --input-addon-bg: var(--secondary-bg);
+
+  // Icons
+  --gray-icon: rgb(255,255,255,0.5);
+  --hamburger-icon: rgb(255,255,255,0.4);
+
+  // Tic Tac Toe
+  --tic-tac-toe-bg: rgb(255,255,255,0);
+  --tic-tac-toe-hover-bg: rgb(255,255,255,0.02);
+  --tic-tac-toe-border: rgb(255,255,255,0.2);
+  --tic-tac-toe-hover-border: #7eb3e5;
+  --tic-tac-toe-icon: rgb(255,255,255,0.85);
+
+  // List of users
+  --user-list-table-border: rgb(255,255,255,0.15);
+  --user-list-header-bg: rgba(107, 169, 225, 0.04);
+  --user-list-bg: rgba(107, 169, 225, 0);
+
+  // Calculator
+  --calculator-bg: #3a4655;
+  --calculator-button-bg: #425062;
+  --calculator-button-hover-bg: #5d6a7a;
+  --calculator-header-bg: rgba(107, 169, 225, 0);
+  --calculator-header-hover-bg: #3a4655;
+  --calculator-operator-button-bg: #425062;
+  --calculator-operator-button-hover-bg: #5d6a7a;
+  --calculator-equal-button-bg: #3f4e5f;
+  --calculator-equal-button-hover-bg: #425062;
+  --calculator-display-text: var(--primary-text);
+  --calculator-button-text: var(--primary-text);
+
+  // General
+  --link-color: rgb(255,255,255, 0.9);
+  --link-hover-color: rgb(255,255,255);
+  --text-color: rgb(255,255,255,0.95);
+  --secondary-text-color: rgb(255,255,255,0.7);
+  --border-color: rgb(255,255,255,0.15);
+  --box-shadow: none;
+
+  // Overlay
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+
+  // Errors
+  --error-color: #FC8181;
+  --success-color: #68D391;
+
+  // Beers specific (can be generalized if used elsewhere)
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  --shadow-outline: 0 0 0 3px rgba(107, 169, 225, 0.5);
+  --card-bg: var(--secondary-bg);
+  --spinner-track-color: rgba(255, 255, 255, 0.1);
+  --spinner-color: var(--colored-text);
+
+  // Calories specific (can be generalized)
+  --switch-bg: rgba(255, 255, 255, 0.2);
+  --switch-checked-bg: var(--colored-text-light);
+  --badge-bg: var(--secondary-bg);
+
+  /* Add other variables as needed */
+}

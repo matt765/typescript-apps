@@ -1,0 +1,45 @@
+.gridItem {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: var(--shadow-xs); 
+  padding: 1rem; 
+  border-radius: 0.125rem; 
+  transition: box-shadow 200ms ease-in-out;
+  background-color: var(--card-bg); 
+
+  &:hover {
+    box-shadow: var(--shadow-outline); 
+  }
+}
+
+.contentFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+.beerName {
+  font-size: 1.5rem; 
+  line-height: 1;
+  color: var(--primary-text);
+}
+
+.tagline {
+  margin-top: 0.5rem; 
+  margin-bottom: 1rem; 
+  color: var(--secondary-text);
+}
+
+.readMoreLinkContainer {
+  width: 100%;
+  max-width: 8rem;
+}
+
+.imageContainer {
+  position: relative;
+  width: 6rem; 
+  height: 6rem; 
+}
+
+.beerImage {
+  object-fit: contain;
+}

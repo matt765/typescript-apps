@@ -1,5 +1,5 @@
-import { Button } from '@chakra-ui/react'
 import React from 'react'
+import styles from '../styles/CalculatorButton.module.scss'
 
 interface ButtonProps {
   label: string;
@@ -8,18 +8,21 @@ interface ButtonProps {
 
 export const CalculatorButton = ({
   label, clickHandler
-}: ButtonProps) =>
-  <Button
-    onClick={clickHandler}
-    w="100%"
-    h="5rem"
-    fontSize="2rem"
-    backgroundColor="calculatorButtonBg"
-    color="white"
-    _hover={{ backgroundColor: 'calculatorButtonHoverBg' }}
-    borderRadius="5px"
-    fontWeight="300"
-  >
-    {label}
-  </Button>
+}: ButtonProps) => {
+  let buttonClass = styles.calculatorButton;
+  if (['÷', '*', '-', '+'].includes(label)) {
+    buttonClass = `${styles.calculatorButton} ${styles.operatorButton}`;
+  } else if (label === '=') {
+    buttonClass = `${styles.calculatorButton} ${styles.equalsButton}`;
+  }
+
+  return (
+    <button
+      onClick={clickHandler}
+      className={buttonClass}
+    >
+      {label}
+    </button>
+  )
+}
 

@@ -1,0 +1,112 @@
+/* src/styles/theme-light.scss */
+
+html.light {
+  // Backgrounds
+  --primary-bg: white;
+  --primary-bg-full-screen: white;
+  --secondary-bg: #BCC5DD;
+  --mobile-navbar-bg: #efeef8a3;
+  --content-bg: white;
+  --spinner-bg: white;
+  --content-full-screen-bg: #f6f6f6;
+  --active-bg: rgb(107, 169, 225, 0.1);
+  --gray-hover-bg: rgb(0,0,0,0.04);
+
+  // Text & links
+  --primary-text: #304a73;
+  --primary-link: #25272a;
+  --primary-link-hover: #25272a;
+  --secondary-text: rgb(0,0,0,0.8);
+  --colored-text: #2683d9;
+  --colored-text-light: #5ca2e2;
+  --header-text: var(--primary-text);
+
+  // Transparent button
+  --button-transparent-bg: #1f3c77;
+  --button-transparent-hover-bg: #2e5095;
+  --button-transparent-active-bg: #2e5095;
+  --button-transparent-border-color: #3784c8;
+  --button-transparent-text: var(--colored-text);
+  --button-transparent-disabled-text: #3784c8;
+  --button-icon-fill-transparent: var(--colored-text);
+
+  // Filled/Colored button
+  --button-filled-bg: #1f3c77;
+  --button-filled-text: rgb(255,255,255,0.9);
+  --button-filled-hover-bg: #2e5095;
+  --button-filled-active-bg: #2e5095;
+  --button-filled-shadow: 2px 8px 26px -9px rgba(31, 60, 119, 1);
+  --button-icon-fill: rgba(255, 255, 255, 0.7);
+  --button-filled-disabled-text: #3784c8;
+
+
+  // Borders
+  --border-gray: rgb(0,0,0,0.2);
+  --gray-border-light: rgb(0,0,0,0.1);
+  --border-main: rgb(0,0,0,0.2);
+
+  // Input
+  --input-border: rgb(159, 167, 202);
+  --input-border-hover: #3784c8;
+  --input-bg: rgb(0,0,0,0);
+  --input-label: var(--secondary-text);
+  --input-addon-bg: #e9ecef;
+
+  // Icons
+  --gray-icon: var(--primary-text);
+  --hamburger-icon: rgba(168, 176, 183, 0.8);
+
+  // Tic Tac Toe
+  --tic-tac-toe-bg: rgb(255,255,255,0.1);
+  --tic-tac-toe-hover-bg: rgba(213, 151, 255, 0.1);
+  --tic-tac-toe-border: rgba(213, 151, 255, 0.91);
+  --tic-tac-toe-hover-border: rgba(213, 151, 255);
+  --tic-tac-toe-icon: rgba(164, 127, 189, 0.91);
+
+  // List of users
+  --user-list-table-border: rgb(48, 74, 115, 0.5);
+  --user-list-header-bg: rgba(255, 255, 255, 0);
+  --user-list-bg: rgba(255, 255, 255, 0.1);
+
+  // Calculator
+  --calculator-bg: #809dca;
+  --calculator-button-bg: #809dca;
+  --calculator-button-hover-bg: #8aa6d2;
+  --calculator-header-bg: #7595c6;
+  --calculator-header-hover-bg: #809dca;
+  --calculator-operator-button-bg: #7595c6;
+  --calculator-operator-button-hover-bg: #809dca;
+  --calculator-equal-button-bg: #6b8ec0;
+  --calculator-equal-button-hover-bg: #7595c6;
+  --calculator-display-text: var(--primary-text);
+  --calculator-button-text: var(--primary-text);
+
+  // General
+  --link-color: #25272a;
+  --link-hover-color: #25272a;
+  --text-color: #304a73;
+  --secondary-text-color: rgb(0,0,0,0.8);
+  --border-color: rgb(0,0,0,0.2);
+  --box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+
+  // Overlay
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+
+  // Errors
+  --error-color: #E53E3E;
+  --success-color: #38A169;
+
+  // Beers specific (can be generalized if used elsewhere)
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-outline: 0 0 0 3px rgba(66, 153, 225, 0.6);
+  --card-bg: var(--primary-bg);
+  --spinner-track-color: rgba(0, 0, 0, 0.1);
+  --spinner-color: var(--colored-text);
+
+  // Calories specific (can be generalized)
+  --switch-bg: #ccc;
+  --switch-checked-bg: var(--colored-text);
+  --badge-bg: #e9ecef;
+
+  /* Add other variables as needed */
+}

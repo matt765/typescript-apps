@@ -1,16 +1,15 @@
-import { Flex } from '@chakra-ui/react'
-
 import { WeatherHeading } from './components/WeatherHeading'
 import { WeatherProvider } from './utils/useWeather'
 import { WeatherMain } from './components/WeatherMain'
+import styles from './styles/Weather.module.scss'
 
 export const WeatherComp = () => {
   return (
     <WeatherProvider>
-      <Flex flexDirection="column" gap="1rem" h="100%" pt="5rem" color="primaryText">
-        <WeatherHeading/>
-        <WeatherMain/>
-      </Flex>
+      <div className={styles.weatherContainer}>
+        <WeatherHeading />
+        <WeatherMain />
+      </div>
     </WeatherProvider>
   )
 }

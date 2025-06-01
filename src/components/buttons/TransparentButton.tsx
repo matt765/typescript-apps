@@ -1,66 +1,48 @@
 import {
-  Button, Icon, useColorMode
-} from '@chakra-ui/react'
-import {
-  FunctionComponent, ReactElement
-} from 'react'
+  FunctionComponent, ReactElement, SVGProps
+} from 'react';
+import styles from './styles/TransparentButton.module.scss';
 
 interface TransparentButtonProps {
   text: string;
   type?: 'button' | 'submit' | 'reset' | undefined;
-  leftIcon?: ReactElement;
+  leftIcon?: ReactElement; // This might need to be re-evaluated
   onClick?: () => void;
   isLoading?: boolean;
   h?: string;
-  icon?: FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  icon?: FunctionComponent<SVGProps<SVGSVGElement>>;
 }
 
 export const TransparentButton = ({
   text,
-  type,
+  type = 'button',
   leftIcon,
   onClick,
   isLoading,
   h = '3rem',
-  icon
+  icon: IconComponent
 }: TransparentButtonProps) => {
-  const {
-    colorMode, toggleColorMode
-  } = useColorMode()
+  const buttonClasses = `
+    ${styles.transparentButton}
+    ${isLoading ? styles.disabled : ''}
+  `;
+
+  const buttonStyle = {
+    height: h,
+    minHeight: h,
+  };
+
   return (
-    <Button
-      borderWidth="1px"
-      borderStyle="solid"
-      borderColor="transparentButtonBorder"
-      w="100%"
-      justifyContent="center"
-      alignItems="center"
-      h={h}
-      borderRadius="10px"
+    <button
+      className={buttonClasses.trim()}
+      style={buttonStyle}
       type={type}
-      cursor="pointer"
-      display="flex"
-      bg="transparentButtonBg"
-      _hover={{ bg: 'transparentButtonHoverBg' }}
-      _active={{ bg: 'transparentButtonActiveBg' }}
-      leftIcon={leftIcon}
-      onClick={isLoading ? () => {} : onClick}
-      minH={h}
-      fontFamily="Quicksand"
-      letterSpacing="0.5px"
-      fontWeight="600"
-      fontSize="0.9rem"
-      boxShadow={colorMode === 'light' ? '2px 8px 26px -9px rgba(31, 60, 119, 1)' : ''}
-      pr="1.3rem"
-      isDisabled={isLoading}
-      sx={{ '& svg': {
-        width: '15px !important',
-        height: '15px !important',
-        fill: 'rgb(255,255,255,0.7)'
-      } }}
-      color="white"
+      onClick={isLoading ? undefined : onClick}
+      disabled={isLoading}
     >
-      {icon ? <Icon as={icon} boxSize={7} /> : text}
-    </Button>
-  )
-}
+      {leftIcon && <span className={styles.buttonIcon}>{leftIcon}</span>}
+      {IconComponent && !leftIcon && <IconComponent className={styles.buttonIcon} />}
+      {!IconComponent && text}
+      {IconComponent && text && <span className={styles.buttonTextWithIcon}>{text}</span>}    </button>
+  );
+};

@@ -1,59 +1,39 @@
-import {
-  useEffect, useState, useContext
-} from 'react'
-import { useColorMode } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
-
-import {
-  Context, InitialSettings
-} from '../pages8/_app'
+import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
+import { useSettingsStore } from '../store/settingsStore'
 
 const useLayout = () => {
   const {
-    settingsData = InitialSettings, setSettingsData = () => undefined
-  } = useContext(Context) || {}
-  const {
-    isFullScreen, isSideMenuOpen
-  } = settingsData
-  const [isLoading, setIsLoading] = useState(true)
-  const [isRouteChanging, setIsRouteChanging] = useState(false)
-  const { colorMode } = useColorMode()
-  const router = useRouter()
+    isFullScreen,
+    isSideMenuOpen,
+    toggleSideMenu
+  } = useSettingsStore()
+  const [isLoading, setIsLoading] = useState(true) // This loading state might be for initial app load, not theme loading
+  const { theme, setTheme, resolvedTheme } = useTheme()
 
+  // useEffect for initial loading, can be kept if it serves a purpose beyond theme
   useEffect(() => {
-    const mode = localStorage.getItem('chakra-ui-color-mode')
-    if (mode) {
+    // Example: Simulate initial data loading or setup
+    const timer = setTimeout(() => {
       setIsLoading(false)
-    }
-  }, [])
-
-  useEffect(() => {
-    const handleRouteChangeStart = () => {
-      setIsRouteChanging(true)
-    }
-    const handleRouteChangeComplete = () => {
-      setIsRouteChanging(false)
-    }
-    router.events.on('routeChangeStart', handleRouteChangeStart)
-    router.events.on('routeChangeComplete', handleRouteChangeComplete)
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChangeStart)
-      router.events.off('routeChangeComplete', handleRouteChangeComplete)
-    }
+    }, 500) // Adjust timing as needed
+    return () => clearTimeout(timer)
   }, [])
 
   const handleSideMenu = () => {
-    const modifiedSettings = { ...settingsData }
-    modifiedSettings.isSideMenuOpen = !isSideMenuOpen
-    setSettingsData(modifiedSettings)
+    toggleSideMenu()
   }
+
+  // Determine current color mode based on resolvedTheme for explicit light/dark
+  const colorMode = resolvedTheme === 'dark' ? 'dark' : 'light'
 
   return {
     isFullScreen,
     isSideMenuOpen,
-    isLoading,
-    isRouteChanging,
-    colorMode,
+    colorMode, // 'light' or 'dark'
+    currentTheme: theme, // actual theme value (system, light, dark)
+    setTheme, // function to change theme
+    isLoading, // App loading state
     handleSideMenu
   }
 }

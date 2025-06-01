@@ -1,0 +1,98 @@
+.currentWeatherContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  border-radius: 4px;
+  transition: 200ms;
+  color: var(--primary-text);
+
+  &:hover {
+    box-shadow: var(--box-shadow); 
+  }
+}
+
+.locationContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+.weatherDetailsContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.weatherIconContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .conditionText {
+    text-transform: capitalize;
+    font-size: 1.25rem; 
+    font-weight: 400;
+    background-color: transparent; 
+    margin: 0;
+  }
+
+  .temperature {
+    font-size: 1.875rem; 
+    margin: 0;
+  }
+}
+
+.additionalInfoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem; 
+}
+
+.weatherBadge {
+  font-size: 1rem; 
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; 
+  text-transform: lowercase;
+  background-color: transparent;
+  padding: 0.25rem 0.5rem; 
+  border-radius: 0.25rem; 
+}
+
+.skeletonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw; 
+  height: 20vh;
+}
+
+.skeleton {
+  height: 2rem;
+  width: 80%; 
+  background-color: var(--secondary-bg); 
+  border-radius: 4px;
+  opacity: 0.7;
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

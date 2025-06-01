@@ -1,13 +1,10 @@
-import {
-  Center,
-  Spinner
-} from '@chakra-ui/react'
+import styles from './Loader.module.scss'
 
 interface LoaderProps {
-    size: string;
+    size: 'xs' | 'sm' | 'md' | 'lg' | 'xl'; // Constrain size to specific values
 }
 
 export const Loader = ({ size }: LoaderProps) =>
-  <Center w="100%" h="100%" data-testid="loader">
-    <Spinner size={size} color="primaryText" />
-  </Center>
+  <div className={styles.center} data-testid="loader">
+    <div className={`${styles.spinner} ${styles[size]}`} />
+  </div>

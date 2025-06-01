@@ -1,9 +1,15 @@
 import { useState } from 'react'
 
+/* eslint-disable no-unused-vars */
+type AddToValueFn = (value: string) => void
+type AddOperatorFn = (operator: string) => void
+type OperationFn = (a: number, b: number) => number
+/* eslint-enable no-unused-vars */
+
 interface UseCalculator {
   screenValue: string,
-  addToValue: (value: string) => void,
-  addOperator: (operator: string) => void,
+  addToValue: AddToValueFn,
+  addOperator: AddOperatorFn,
   calculate: () => void,
   clear: () => void,
   deleteLast: () => void
@@ -14,7 +20,7 @@ export const useCalculator = (): UseCalculator => {
   const [firstValue, setFirstValue] = useState('')
   const [secondValue, setSecondValue] = useState('')
   const [valueCheck, setValueCheck] = useState(1)
-  const [currentOperator, setCurrentOperator] = useState('')
+  const [, setCurrentOperator] = useState('')
 
   const addToValue = (value: string) => {
     const lastChar = screenValue.slice(-1)
@@ -68,8 +74,7 @@ export const useCalculator = (): UseCalculator => {
       const isFirstValue = valueCheck === 1
       const valueToUpdate = isFirstValue ? firstValue : secondValue
       const setValue = isFirstValue ? setFirstValue : setSecondValue
-
-      if (!valueToUpdate.includes('.')) {
+    if (!valueToUpdate.includes('.')) {
         setScreenValue((prevScreenValue) => prevScreenValue + operator)
         setValue((prevValue) => prevValue + operator)
       }
@@ -82,7 +87,7 @@ export const useCalculator = (): UseCalculator => {
   }
 
   type OperationsType = {
-    [key: string]: (a: number, b: number) => number;
+    [key: string]: OperationFn;
   };
 
   const operations: OperationsType = {

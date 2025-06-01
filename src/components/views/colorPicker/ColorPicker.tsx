@@ -1,7 +1,6 @@
 import { useRef } from 'react'
-import {
-  Flex, Box, SimpleGrid, Text
-} from '@chakra-ui/react'
+
+import styles from './styles/ColorPicker.module.scss' // Import SCSS module
 
 import { ColorCard } from './components/ColorCard'
 import { useColorPicker } from './useColorPicker'
@@ -15,51 +14,18 @@ export const ColorPicker = () => {
     setHoveredColorName
   } = useColorPicker()
 
-  const bgRef = useRef(null)
+  const bgRef = useRef<HTMLDivElement>(null) // Added type for ref
 
   return (
-    <Flex
-      w="100%"
-      h="100%"
-      justify="center"
-      alignItems={{
-        base: 'flex-start',
-        lg: 'center'
-      }}
+    <div
+      className={styles.colorPickerContainer}
       ref={bgRef}
-      mt={{
-        base: '5rem',
-        lg: 'unset'
-      }}
-      mb={{
-        base: '5rem',
-        lg: 'unset'
-      }}
-      py="3rem"
-      pt={{
-        base: '3rem',
-        lg: '5rem'
-      }}
-      overflow={{
-        base: 'unset',
-        '1xl': 'hidden'
-      }}
     >
-      <Flex direction="column" justify="space-between">
-        <Text h="2rem" mb="2rem" textAlign="center" variant="h3" as="h3">
+      <div className={styles.contentWrapper}>
+        <p className={styles.messageText}> {/* Changed Text to p, applied styles */}
           {message ? `Copied: ${message}` : 'Click a color to copy its code'}
-        </Text>
-        <SimpleGrid
-          columns={{
-            base: 3,
-            lg: 6,
-            xl: 6
-          }}
-          ml={{
-            base: '0rem',
-            sm: 'unset'
-          }}
-        >
+        </p>
+        <div className={styles.colorGrid}> {/* Changed SimpleGrid to div, applied styles */}
           {colorPickerData.map((item, index) =>
             <ColorCard
               hexValue={item.hexValue}
@@ -70,20 +36,11 @@ export const ColorPicker = () => {
               setHoveredColorName={setHoveredColorName}
             />
           )}
-        </SimpleGrid>
-        <Text
-          display="flex"
-          w="100%"
-          justifyContent="center"
-          alignItems="center"
-          mt="1.4rem"
-          h="1.4rem"
-          mb="2rem"
-          variant="primaryText"
-        >
+        </div>
+        <p className={styles.hoveredColorText}> {/* Changed Text to p, applied styles */}
           {hoveredColorName}
-        </Text>
-      </Flex>
-    </Flex>
+        </p>
+      </div>
+    </div>
   )
 }

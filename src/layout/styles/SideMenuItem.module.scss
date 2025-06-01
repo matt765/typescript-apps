@@ -1,0 +1,67 @@
+.menuItem {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding-left: 1.1rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.menuItem:hover {
+  background-color: var(--gray-hover-bg);
+}
+
+.active {
+  background-color: var(--active-bg);
+}
+
+.menuItem.active:hover {
+  background-color: var(--active-bg);
+}
+
+.iconContainer {
+  height: 20px;
+  margin-right: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.iconContainer svg {
+  width: 24px;
+  height: 24px;
+}
+
+.iconContainer path {
+  fill: var(--gray-icon);
+  transition: fill 0.2s ease-in-out;
+}
+
+.active .iconContainer path {
+  fill: var(--colored-text);
+}
+
+.title {
+  font-family: 'Jost', sans-serif;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  color: var(--primary-text);
+  transition: color 0.2s ease-in-out;
+}
+
+.active .title {
+  color: var(--colored-text);
+}
+
+.lightTheme .title {
+  font-weight: 500;
+}
+
+.darkTheme .title {
+  font-weight: 400;
+}

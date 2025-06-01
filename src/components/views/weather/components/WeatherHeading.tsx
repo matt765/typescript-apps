@@ -1,21 +1,9 @@
 import * as React from 'react'
-import {
-  Button,
-  Heading,
-  Flex,
-  AlertIcon,
-  Alert,
-  Switch,
-  FormControl,
-  FormLabel,
-  Input,
-  Text,
-  Box
-} from '@chakra-ui/react'
 import { EnvironmentOutlined } from '@ant-design/icons'
 
 import { useWeather } from '../utils/useWeather'
 import { FilledButton } from '../../../buttons/FilledButton'
+import styles from './styles/WeatherHeading.module.scss'
 
 export const WeatherHeading = () => {
   const {
@@ -26,79 +14,48 @@ export const WeatherHeading = () => {
   const handleGeolocation = () => setIsGeolocation(!isGeolocation)
 
   return (
-    <Flex
-      as="header"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Text as="h1" mb="1.2rem" variant="h1">
+    <header className={`${styles.flexColumnCenter} ${styles.weatherHeading}`}>
+      <h1 className={styles.h1}>
         Weather
-      </Text>
-      <FormControl
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        mb="1.2rem"
-      >
-        <FormLabel htmlFor="use-geolocation" mb="0" fontWeight={400}>
+      </h1>
+      <div className={`${styles.formControl} ${styles.geolocationToggleContainer}`}>
+        <label htmlFor="use-geolocation" className={styles.formLabel}>
           Use geolocation?
-        </FormLabel>
-        <Switch
+        </label>
+        <input
+          type="checkbox"
           id="use-geolocation"
-          colorScheme="twitter"
+          className={styles.switch}
           onChange={handleGeolocation}
-          isChecked={isGeolocation}
+          checked={isGeolocation}
         />
-      </FormControl>
+      </div>
       {isGeolocation
-        ? <Box mt="1rem" w="12rem">
+        ? <div className={styles.getLocationButtonContainer}>
           <FilledButton onClick={onClick} text="Get Location" />
-        </Box>
-        : <FormControl
-          display="flex"
-          as="form"
+        </div>
+        : <form
           onSubmit={
-            onSubmit as unknown as React.FormEventHandler<HTMLDivElement>
+            onSubmit as unknown as React.FormEventHandler<HTMLFormElement>
           }
-          mt="1rem"
-          flexDirection={{
-            base: 'column',
-            md: 'row'
-          }}
-          alignItems={{
-            base: 'center',
-            md: 'unset'
-          }}
-          justifyContent="center"
+          className={`${styles.cityForm} ${styles.flexColumnCenter}`}
         >
-          <Input
+          <input
             placeholder="Your City"
             required
-            variant="outline"
-            w="18rem"
-            maxW="18rem"
-            _placeholder={{ color: 'secondaryText' }}
+            className={styles.cityInput}
           />
-          <Flex
-            ml="1rem"
-            w="10rem"
-            maxW="10rem"
-            mt={{
-              base: '1.5rem',
-              md: 'unset'
-            }}
-          >
+          <div className={styles.checkButtonContainer}>
             <FilledButton type="submit" text="Check" h="2.5rem" />
-          </Flex>
-        </FormControl>
+          </div>
+        </form>
       }
       {error &&
-        <Alert status="error" mt={4}>
-          <AlertIcon />
+        <div className={styles.alertError}>
+          <EnvironmentOutlined className={styles.alertIcon} />
           {error.message}
-        </Alert>
+        </div>
       }
-    </Flex>
+    </header>
   )
 }

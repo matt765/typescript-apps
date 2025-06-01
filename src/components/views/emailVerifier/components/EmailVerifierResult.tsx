@@ -1,7 +1,5 @@
-import {
-  Box, Flex, Spinner, Text
-} from '@chakra-ui/react'
 import { Loader } from '../../../loader/Loader'
+import styles from '../styles/EmailVerifierResult.module.scss'
 
 interface ResultProps {
   validationResult: string;
@@ -13,27 +11,14 @@ export const Result = ({
 }: ResultProps) => {
   return (
     <>
-      <Flex
-        h="3.5rem"
-        textAlign="center"
-        fontSize="1.3rem"
-        fontFamily="Quicksand"
-        mb="3rem"
-        w="27rem"
-        px="1rem"
-        justify="center"
-        alignItems="flex-start"
-      >
+      <div className={styles.resultContainer}>
         {loading
           ? <Loader data-testid="spinner" size="lg" />
-          : <Text variant="h3" as="h3" mt="0.5rem" px={{
-            base: '2rem',
-            md: '1rem'
-          }}>
+          : <p className={styles.resultText}>
             {validationResult}
-          </Text>
+          </p>
         }
-      </Flex>
+      </div>
     </>
   )
 }

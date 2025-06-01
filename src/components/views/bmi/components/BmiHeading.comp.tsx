@@ -1,16 +1,14 @@
-import {
-  Flex, Heading, Text
-} from '@chakra-ui/react'
+import styles from '../styles/BmiHeading.module.scss'
 
 export const BmiHeadingComp = () => {
   return (
-    <Flex as="header" flexDirection="column" alignItems="center">
-      <Heading as="h1" fontWeight={300} fontSize="5xl">
+    <header className={styles.bmiHeader}>
+      <h1 className={styles.mainHeading}>
         BMI Calculator
-      </Heading>
-      <Text fontSize="lg" textAlign="center" mt="1rem" mb="0.5rem">
+      </h1>
+      <p className={styles.subHeading}>
         Input your measures and get your BMI
-      </Text>
-    </Flex>
+      </p>
+    </header>
   )
 }

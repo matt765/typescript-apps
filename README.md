@@ -2,7 +2,7 @@
 Open source collection of small applications written in ReactJS and TypeScript.
  
 ## Tech stack
-React, NextJS, TypeScript, Chakra UI, React Query, Framer Motion, React Testing Library
+React, NextJS, TypeScript, SCSS Modules, React Query, Framer Motion, React Testing Library
 
 ## Live link
 [https://typescriptapps.netlify.app/](https://typescriptapps.netlify.app/)

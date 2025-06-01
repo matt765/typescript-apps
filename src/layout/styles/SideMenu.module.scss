@@ -1,0 +1,115 @@
+.sideMenuContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border-width: 0px;
+  border-style: solid;
+  border-color: var(--border-main);
+  backdrop-filter: blur(10px);
+  transition: width 0.3s ease;
+}
+
+.sideMenuOpen {
+  width: 17rem;
+}
+
+.sideMenuClosed {
+  width: 4rem;
+}
+
+.sideMenuContainer {
+  background-color: var(--primary-bg);
+}
+
+.fullScreen {
+  box-shadow: none;
+  border-radius: 0px;
+}
+
+.notFullScreen {
+  box-shadow: var(--box-shadow-light);
+  border-radius: 15px;
+}
+
+body[data-theme='dark'] .notFullScreen {
+  box-shadow: var(--box-shadow-dark);
+}
+
+.menuItemsList {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.6rem;
+  overflow-y: auto;
+  height: calc(100% - 5rem);
+}
+
+.menuItemsListOpen {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.menuItemsListClosed {
+  margin-left: 0.3rem;
+  align-items: center;
+}
+
+.sideMenuFooter {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.footerOpen {
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+
+.footerClosed {
+  justify-content: center;
+}
+
+.githubLink {
+  display: flex;
+  width: 100%;
+  margin-left: 1rem;
+  margin-right: 0.7rem;
+  height: 2.5rem;
+  align-items: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--border-gray);
+  border-radius: 10px;
+  justify-content: center;
+  cursor: pointer;
+  fill: var(--secondary-text);
+  color: var(--secondary-text);
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.githubLink:hover {
+  background-color: var(--gray-hover-bg);
+}
+
+.toggleButton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  fill: var(--secondary-text);
+}
+
+@media (max-width: 1200px) {
+  .sideMenuContainer {
+    display: none;
+  }
+}
+
+@media (min-width: 1536px) {
+  .sideMenuOpen {
+    width: 18.5rem;
+  }
+}

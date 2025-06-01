@@ -1,10 +1,6 @@
 import React, { useRef } from 'react'
-import {
-  Box,
-  IconButton,
-  Flex
-} from '@chakra-ui/react'
-import { RepeatIcon } from '@chakra-ui/icons'
+import { RefreshIcon } from '../../../assets/icons/RefreshIcon' // Assuming RefreshIcon is the correct component
+import styles from './styles/TicTacToe.module.scss'
 
 import { useTicTacToe } from './useTicTacToe'
 import { TicTacToeGrid } from './components/TicTacToeGrid'
@@ -17,33 +13,23 @@ export const TicTacToe = () => {
   const closeButtonRef = useRef<HTMLButtonElement>(null)
 
   return (
-    <Box>
+    <div className={styles.ticTacToeContainer}>
       <TicTacToeGrid cells={cells} play={play} />
-      <Flex w="100%" justify="center" mt="1rem" >
-        <IconButton
+      <div className={styles.flexCenter}>
+        <button
           aria-label="Reset game"
-          icon={<RepeatIcon boxSize={7} />}
-          mt={4}
+          className={styles.resetButton}
           onClick={reset}
-          w="4rem"
-          h="4rem"
-          bgColor="ticTacToeBg"
-          color="ticTacToeIcon"
-          borderStyle="solid"
-          borderWidth="1px"
-          borderColor="ticTacToeBorder"
-          _hover={{
-            backgroundColor: 'ticTacToeHoverBg',
-            borderColor: 'ticTacToeHoverBorder'
-          }}
-        />
-      </Flex>
+        >
+          <RefreshIcon className={styles.resetIcon} />
+        </button>
+      </div>
       <TicTacToeAlert
         isAlertDialogOpen={isAlertDialogOpen}
         alertDialogText={alertDialogText}
         onCloseAlertDialog={onCloseAlertDialog}
         leastDestructiveRef={closeButtonRef}
       />
-    </Box>
+    </div>
   )
 }

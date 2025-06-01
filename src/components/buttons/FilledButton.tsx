@@ -1,63 +1,53 @@
-import {
-  Button, Icon, useColorMode
-} from '@chakra-ui/react'
-import {
-  FunctionComponent, ReactElement
-} from 'react'
+import { FunctionComponent, ReactElement, SVGProps } from "react";
+import styles from "./styles/FilledButton.module.scss";
 
 interface FilledButtonProps {
   text: string;
-  type?: 'button' | 'submit' | 'reset' | undefined;
+  type?: "button" | "submit" | "reset" | undefined;
   leftIcon?: ReactElement;
   onClick?: () => void;
   isLoading?: boolean;
   h?: string;
-  icon?: FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  icon?: FunctionComponent<SVGProps<SVGSVGElement>>;
 }
 
 export const FilledButton = ({
   text,
-  type,
+  type = "button",
   leftIcon,
   onClick,
   isLoading,
-  h = '3rem',
-  icon
+  h = "3rem", // Default height
+  icon: IconComponent, // Renamed to avoid conflict if we use a variable named 'icon'
 }: FilledButtonProps) => {
-  const {
-    colorMode, toggleColorMode
-  } = useColorMode()
+  // Construct class names
+  const buttonClasses = `
+    ${styles.filledButton}
+    ${isLoading ? styles.disabled : ""}
+  `;
+
+  // Style for height if provided
+  const buttonStyle = {
+    height: h,
+    minHeight: h, // Ensure minHeight is also set
+  };
+
   return (
-    <Button
-      w="100%"
-      justifyContent="center"
-      alignItems="center"
-      h={h}
-      borderRadius="10px"
+    <button
+      className={buttonClasses.trim()}
+      style={buttonStyle}
       type={type}
-      cursor="pointer"
-      display="flex"
-      color="coloredButtonText"
-      bg="coloredButtonBg"
-      _hover={{ bg: 'coloredButtonHoverBg' }}
-      _active={{ bg: 'coloredButtonActiveBg' }}
-      leftIcon={leftIcon}
-      onClick={isLoading ? () => {} : onClick}
-      minH={h}
-      fontFamily="Quicksand"
-      letterSpacing="0.5px"
-      fontWeight="600"
-      fontSize="0.9rem"
-      boxShadow={colorMode === 'light' ? '2px 8px 26px -9px rgba(31, 60, 119, 1)' : ''}
-      pr="1.3rem"
-      isDisabled={isLoading}
-      sx={{ '& svg': {
-        width: '15px !important',
-        height: '15px !important',
-        fill: 'rgb(255,255,255,0.7)'
-      } }}
+      onClick={isLoading ? undefined : onClick}
+      disabled={isLoading}
     >
-      {icon ? <Icon as={icon} boxSize={7} /> : text}
-    </Button>
-  )
-}
+      {leftIcon && <span className={styles.buttonIcon}>{leftIcon}</span>}
+      {IconComponent && !leftIcon && (
+        <IconComponent className={styles.buttonIcon} />
+      )}
+      {!IconComponent && text}
+      {IconComponent && text && (
+        <span className={styles.buttonTextWithIcon}>{text}</span>
+      )}
+    </button>
+  );
+};

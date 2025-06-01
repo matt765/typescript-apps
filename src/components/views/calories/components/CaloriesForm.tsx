@@ -1,18 +1,5 @@
-import {
-  Center,
-  Flex,
-  FormControl,
-  FormLabel,
-  HStack,
-  Input,
-  InputGroup,
-  InputRightAddon,
-  Radio,
-  RadioGroup,
-  Select,
-  Switch,
-  Text
-} from '@chakra-ui/react'
+import * as React from 'react' // Added React
+import styles from '../styles/CaloriesForm.module.scss' // Added
 
 import { TransparentButton } from '../../../buttons/TransparentButton'
 import { useCaloriesCounter } from '../utils/useCaloriesCounter'
@@ -36,109 +23,98 @@ export const CaloriesForm = () => {
   } = useCaloriesCounter()
 
   return (
-    <Flex
-      flexDirection="column"
-      gap={4}
-      w="100%"
-      mx="auto"
-      my={4}
-      as="form"
-      pb="2rem"
-      onSubmit={calculate}
+    <form
+      className={styles.caloriesForm} // Changed from Flex, as="form"
+      onSubmit={(e) => {
+        e.preventDefault() // Prevent default form submission
+        calculate(e) // Pass event to calculate
+      }}
     >
-      <Flex alignItems="center" mx="auto" gap={2}>
-        <Text variant="primaryText">Metric</Text>
-        <Switch
-          id="use-geolocation"
-          isChecked={isImperial}
-          onChange={toggleImperial}
-          _checked={{ '> span': { bg: 'blue.400' } }}
-        />
-        <Text variant="primaryText">Imperial</Text>
-      </Flex>
-      <FormControl as="fieldset">
-        <FormLabel as="legend">
-          <Text variant="inputLabel">Age</Text>
-        </FormLabel>
-        <Input
+      <div className={styles.unitSwitchContainer}> {/* Changed from Flex */}
+        <span className={styles.primaryText}>Metric</span> {/* Changed from Text */}
+        <label className={styles.switch}> {/* Custom switch implementation */}
+          <input
+            type="checkbox"
+            id="use-geolocation" // Kept id for potential label association if needed
+            checked={isImperial}
+            onChange={toggleImperial} // Directly pass toggleImperial
+          />
+          <span className={`${styles.slider} ${styles.round}`}></span>
+        </label>
+        <span className={styles.primaryText}>Imperial</span> {/* Changed from Text */}
+      </div>
+      <fieldset> {/* Removed styles.formControl as it was empty */}
+        <legend className={styles.inputLabel}> {/* Changed from FormLabel and Text */}
+          Age
+        </legend>
+        <input
           type="number"
           placeholder="Input your age"
-          onChange={setAge}
+          onChange={setAge} // Pass event directly
           value={age}
-          isInvalid={errors.age}
           required
-          color="primaryText"
-          borderColor="inputBorder"
-          _placeholder={{ color: 'secondaryText' }}
+          className={`${styles.inputField} ${errors.age ? styles.invalid : ''}`} // Changed from Input
         />
-      </FormControl>
-      <FormControl as="fieldset">
-        <FormLabel as="legend">
-          <Text variant="inputLabel">Gender</Text>
-        </FormLabel>
-        <RadioGroup value={gender} onChange={setGender} defaultValue="male">
-          <HStack spacing="24px">
-            <Radio value="male">
-              <Text variant="inputLabel">Male</Text>
-            </Radio>
-            <Radio value="female">
-              <Text variant="inputLabel">Female</Text>
-            </Radio>
-          </HStack>
-        </RadioGroup>
-      </FormControl>
-      <FormControl as="fieldset">
-        <FormLabel as="legend">
-          <Text variant="inputLabel">Height</Text>
-        </FormLabel>
-        <InputGroup>
-          <Input
+      </fieldset>
+      <fieldset> {/* Removed styles.formControl */}
+        <legend className={styles.inputLabel}> {/* Changed from FormLabel and Text */}
+          Gender
+        </legend>
+        {/* Changed from RadioGroup and HStack */}
+        <div className={styles.radioGroupContainer}>
+          <label className={styles.radioLabel}>
+            <input type="radio" value="male" name="gender" checked={gender === 'male'} onChange={() => setGender('male')} />
+            Male
+          </label>
+          <label className={styles.radioLabel}>
+            <input type="radio" value="female" name="gender" checked={gender === 'female'} onChange={() => setGender('female')} />
+            Female
+          </label>
+        </div>
+      </fieldset>
+      <fieldset> {/* Removed styles.formControl */}
+        <legend className={styles.inputLabel}> {/* Changed from FormLabel and Text */}
+          Height
+        </legend>
+        <div className={styles.inputGroup}> {/* Changed from InputGroup */}
+          <input
             placeholder="Input your height"
-            onChange={setHeight}
+            onChange={setHeight} // Pass event directly
             value={height}
             type="number"
-            isInvalid={errors.height}
             required
-            borderColor="inputBorder"
-            color="primaryText"
-            _placeholder={{ color: 'secondaryText' }}
+            className={`${styles.inputField} ${errors.height ? styles.invalid : ''}`} // Changed from Input
           />
-          {/* eslint-disable-next-line react/no-children-prop */}
-          <InputRightAddon children={<Text variant="inputLabel">{isImperial ? 'in' : 'cm'}</Text>} />
-        </InputGroup>
-      </FormControl>
-      <FormControl as="fieldset">
-        <FormLabel as="legend">
-          <Text variant="inputLabel">Weight</Text>
-        </FormLabel>
-        <InputGroup>
-          <Input
+          <span className={styles.inputRightAddon}>{isImperial ? 'in' : 'cm'}</span> {/* Changed from InputRightAddon and Text */}
+        </div>
+      </fieldset>
+      <fieldset> {/* Removed styles.formControl */}
+        <legend className={styles.inputLabel}> {/* Changed from FormLabel and Text */}
+          Weight
+        </legend>
+        <div className={styles.inputGroup}> {/* Changed from InputGroup */}
+          <input
             placeholder="Input your weight"
             value={weight}
-            onChange={setWeight}
+            onChange={setWeight} // Pass event directly
             type="number"
-            isInvalid={errors.weight}
             required
-            borderColor="inputBorder"
-            color="primaryText"
-            _placeholder={{ color: 'secondaryText' }}
+            className={`${styles.inputField} ${errors.weight ? styles.invalid : ''}`} // Changed from Input
           />
-          {/* eslint-disable-next-line react/no-children-prop */}
-          <InputRightAddon children={<Text variant="inputLabel">{isImperial ? 'lb' : 'kg'}</Text>} />
-        </InputGroup>
-      </FormControl>
-      <FormControl as="fieldset" sx={{ wordBreak: 'break-all' }}>
-        <FormLabel as="legend">
-          <Text variant="inputLabel">Activity</Text>
-        </FormLabel>
-        <Select
-          placeholder="Select option"
-          onChange={setActivity}
+          <span className={styles.inputRightAddon}>{isImperial ? 'lb' : 'kg'}</span> {/* Changed from InputRightAddon and Text */}
+        </div>
+      </fieldset>
+      <fieldset className={styles.breakWord}> {/* Removed styles.formControl, kept breakWord */}
+        <legend className={styles.inputLabel}> {/* Changed from FormLabel and Text */}
+          Activity
+        </legend>
+        <select
+          onChange={setActivity} // Pass event directly
           value={activity}
-          isInvalid={errors.activity}
           required
-          borderColor="inputBorder"
+          className={`${styles.selectField} ${errors.activity ? styles.invalid : ''}`} // Changed from Select
         >
+          <option value="" disabled hidden>Select option</option> {/* Corrected placeholder for select */}
           <option value="1">Basic metabolic rate</option>
           <option value="1.2">Sedentary: little/no exercise</option>
           <option value="1.375">Light: exercise 1-3 times/week</option>
@@ -152,18 +128,16 @@ export const CaloriesForm = () => {
           <option value="2.2">
             Extra active: very intense exercise daily or physical job
           </option>
-        </Select>
-      </FormControl>
-      <Flex w="100%" justify="center" mt="1rem">
+        </select>
+      </fieldset>
+      <div className={styles.buttonContainer}> {/* Changed from Flex */}
         <TransparentButton text="Calculate" type="submit" />
-      </Flex>
+      </div>
       {Object.values(errors).some((value) => value === true) &&
-        <Center>
-          <Text color="red.300" mt="1rem">
-            Some of the values are invalid
-          </Text>
-        </Center>
+        <div className={styles.errorMessage}> {/* Changed from Center and Text */}
+          Some of the values are invalid
+        </div>
       }
-    </Flex>
+    </form>
   )
 }

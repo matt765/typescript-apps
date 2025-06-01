@@ -1,17 +1,8 @@
 import * as React from 'react'
-import {
-  Flex,
-  FormControl,
-  FormLabel,
-  Text,
-  Input,
-  InputGroup,
-  InputRightAddon,
-  Switch
-} from '@chakra-ui/react'
 
 import { calcBMI } from '../utils/calcBMI'
 import { TransparentButton } from '../../../buttons/TransparentButton'
+import styles from '../styles/BmiForm.module.scss'
 
 export const BmiFormComp = () => {
   const [isImperial, setIsImperial] = React.useState(false)
@@ -27,84 +18,68 @@ export const BmiFormComp = () => {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    const bmi = calcBMI({
+    const bmiValue = calcBMI({
       height,
       weight,
       isImperial
     })
 
-    setBmi(bmi)
+    setBmi(bmiValue)
   }
 
   return (
-    <Flex
-      flexDirection="column"
-      gap={4}
-      w={{
-        base: '90%',
-        md: '25rem',
-        xl: '25rem'
-      }}
-      mx="auto"
-      my={4}
-      as="form"
+    <form
+      className={styles.bmiForm}
       onSubmit={onSubmit}
-      justifyContent="center"
-      alignItems="center"
     >
-      <Flex alignItems="center" mx="auto" gap={2}>
+      <div className={styles.switchContainer}>
         Metric
-        <Switch
-          id="toggle-imperial"
-          _checked={{ '> span': { bg: 'blue.400' } }}
-          checked={isImperial}
-          onChange={() => setIsImperial(!isImperial)}
-        />
+        <label className={styles.switch}>
+          <input
+            type="checkbox"
+            id="toggle-imperial"
+            checked={isImperial}
+            onChange={() => setIsImperial(!isImperial)}
+          />
+          <span className={styles.slider}></span>
+        </label>
         Imperial
-      </Flex>
-      <FormControl as="fieldset">
-        <FormLabel as="legend">Height</FormLabel>
-        <InputGroup>
-          <Input
+      </div>
+      <fieldset className={styles.formControl}>
+        <legend className={styles.formLabel}>Height</legend>
+        <div className={styles.inputGroup}>
+          <input
             placeholder="Input your height"
             type="number"
             value={height}
             onChange={changeHeight}
             required
-            borderColor="inputBorder"
+            className={styles.input}
           />
-          {/* eslint-disable-next-line react/no-children-prop */}
-          <InputRightAddon children={<p>{isImperial ? 'in' : 'cm'}</p>} />
-        </InputGroup>
-      </FormControl>
-      <FormControl as="fieldset" mb="1.5rem">
-        <FormLabel as="legend">Weight</FormLabel>
-        <InputGroup>
-          <Input
+          <span className={styles.inputRightAddon}><p>{isImperial ? 'in' : 'cm'}</p></span>
+        </div>
+      </fieldset>
+      <fieldset className={`${styles.formControl} ${styles.marginBottom}`}>
+        <legend className={styles.formLabel}>Weight</legend>
+        <div className={styles.inputGroup}>
+          <input
             placeholder="Input your weight"
             type="number"
             value={weight}
             onChange={changeWeight}
             required
-            borderColor="inputBorder"
+            className={styles.input}
           />
-          {/* eslint-disable-next-line react/no-children-prop */}
-          <InputRightAddon children={<p>{isImperial ? 'lb' : 'kg'}</p>} />
-        </InputGroup>
-      </FormControl>
+          <span className={styles.inputRightAddon}><p>{isImperial ? 'lb' : 'kg'}</p></span>
+        </div>
+      </fieldset>
       <TransparentButton text="Calculate" type="submit" />
       {bmi &&
-        <Flex
-          alignItems="center"
-          justifyContent="center"
-          flexDirection="column"
-          mt="1rem"
-          mb="3rem"
-        >
-          <Text fontSize="4xl">Your BMI</Text>
-          <Text fontSize="2xl">{bmi}</Text>
-        </Flex>
+        <div className={styles.resultContainer}>
+          <p className={styles.resultHeading}>Your BMI</p>
+          <p className={styles.resultValue}>{bmi}</p>
+        </div>
       }
-    </Flex>
+    </form>
   )
 }

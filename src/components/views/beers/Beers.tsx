@@ -1,7 +1,5 @@
 import * as React from 'react'
-import {
-  Box, Heading, Text
-} from '@chakra-ui/react'
+import styles from './styles/Beers.module.scss'
 
 export const Beers = ({
   children,
@@ -10,18 +8,15 @@ export const Beers = ({
   React.HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
 >) =>
-  <Box as="section" {...rest} maxH="100%" p="3rem" color="primaryText" borderRadius={{
-    base: '0',
-    xl: '15px'
-  }}>
-    <Box as="header" mb={10}>
-      <Text variant ="h1" as="h1" size="3xl" fontWeight={300} mb="1rem">
+  <section {...rest} className={styles.beersSection}>
+    <header className={styles.beersHeader}>
+      <h1 className={styles.mainHeading}>
         View our beers
-      </Text>
-      <Text variant ="h3" as="h3" fontWeight={300}>
+      </h1>
+      <h3 className={styles.subHeading}>
         Choose your beverage and find out the details
-      </Text>
-    </Box>
+      </h3>
+    </header>
     {children}
-  </Box>
+  </section>
 

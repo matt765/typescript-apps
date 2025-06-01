@@ -1,0 +1,27 @@
+.beersSection {
+  max-height: 100%;
+  padding: 3rem;
+  color: var(--primary-text);
+  border-radius: 0;
+
+  @media (min-width: 80em) { 
+    border-radius: 15px;
+  }
+}
+
+.beersHeader {
+  margin-bottom: 2.5rem; 
+}
+
+.mainHeading {
+  font-size: 2.25rem; 
+  font-weight: 300; 
+  margin-bottom: 1rem;
+  color: var(--header-text); 
+}
+
+.subHeading {
+  font-size: 1.25rem; 
+  font-weight: 300; 
+  color: var(--primary-text); 
+}

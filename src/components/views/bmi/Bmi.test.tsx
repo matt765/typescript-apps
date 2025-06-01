@@ -2,6 +2,7 @@ import {
   render, fireEvent, cleanup
 } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+import { afterEach, describe, it, expect } from '@jest/globals';
 
 import { Bmi } from './Bmi'
 

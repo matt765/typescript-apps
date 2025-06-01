@@ -1,0 +1,19 @@
+.caloriesHeadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem; 
+}
+
+.headingText {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--header-text);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.subHeadingText {
+  color: var(--primary-text);
+  text-align: center;
+}

@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useBoolean } from '@chakra-ui/react'
 
 const win = [
   [0, 1, 2],
@@ -25,7 +24,7 @@ interface TicTacToe {
 export const useTicTacToe = (): TicTacToe => {
   const [playerState, setPlayerState] = useState(true)
   const [cells, setCells] = useState(Array.from({ length: 9 }, () => ''))
-  const [isAlertDialogOpen, setIsAlertDialogOpen] = useBoolean(false)
+  const [isAlertDialogOpen, setIsAlertDialogOpen] = useState(false)
   const [alertDialogText, setAlertDialogText] = useState('')
 
   const reset = () => {
@@ -42,10 +41,10 @@ export const useTicTacToe = (): TicTacToe => {
       const result = whoWon(newCells, currentClass)
       if (result) {
         setAlertDialogText(`Player ${currentClass} won!`)
-        setIsAlertDialogOpen.on()
+        setIsAlertDialogOpen(true)
       } else if (newCells.filter((cell) => cell).length > 8) {
         setAlertDialogText('Draw!')
-        setIsAlertDialogOpen.on()
+        setIsAlertDialogOpen(true)
       }
 
       setCells(newCells)
@@ -62,7 +61,7 @@ export const useTicTacToe = (): TicTacToe => {
   }
 
   const onCloseAlertDialog = () => {
-    setIsAlertDialogOpen.off()
+    setIsAlertDialogOpen(false)
     reset()
   }
 

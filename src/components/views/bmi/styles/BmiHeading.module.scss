@@ -1,0 +1,19 @@
+.bmiHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary-text);
+}
+
+.mainHeading {
+  font-weight: 300;
+  font-size: 3rem; 
+  margin: 0;
+}
+
+.subHeading {
+  font-size: 1.125rem; 
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}

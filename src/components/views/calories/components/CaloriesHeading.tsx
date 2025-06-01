@@ -1,12 +1,13 @@
-import {
-  Flex, Heading, Text
-} from '@chakra-ui/react'
+import styles from '../styles/CaloriesHeading.module.scss' // Added
 
-export const CaloriesHeading = () =>
-  <Flex as="header" flexDirection="column" alignItems="center">
-    <Text variant="h2" as="h2" mb="1rem" textAlign="center">
+export const CaloriesHeading = () => (
+  <header className={styles.caloriesHeadingContainer}> {/* Changed from Flex, as="header" */}
+    <h2 className={styles.headingText}> {/* Changed from Text, as="h2" */}
       Calories Calculator
-    </Text>
-    <Text variant="primaryText" textAlign="center">Input your measures and get your daily calories</Text>
-  </Flex>
+    </h2>
+    <p className={styles.subHeadingText}> {/* Changed from Text */}
+      Input your measures and get your daily calories
+    </p>
+  </header>
+)
 

@@ -1,0 +1,154 @@
+.caloriesForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; 
+  width: 100%;
+  margin: 1rem auto; 
+  padding-bottom: 2rem;
+}
+
+.unitSwitchContainer {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  gap: 0.5rem; 
+}
+
+.primaryText {
+  color: var(--primary-text);
+}
+
+.inputLabel {
+  color: var(--input-label);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.inputField {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--input-border);
+  border-radius: 0.25rem;
+  color: var(--primary-text);
+  background-color: var(--input-bg);
+
+  &::placeholder {
+    color: var(--secondary-text);
+  }
+
+  &.invalid {
+    border-color: var(--error-color); 
+  }
+}
+
+.radioGroupContainer {
+  display: flex;
+  gap: 1.5rem; 
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--input-label);
+  cursor: pointer;
+}
+
+.inputGroup {
+  display: flex;
+}
+
+.inputRightAddon {
+  padding: 0.5rem 0.75rem;
+  background-color: var(--input-addon-bg);
+  border: 1px solid var(--input-border);
+  border-left: 0;
+  border-radius: 0 0.25rem 0.25rem 0;
+  color: var(--input-label);
+  white-space: nowrap;
+}
+
+.selectField {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--input-border);
+  border-radius: 0.25rem;
+  color: var(--primary-text);
+  background-color: var(--input-bg);
+
+  &.invalid {
+    border-color: var(--error-color);
+  }
+
+  option {
+    background-color: var(--input-bg);
+    color: var(--primary-text);
+  }
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.errorMessage {
+  color: var(--error-color); 
+  margin-top: 1rem;
+  text-align: center;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px; 
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--switch-bg); 
+  transition: .4s;
+  border-radius: 20px; 
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px; 
+  width: 14px;  
+  left: 3px;    
+  bottom: 3px;  
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--switch-checked-bg); 
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--switch-checked-bg);
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px); 
+}
+
+.breakWord {
+ word-break: break-all;
+}

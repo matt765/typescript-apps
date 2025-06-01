@@ -24,35 +24,47 @@ a {
   box-sizing: border-box;
 }
 
-/* Custom scrollbar */
+body {
+  font-family: 'Jost';
+  background-color: black;
+}
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: "red";
-}
-::-webkit-scrollbar {
-  width: 20px;
+  scrollbar-color: rgb(255,255,255,0.1);
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(120, 168, 231, 0.25);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(120, 168, 231, 0.5)
-}
-
-*::-webkit-scrollbar-track {
-  background: transparent;
+*::-webkit-scrollbar {
+  width: 10px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: "red";
-  border-radius: 0;
+  background: rgb(255,255,255,0.1);
+  border-radius: 30px;
   border: none;
 }
 
-:root{
-  scrollbar-color: rgba(120, 168, 231, 0.25) rgb(255, 255, 255, 0) !important;
+*::-webkit-scrollbar-thumb:hover {
+  background: rgb(255,255,255,0.1);
+}
 
+*::-webkit-scrollbar-track {
+  background: rgb(255,255,255,0);
+}
+
+:root {
+  scrollbar-color: rgb(255,255,255,0.1) rgb(255,255,255,0.1);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0,0,0,0);
+}
+
+::-webkit-input-placeholder {
+  color: rgb(255,255,255,0.4) !important;
+}
+
+option, optgroup {
+  -webkit-appearance: none !important;
 }

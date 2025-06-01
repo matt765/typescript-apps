@@ -1,11 +1,10 @@
-import { Flex } from '@chakra-ui/react'
-
 import { CurrentWeather } from './CurrentWeather'
 import { DayWeather } from './DayWeather'
+import styles from './styles/WeatherMain.module.scss'
 
 export const WeatherMain = () =>
-  <Flex flexDirection="column">
+  <div className={styles.weatherMain}>
     <CurrentWeather/>
     <DayWeather/>
-  </Flex>
+  </div>
 

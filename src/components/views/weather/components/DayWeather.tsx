@@ -1,9 +1,7 @@
-import {
-  Badge, Flex, SimpleGrid, Skeleton, Text
-} from '@chakra-ui/react'
 import Image from 'next/image'
 
 import { useWeather } from '../utils/useWeather'
+import styles from './styles/DayWeather.module.scss'
 
 export const DayWeather = () => {
   const {
@@ -16,39 +14,20 @@ export const DayWeather = () => {
 
   if (position && !forecast) {
     return (
-      <Flex
-        alignItems="center"
-        justifyContent="center"
-        width="100vw"
-        height="20vh"
-      >
-        <Skeleton height="2rem" />
-      </Flex>
+      <div className={styles.skeletonContainer}>
+        <div className={styles.skeleton} />
+      </div>
     )
   }
 
   return (
-    <SimpleGrid
-      columns={{
-        md: 3,
-        lg: 4
-      }}
-      textAlign="center"
-      pb="3rem"
-    >
+    <div className={styles.dayWeatherGrid}>
       {forecast?.forecast?.forecastday[0]?.hour.map((h) =>
-        <Flex
+        <div
           key={h.time_epoch}
-          flexDirection="column"
-          boxShadow="sm"
-          p={2}
-          borderRadius={4}
-          _hover={{ boxShadow: 'outline' }}
-          transition="200ms"
-          justifyContent="center"
-          alignItems="center"
+          className={styles.weatherCard}
         >
-          <Text>{h.time.split(' ')[1]}</Text>
+          <p className={styles.time}>{h.time.split(' ')[1]}</p>
           {h.condition.icon &&
             <Image
               src={`https:${h.condition.icon}`}
@@ -58,22 +37,16 @@ export const DayWeather = () => {
               objectFit="contain"
             />
           }
-          <Badge
-            textTransform="capitalize"
-            fontSize="sm"
-            w={{
-              base: '10rem',
-              md: '80%'
-            }}
-            fontWeight="400"
+          <span
+            className={styles.conditionText}
           >
             {h.condition.text}
-          </Badge>
-          <Text fontSize="lg" mt={2} fontWeight={600}>
+          </span>
+          <p className={styles.temperature}>
             {h.temp_c}°C
-          </Text>
-        </Flex>
+          </p>
+        </div>
       )}
-    </SimpleGrid>
+    </div>
   )
 }

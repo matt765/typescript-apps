@@ -1,75 +1,65 @@
-import {
-  Box, Flex, Icon, useColorMode
-} from '@chakra-ui/react'
-import {
-  FunctionComponent, useEffect, useState
-} from 'react'
-import { useRouter } from 'next/router'
+import { FunctionComponent, useEffect, useState, SVGProps } from 'react'
+import { useRouter, usePathname } from 'next/navigation' // Changed from 'next/router'
+import styles from '../../styles/SideMenuItem.module.scss'
+import useLayout from '../../useLayout' // Corrected path
 
 type Props = {
-  icon: FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  icon: FunctionComponent<SVGProps<SVGSVGElement>>;
   title: string;
   path: string;
   isSideMenuOpen: boolean;
 };
 
-export const SideMenuItem = ({
-  icon, title, path, isSideMenuOpen
-}: Props) => {
+export const SideMenuItem = ({ icon: IconComponent, title, path, isSideMenuOpen }: Props) => {
   const router = useRouter()
+  const pathname = usePathname() // Added usePathname hook
   const [isActive, setIsActive] = useState(false)
-  const { colorMode } = useColorMode()
+  const { colorMode } = useLayout() // 'light' or 'dark'
 
   useEffect(() => {
     if (
-      router.pathname.includes(path) ||
-      router.pathname === '/' && title === 'E-mail verifier' ||
-      title === 'Beers Hub' && router.pathname.startsWith('/beer/')
+      pathname === path ||
+      (pathname === '/' && path === '/email-verifier') || // Assuming /email-verifier is the default for '/'
+      (title === 'Beers Hub' && pathname.startsWith('/beer/'))
     ) {
       setIsActive(true)
     } else {
       setIsActive(false)
     }
-  }, [router.pathname])
+  }, [pathname, path, title])
 
   const handleClick = () => {
     router.push(path)
   }
 
+  const itemClasses = [
+    styles.menuItem,
+    isActive ? styles.active : '',
+    colorMode === 'light' ? styles.lightTheme : styles.darkTheme, // For specific light/dark overrides not covered by CSS vars
+  ].join(' ').trim()
+
+  const titleClasses = [
+    styles.title,
+    // isActive ? styles.activeTitle : '', // if active title needs specific style not covered by .active .title
+  ].join(' ').trim()
+
   return (
-    <Flex
-      height="50px"
-      alignItems="center"
-      pl="1.1rem"
-      cursor="pointer"
-      bg={isActive ? 'activeBg' : 'rgb(0,0,0,0)'}
+    <div
+      className={itemClasses}
       onClick={handleClick}
-      _hover={{ bg: isActive ? '' : 'grayHoverBg' }}
-      fontSize="1.1rem"
-      overflow="hidden"
-      wrap="nowrap"
-      w="100%"
-      borderRadius="10px"
-      mb="0.1rem"
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleClick()}
+      title={title} // Accessibility: provide title for the div acting as a button
     >
-      <Box
-        height="20px"
-        mr="1.3rem"
-        sx={{ '& path': { fill: isActive ? 'coloredText' : 'grayIcon' } }}
-      >
-        <Icon as={icon} boxSize={6} />
-      </Box>
+      <div className={styles.iconContainer}>
+        <IconComponent className={styles.icon} /> {/* Apply styles.icon if needed for sizing/spacing */}
+      </div>
       {isSideMenuOpen &&
-        <Box
-          color={isActive ? 'coloredText' : 'primaryText'}
-          fontWeight={ colorMode === 'light' ? '500' : '400' }
-          fontFamily="Jost"
-          whiteSpace="nowrap"
-          letterSpacing="1px"
-        >
+        <span className={titleClasses}>
           {title}
-        </Box>
+        </span>
       }
-    </Flex>
+    </div>
   )
 }

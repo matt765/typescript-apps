@@ -1,0 +1,123 @@
+.mobileNavbarContainer {
+  display: flex; 
+  width: 100%;
+  height: 5rem;
+  background-color: var(--mobile-navbar-bg); 
+  justify-content: space-between;
+  align-items: center; 
+  padding: 0 1rem; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000; 
+}
+
+
+.hamburgerButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  z-index: 1002; 
+}
+
+.hamburgerLine {
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-text); 
+  border-radius: 2px;
+  transition: all 0.3s linear;
+}
+
+
+.hamburgerButton.open .hamburgerLine:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburgerButton.open .hamburgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerButton.open .hamburgerLine:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+
+
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-bg); 
+  z-index: 1001; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem; 
+}
+
+.mobileNavItemsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; 
+  margin-bottom: 2rem; 
+}
+
+.mobileNavbarItem {
+  text-align: center;
+  cursor: pointer;
+}
+
+.mobileNavbarItemText {
+  
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-size: 1.3rem;
+  color: var(--primary-text);
+  transition: color 0.2s;
+}
+
+.mobileNavbarItemText:hover {
+  color: var(--colored-text);
+}
+
+.githubLinkMobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-gray);
+  border-radius: 10px;
+  color: var(--primary-text);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.githubLinkMobile:hover {
+  background-color: var(--gray-hover-bg);
+}
+
+.githubIconMobile {
+  margin-right: 0.5rem;
+  fill: var(--primary-text);
+}
+
+
+@media (min-width: 1201px) { 
+  .mobileNavbarContainer {
+    display: none;
+  }
+  .mobileMenuOverlay {
+    display: none;
+  }
+}

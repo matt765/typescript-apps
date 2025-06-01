@@ -1,72 +1,40 @@
-import {
-  Container,
-  Grid
-} from '@chakra-ui/react'
 import React from 'react'
 
 import { CalculatorButton } from './components/CalculatorButton'
 import { CalculatorHeader } from './components/CalculatorHeader'
 import { useCalculator } from './useCalculator'
+import styles from './styles/Calculator.module.scss'
 
 export const Calculator = () => {
   const {
     screenValue, addToValue, addOperator, calculate, clear, deleteLast
   } = useCalculator()
 
-  return (
-    <Container
-      backgroundColor="calculatorBg"
-      borderRadius="md"
-      boxShadow="xl"
-      py="0"
-      mx={{
-        base: '0rem',
-        md: '0'
-      }}
-      maxW={{
-        base: '21.5rem',
-        md: '22.5rem'
-      }}
-      mt={{
-        base: '1rem',
-        md: '-2rem'
-      }}
-      mb={{
-        base: '2rem',
-        md: 'unset'
-      }}
-      px="0"
+  const buttons = [
+    '7', '8', '9', '÷',
+    '4', '5', '6', '*',
+    '1', '2', '3', '-',
+    '.', '0', '=', '+'
+  ];
 
-    >
+  return (
+    <div className={styles.calculatorContainer}>
       <CalculatorHeader
         screenValue={screenValue}
         clear={clear}
         deleteLast={deleteLast}
       />
-      <Grid templateColumns="repeat(4, 1fr)" gap={1}>
-        {[
-          '7',
-          '8',
-          '9',
-          '÷',
-          '4',
-          '5',
-          '6',
-          '*',
-          '1',
-          '2',
-          '3',
-          '-',
-          '.',
-          '0',
-          '=',
-          '+'
-        ].map((label) =>
+      <div className={styles.gridContainer}>
+        {buttons.map((label) =>
           <CalculatorButton
             key={label}
             label={label}
             clickHandler={() => {
-              if (isNaN(parseFloat(label)) && label !== '=') {
+              if (label === 'C') {
+                clear();
+              } else if (label === '⌫') {
+                deleteLast();
+              } else if (['÷', '*', '-', '+'].includes(label)) {
                 addOperator(label)
               } else if (label === '=') {
                 calculate()
@@ -76,7 +44,7 @@ export const Calculator = () => {
             }}
           />
         )}
-      </Grid>
-    </Container>
+      </div>
+    </div>
   )
 }

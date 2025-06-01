@@ -1,0 +1,37 @@
+.resultContainer {
+  height: 3.5rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 3rem;
+  width: 27rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.resultText {
+  
+  font-size: 1.75em; 
+  font-weight: 600; 
+  line-height: 1.2; 
+  margin-top: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: var(--primary-text); 
+
+  @media (min-width: 48em) { 
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.resultText.success {
+  color: var(--success-color);
+}
+
+.resultText.error {
+  color: var(--error-color);
+}

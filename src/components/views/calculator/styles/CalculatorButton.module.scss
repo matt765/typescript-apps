@@ -1,0 +1,30 @@
+.calculatorButton {
+  width: 100%;
+  height: 5rem;
+  font-size: 2rem;
+  background-color: var(--calculator-button-bg);
+  color: var(--calculator-button-text);
+  border: 1px solid var(--calculator-bg); 
+  border-radius: 5px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--calculator-button-hover-bg);
+  }
+}
+
+.operatorButton {
+  background-color: var(--calculator-operator-button-bg);
+  &:hover {
+    background-color: var(--calculator-operator-button-hover-bg);
+  }
+}
+
+.equalsButton {
+  background-color: var(--calculator-equal-button-bg);
+  &:hover {
+    background-color: var(--calculator-equal-button-hover-bg);
+  }
+}

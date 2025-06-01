@@ -1,0 +1,49 @@
+.screenContainer {
+  min-height: 3rem;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.screenInput {
+  width: 100%;
+  background-color: var(--calculator-header-bg); 
+  color: var(--calculator-display-text);
+  text-align: center;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  height: 6rem;
+  font-size: 1.7rem;
+  border-radius: 5px 5px 0 0;
+  box-sizing: border-box; 
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+}
+
+.headerButton {
+  width: 50%;
+  height: 5rem;
+  font-size: 1.5rem;
+  border-radius: 0;
+  background-color: var(--calculator-header-bg);
+  color: var(--calculator-button-text); 
+  font-weight: 300;
+  cursor: pointer;
+  border: 1px solid var(--calculator-bg); 
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--calculator-header-hover-bg);
+  }
+}
+
+.deleteButton {
+  color: var(--primary-text); 
+}

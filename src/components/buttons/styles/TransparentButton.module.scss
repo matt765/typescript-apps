@@ -1,0 +1,38 @@
+.transparentButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid var(--button-transparent-border-color);
+  background-color: transparent;
+  color: var(--button-transparent-text);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.transparentButton:hover {
+  background-color: var(--button-transparent-hover-bg);
+  color: var(--button-transparent-hover-text);
+  border-color: var(--button-transparent-hover-border-color);
+}
+
+.transparentButton:active {
+  background-color: var(--button-transparent-active-bg);
+}
+
+.transparentButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.buttonIcon {
+  width: 15px !important;
+  height: 15px !important;
+  fill: var(--button-icon-fill-transparent); 
+  margin-right: 0.5rem;
+}
