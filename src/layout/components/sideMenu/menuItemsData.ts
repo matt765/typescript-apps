@@ -5,6 +5,7 @@ import { HealthIcon } from "../../../assets/icons/HealthIcon";
 import { TicTacToeIcon } from "../../../assets/icons/TicTacToeIcon";
 import { CalculatorIcon } from "../../../assets/icons/CalculatorIcon";
 import { PlanetIcon } from "../../../assets/icons/PlanetIcon";
+import { NewtonsCradleIcon } from "../../../assets/icons/NewtonsCradleIcon";
 
 export const menuItems = [
   {
@@ -16,6 +17,11 @@ export const menuItems = [
     title: "Solar System",
     icon: PlanetIcon,
     path: "/solar-system",
+  },
+  {
+    title: "Newton's Crade",
+    icon: NewtonsCradleIcon,
+    path: "/newtons-cradle",
   },
   {
     title: "Color picker",
