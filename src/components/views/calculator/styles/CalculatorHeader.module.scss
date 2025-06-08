@@ -32,11 +32,11 @@
   height: 5rem;
   font-size: 1.5rem;
   border-radius: 0;
-  background-color: var(--calculator-header-bg);
+  background-color: transparent;
   color: var(--calculator-button-text); 
   font-weight: 300;
   cursor: pointer;
-  border: 1px solid var(--calculator-bg); 
+  border: 0px solid var(--border-main); 
   transition: background-color 0.2s ease;
 
   &:hover {

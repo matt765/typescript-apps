@@ -3,11 +3,49 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  border-width: 0px;
-  border-style: solid;
-  border-color: var(--border-main);
-  backdrop-filter: blur(10px);
+  position: relative;
+  backdrop-filter: blur(15px);
   transition: width 0.3s ease;
+  z-index: 2;
+  /* Usuń standardowy border */
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgba(133, 183, 213, 0.3);
+  border-radius: 15px;
+}
+
+/* Gradient border z zachowaniem border-radius */
+.sideMenuContaine2r::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: subtract;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+/* Wersja dla dark mode */
+body[data-theme="dark"] .sideMenuContai2ner::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(255, 255, 255, 0.02) 50%,
+    rgba(255, 255, 255, 0.05) 75%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
 }
 
 .sideMenuOpen {
@@ -23,8 +61,13 @@
 }
 
 .fullScreen {
-  box-shadow: none;
   border-radius: 0px;
+  box-shadow: none;
+}
+
+/* Ukryj gradient border w trybie fullscreen */
+.fullScreen::before {
+  display: none;
 }
 
 .notFullScreen {
@@ -32,7 +75,7 @@
   border-radius: 15px;
 }
 
-body[data-theme='dark'] .notFullScreen {
+body[data-theme="dark"] .notFullScreen {
   box-shadow: var(--box-shadow-dark);
 }
 

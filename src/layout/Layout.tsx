@@ -42,6 +42,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
           isSideMenuOpen={isSideMenuOpen}
           setIsSideMenuOpen={handleSideMenu} // Pass the handler from useLayout
         />
+        <div className={styles.overlay}></div>
         <main className={contentWrapperClasses}> {/* Changed Flex to main for semantics */}
           <div className={styles.contentBox}>
             {/* isLoading check is now at the top for the whole layout */}

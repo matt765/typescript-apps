@@ -1,52 +1,45 @@
-// src/layout/components/sideMenu/menuItemsData.ts
-import { BeerHubIcon } from '../../../assets/icons/BeerHubIcon'
-import { ColorPickerIcon } from '../../../assets/icons/ColorPickerIcon'
-import { EmailVerifierIcon } from '../../../assets/icons/EmailVerifierIcon'
-import { UserListIcon } from '../../../assets/icons/UserListIcon'
-import { WeatherForecastIcon } from '../../../assets/icons/WeatherForecastIcon'
-import { HealthIcon } from '../../../assets/icons/HealthIcon'
-import { TicTacToeIcon } from '../../../assets/icons/TicTacToeIcon'
-import { CalculatorIcon } from '../../../assets/icons/CalculatorIcon'
+import { BeerHubIcon } from "../../../assets/icons/BeerHubIcon";
+import { ColorPickerIcon } from "../../../assets/icons/ColorPickerIcon";
+import { WeatherForecastIcon } from "../../../assets/icons/WeatherForecastIcon";
+import { HealthIcon } from "../../../assets/icons/HealthIcon";
+import { TicTacToeIcon } from "../../../assets/icons/TicTacToeIcon";
+import { CalculatorIcon } from "../../../assets/icons/CalculatorIcon";
+import { PlanetIcon } from "../../../assets/icons/PlanetIcon";
 
 export const menuItems = [
   {
-    title: 'E-mail verifier',
-    icon: EmailVerifierIcon,
-    path: '/email-verifier',
-  },
-  {
-    title: 'Tic Tac Toe',
+    title: "Tic Tac Toe",
     icon: TicTacToeIcon,
-    path: '/tictactoe',
+    path: "/tictactoe",
   },
   {
-    title: 'Color picker',
+    title: "Solar System",
+    icon: PlanetIcon,
+    path: "/solar-system",
+  },
+  {
+    title: "Color picker",
     icon: ColorPickerIcon,
-    path: '/color-picker',
+    path: "/color-picker",
   },
   {
-    title: 'List of users',
-    icon: UserListIcon,
-    path: '/users-list',
-  },
-  {
-    title: 'Beers Hub',
+    title: "Beers Hub",
     icon: BeerHubIcon,
-    path: '/beers-hub',
+    path: "/beers-hub",
   },
   {
-    title: 'Weather forecast',
+    title: "Weather forecast",
     icon: WeatherForecastIcon,
-    path: '/weather-forecast',
+    path: "/weather-forecast",
   },
   {
-    title: 'Health calculators',
+    title: "Health calculators",
     icon: HealthIcon,
-    path: '/health',
+    path: "/health",
   },
   {
-    title: 'Calculator',
+    title: "Calculator",
     icon: CalculatorIcon,
-    path: '/calculator',
+    path: "/calculator",
   },
-]
+];

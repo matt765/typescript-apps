@@ -1,10 +1,9 @@
-'use client'
-import type { NextPage } from 'next'
-
-import { EmailVerifier } from '../components/views/emailVerifier/EmailVerifier'
+"use client";
+import type { NextPage } from "next";
+import { Calculator } from "../components/views/calculator/Calculator";
 
 const Home: NextPage = () => {
-  return <EmailVerifier />
-}
+  return <Calculator />;
+};
 
-export default Home
+export default Home;

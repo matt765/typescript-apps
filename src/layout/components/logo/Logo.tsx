@@ -23,8 +23,8 @@ export const Logo = ({ isSideMenuOpen, isMobile }: Props) => {
         </div>
         {isSideMenuOpen && (
           <div className={styles.logoTextContainer}>
-            <span className={styles.logoTextTypeScript}>TypeScript</span>
-            <span className={styles.logoTextApps}>Apps</span>
+            <span className={styles.logoTextTypeScript}>Alveron</span>
+            <span className={styles.logoTextApps}>Bay</span>
           </div>
         )}
       </div>
