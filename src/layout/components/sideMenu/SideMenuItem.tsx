@@ -52,6 +52,9 @@ export const SideMenuItem = ({
     if (title === "Solar System") {
       return styles.planetIcon;
     }
+    if (title === "Wrecking Ball") {
+      return styles.wreckingBallIcon;
+    }
     return undefined;
   };
 

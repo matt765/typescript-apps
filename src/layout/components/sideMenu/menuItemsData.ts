@@ -7,6 +7,7 @@ import { CalculatorIcon } from "../../../assets/icons/CalculatorIcon";
 import { PlanetIcon } from "../../../assets/icons/PlanetIcon";
 import { NewtonsCradleIcon } from "../../../assets/icons/NewtonsCradleIcon";
 import { GridIcon } from "../../../assets/icons/GridIcon";
+import { WreckingBallIcon } from "../../../assets/icons/WreckingBallIcon";
 
 export const menuItems = [
   {
@@ -23,6 +24,11 @@ export const menuItems = [
     title: "Cloth Swing",
     icon: GridIcon,
     path: "/cloth-swing",
+  },
+  {
+    title: "Wrecking Ball",
+    icon: WreckingBallIcon,
+    path: "/wrecking-ball",
   },
   {
     title: "Newton's Crade",

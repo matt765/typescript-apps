@@ -43,6 +43,12 @@
   height: 30px !important;
 }
 
+.wreckingBallIcon {
+  path {
+    fill: transparent !important;
+  }
+}
+
 .iconContainer path {
   fill: var(--gray-icon);
   transition: fill 0.2s ease-in-out;
