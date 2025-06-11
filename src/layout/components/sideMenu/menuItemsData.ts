@@ -6,6 +6,7 @@ import { TicTacToeIcon } from "../../../assets/icons/TicTacToeIcon";
 import { CalculatorIcon } from "../../../assets/icons/CalculatorIcon";
 import { PlanetIcon } from "../../../assets/icons/PlanetIcon";
 import { NewtonsCradleIcon } from "../../../assets/icons/NewtonsCradleIcon";
+import { GridIcon } from "../../../assets/icons/GridIcon";
 
 export const menuItems = [
   {
@@ -17,6 +18,11 @@ export const menuItems = [
     title: "Solar System",
     icon: PlanetIcon,
     path: "/solar-system",
+  },
+  {
+    title: "Cloth Swing",
+    icon: GridIcon,
+    path: "/cloth-swing",
   },
   {
     title: "Newton's Crade",
