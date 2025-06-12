@@ -13,6 +13,20 @@
   background-color: var(--secondary-bg);
 }
 
+@media (min-width: 1260px) {
+  .layoutContainer {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+}
+
+@media (min-width: 1750px) {
+  .layoutContainer {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -125,9 +139,4 @@ body[data-theme="dark"] .contentWrap2per::before {
   }
 }
 
-@media (min-width: 1536px) {
-  .layoutContainer {
-    padding-left: 15rem;
-    padding-right: 15rem;
-  }
-}
+

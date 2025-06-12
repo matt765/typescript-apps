@@ -11,6 +11,14 @@
   border-radius: 10px;
   margin-bottom: 0.1rem;
   transition: background-color 0.2s ease-in-out;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1750px) {
+  .menuItem {
+    height: 3rem;
+    font-size: 0.9rem;
+  }
 }
 
 .menuItem:hover {

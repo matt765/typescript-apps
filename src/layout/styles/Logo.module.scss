@@ -3,10 +3,10 @@
   align-items: center;
   border-style: solid;
   border-color: var(--border-main);
+  height: 100%;
 }
 
 .logoContainerDefault {
-  height: 6rem;
   border-width: 0 0 1px 0;
   justify-content: flex-start;
 }
@@ -14,8 +14,8 @@
 .logoContainerMobile {
   height: 100%;
   border-width: 0;
-  margin-left: -1rem; 
-  justify-content: flex-start; 
+  margin-left: -1rem;
+  justify-content: flex-start;
 }
 
 .logoOpen {
@@ -28,18 +28,18 @@
 
 .imageContainer {
   margin-right: 0.8rem;
-  display: flex; 
+  display: flex;
   width: 2rem;
-  height: auto; 
+  height: auto;
 }
 
 .logoTextContainer {
   display: flex;
-  font-family: 'Jost', sans-serif;
-  font-size: 1.5rem;
+  font-family: "Jost", sans-serif;
+  font-size: 1.4rem;
   color: var(--primary-text);
   font-weight: 700;
-  text-shadow: 1px 2px 1px rgba(0,0,0,0.1);
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
   align-items: center;
   justify-content: center;
 }
