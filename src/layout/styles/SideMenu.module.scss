@@ -8,49 +8,16 @@
   transition: width 0.3s ease;
   z-index: 2;
   /* Usuń standardowy border */
-  border-width: 3px;
+  border-width: 1px;
   border-style: solid;
-  border-color: rgba(133, 183, 213, 0.3);
+  border-color: rgb(255, 255, 255, 0.1);
   border-radius: 15px;
-}
-
-/* Gradient border z zachowaniem border-radius */
-.sideMenuContaine2r::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 1px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 0.1) 25%,
-    rgba(255, 255, 255, 0.05) 50%,
-    rgba(255, 255, 255, 0.1) 75%,
-    rgba(255, 255, 255, 0.3) 100%
-  );
-  border-radius: inherit;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: subtract;
-  -webkit-mask-composite: xor;
-  pointer-events: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .sideMenuLogo {
   height: 5.5rem;
   flex-shrink: 0;
-}
-
-/* Wersja dla dark mode */
-body[data-theme="dark"] .sideMenuContai2ner::before {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.05) 25%,
-    rgba(255, 255, 255, 0.02) 50%,
-    rgba(255, 255, 255, 0.05) 75%,
-    rgba(255, 255, 255, 0.15) 100%
-  );
 }
 
 .sideMenuOpen {
@@ -76,12 +43,7 @@ body[data-theme="dark"] .sideMenuContai2ner::before {
 }
 
 .notFullScreen {
-  box-shadow: var(--box-shadow-light);
   border-radius: 15px;
-}
-
-body[data-theme="dark"] .notFullScreen {
-  box-shadow: var(--box-shadow-dark);
 }
 
 .menuItemsList {

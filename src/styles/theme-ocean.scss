@@ -1,12 +1,11 @@
-/* src/styles/theme-dark.scss */
-
-html.dark {
-  // Backgrounds
-  --primary-bg: rgba(168, 168, 168, 0.15);
+/* src/styles/theme-ocean.scss */
+html.ocean {
+ // Backgrounds
+  --primary-bg: rgba(12, 27, 45, 0.62);
   --primary-bg-full-screen: #3f4450;
   --secondary-bg: #3a2f37;
   --mobile-navbar-bg: #383d47;
-  --content-bg: rgba(168, 168, 168, 0.15);
+  --content-bg: rgba(12, 27, 45, 0.62);
   --spinner-bg: #2f323a;
   --content-full-screen-bg: #3f4450;
   --active-bg: rgb(107, 169, 225, 0.1);
@@ -18,8 +17,8 @@ html.dark {
   --primary-link: rgb(255, 255, 255, 0.9);
   --primary-link-hover: rgb(255, 255, 255);
   --secondary-text: rgb(255, 255, 255, 0.7);
-  --colored-text: #df76f9;
-  --colored-text-light: #df76f9;
+  --colored-text: #e5b07e;
+  --colored-text-light: #dfbe71;
   --header-text: var(--primary-text);
 
   // Transparent button
@@ -69,7 +68,7 @@ html.dark {
   --user-list-bg: rgba(107, 169, 225, 0);
 
   // Calculator
-  --calculator-bg: rgba(37, 40, 43, 0.22);
+  --calculator-bg: rgba(37, 40, 43, 0.42);
   --calculator-button-bg: rgb(255,255,255,0.03);
   --calculator-button-hover-bg: #5d6a7a;
   --calculator-header-bg: rgba(255,255,255,0.03);

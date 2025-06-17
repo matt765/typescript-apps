@@ -60,6 +60,7 @@
 .iconContainer path {
   fill: var(--gray-icon);
   transition: fill 0.2s ease-in-out;
+  color: var(--gray-icon);
 }
 
 .active .iconContainer path {
@@ -79,12 +80,4 @@
 
 .active .title {
   color: var(--colored-text);
-}
-
-.lightTheme .title {
-  font-weight: 500;
-}
-
-.darkTheme .title {
-  font-weight: 400;
 }

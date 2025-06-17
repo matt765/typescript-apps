@@ -4,12 +4,12 @@
   font-size: 2rem;
   background-color: var(--calculator-button-bg);
   color: var(--calculator-button-text);
-  border: 1px solid var(--border-main); 
-  border-radius: 5px;
+
+  border-radius: 7px;
   font-weight: 300;
   cursor: pointer;
   transition: background-color 0.2s ease;
-
+  border: 1px solid var(--border-gray);
   &:hover {
     background-color: var(--calculator-button-hover-bg);
   }

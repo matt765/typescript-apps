@@ -25,6 +25,8 @@ import "@fontsource/quicksand/300.css";
 import "../styles/globals.css";
 import "../styles/theme-light.scss"; // Changed to scss
 import "../styles/theme-dark.scss"; // Changed to scss
+import "../styles/theme-sunset.scss"; // Changed to scss
+import "../styles/theme-ocean.scss"; // Changed to scss
 import { Providers } from "../services/Providers"; // Added Providers
 import { Layout } from "../layout/Layout"; // Corrected Layout import
 

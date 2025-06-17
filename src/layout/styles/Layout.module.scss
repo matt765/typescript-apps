@@ -35,14 +35,42 @@
   height: 100vh;
   background-color: var(--layout-overlay);
   z-index: 1;
-}
-.lightThemeSpecific {
-  background-image: url("/lightbg.jpg");
+  // backdrop-filter: blur(50px);
 }
 
-.darkThemeSpecific {
-  background-image: url("/darkbg.png");
+// .lightThemeSpecific {
+// background-color:hsla(233,13%,12%,1);
+// background-image:
+// radial-gradient(at 86% 87%, hsla(278,19%,33%,0.8) 0px, transparent 30%),
+// radial-gradient(at 10% 95%, hsla(278,19%,33%,0.8) 0px, transparent 20%),
+// radial-gradient(at 30% 10%, hsla(278,19%,33%,0.8) 0px, transparent 25%);
+//   background-repeat: no-repeat;
+// }
+.lightThemeSpecific {
+  background-image: url("/bg2.png");
 }
+.darkThemeSpecific {
+  background-image: url("/bg1.png");
+}
+
+.oceanThemeSpecific {
+  background-image: url("/bg3.png");
+}
+
+.sunsetThemeSpecific {
+  background-image: url("/bg4.png");
+}
+// .darkThemeSpecific {
+//   background-color: hsla(223, 14%, 13%, 1);
+//   background-image: radial-gradient(
+//       at 4% 2%,
+//       hsla(208, 6%, 74%, 0.2) 0px,
+//       transparent 30%
+//     ),
+//     radial-gradient(at 28% 100%, hsla(217, 10%, 28%, 0.57) 0px, transparent 30%),
+//     radial-gradient(at 88% 15%, hsla(217, 10%, 28%, 0.68) 0px, transparent 25%);
+//   background-repeat: no-repeat;
+// }
 
 .contentWrapper {
   z-index: 2;
@@ -55,19 +83,22 @@
   padding-right: 0.5rem;
   margin-left: 1.6rem;
   border-radius: 15px;
-  box-shadow: var(--box-shadow-light);
+
   overflow: hidden;
   transition: 0s;
   /* Usuń standardowy border */
-  border-width: 3px;
+  border-width: 1px;
   border-style: solid;
-  border-color: rgba(133, 183, 213, 0.3);
+  border-color: rgb(255, 255, 255, 0.1);
   border-radius: 15px;
   height: 100%;
   background-color: var(--content-bg);
 
   /* Dodaj position relative dla gradient border */
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 /* Gradient border dla contentWrapper */
@@ -138,5 +169,3 @@ body[data-theme="dark"] .contentWrap2per::before {
     display: none;
   }
 }
-
-

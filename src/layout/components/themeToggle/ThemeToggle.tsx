@@ -1,37 +1,83 @@
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
-import styles from '../../styles/ThemeToggle.module.scss'
-import { SunIcon } from '../../../assets/icons/SunIcon' // Adjusted path
-import { MoonIcon } from '../../../assets/icons/MoonIcon' // Adjusted path
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import styles from "../../styles/ThemeToggle.module.scss";
+import { SunIcon } from "../../../assets/icons/SunIcon";
+import { MoonIcon } from "../../../assets/icons/MoonIcon";
+// Możesz dodać nowe ikony dla nowych motywów
+// import { OceanIcon } from '../../../assets/icons/OceanIcon'
+// import { SunsetIcon } from '../../../assets/icons/SunsetIcon'
 
 export const ThemeToggle = () => {
-  const { setTheme, resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  // useEffect only runs on the client, so we can safely show the UI
+  // Definiujemy kolejność motywów
+  const themes = ["light", "dark", "ocean", "sunset"] as const;
+
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   if (!mounted) {
-    return null
+    return null;
   }
 
   const toggleTheme = () => {
-    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
-  }
+    const currentIndex = themes.indexOf(
+      resolvedTheme as (typeof themes)[number]
+    );
+    const nextIndex = (currentIndex + 1) % themes.length;
+    setTheme(themes[nextIndex]);
+  };
+
+  // Funkcja do uzyskania odpowiedniej ikony dla każdego motywu
+  const getThemeIcon = () => {
+    switch (resolvedTheme) {
+      case "light":
+        return <SunIcon className={styles.icon} />;
+      case "dark":
+        return <MoonIcon className={styles.icon} />;
+      case "ocean":
+        // Możesz użyć dedykowanej ikony lub emoji
+        return <span className={styles.emoji}>🌊</span>;
+      case "sunset":
+        // Możesz użyć dedykowanej ikony lub emoji
+        return <span className={styles.emoji}>🌅</span>;
+      default:
+        return <SunIcon className={styles.icon} />;
+    }
+  };
+
+  // Function to get the next theme name for aria-label
+  const getNextThemeName = () => {
+    const currentIndex = themes.indexOf(
+      resolvedTheme as (typeof themes)[number]
+    );
+    const nextIndex = (currentIndex + 1) % themes.length;
+    const nextTheme = themes[nextIndex];
+
+    switch (nextTheme) {
+      case "light":
+        return "light mode";
+      case "dark":
+        return "dark mode";
+      case "ocean":
+        return "ocean mode";
+      case "sunset":
+        return "sunset mode";
+      default:
+        return "next theme";
+    }
+  };
 
   return (
     <button
       onClick={toggleTheme}
       className={styles.themeToggleButton}
-      aria-label={resolvedTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+      aria-label={`Switch to ${getNextThemeName()}`}
+      title={`Current theme: ${resolvedTheme}. Click to switch to ${getNextThemeName()}`}
     >
-      {resolvedTheme === 'dark' ? (
-        <SunIcon className={styles.icon} />
-      ) : (
-        <MoonIcon className={styles.icon} />
-      )}
+      {getThemeIcon()}
     </button>
-  )
-}
+  );
+};

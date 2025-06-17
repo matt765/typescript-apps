@@ -15,12 +15,27 @@ export const Layout = ({ children }: { children: ReactNode }) => {
     handleSideMenu,
   } = useLayout()
 
+  const getThemeSpecificClass = () => {
+    switch (colorMode) {
+      case 'light':
+        return styles.lightThemeSpecific
+      case 'dark':
+        return styles.darkThemeSpecific
+      case 'ocean':
+        return styles.oceanThemeSpecific
+      case 'sunset':
+        return styles.sunsetThemeSpecific
+      default:
+        return styles.lightThemeSpecific // fallback
+    }
+  }
+
   const layoutContainerClasses = [
     styles.layoutContainer,
-    colorMode === 'light' ? styles.lightThemeSpecific : styles.darkThemeSpecific, // For bg image or specific root styles
-    // Note: global light/dark class is applied on <html> by next-themes
+    getThemeSpecificClass(),
+    // Nota: globalna klasa light/dark/ocean/sunset jest aplikowana na <html> przez next-themes
   ].join(' ').trim()
-
+  
   const contentWrapperClasses = [
     styles.contentWrapper,
     isFullScreen ? styles.fullScreenContent : '', // Optional: if content needs to change in fullscreen

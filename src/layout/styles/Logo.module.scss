@@ -31,6 +31,7 @@
   display: flex;
   width: 2rem;
   height: auto;
+  color: var(--colored-text-light);
 }
 
 .logoTextContainer {
@@ -46,5 +47,5 @@
 
 .logoTextApps {
   color: var(--colored-text-light);
-  margin-left: 0rem;
+  margin-left: 0.3rem;
 }
