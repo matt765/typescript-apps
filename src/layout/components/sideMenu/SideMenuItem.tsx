@@ -2,7 +2,6 @@ import { FunctionComponent, useEffect, useState, SVGProps } from "react";
 import { usePathname } from "next/navigation"; // Changed from 'next/router'
 import Link from "next/link"; // Added Link import
 import styles from "../../styles/SideMenuItem.module.scss";
-import useLayout from "../../useLayout"; // Corrected path
 
 type Props = {
   icon: FunctionComponent<SVGProps<SVGSVGElement>>;
@@ -19,14 +18,9 @@ export const SideMenuItem = ({
 }: Props) => {
   const pathname = usePathname(); // Added usePathname hook
   const [isActive, setIsActive] = useState(false);
-  const { colorMode } = useLayout(); // 'light' or 'dark'
 
   useEffect(() => {
-    if (
-      pathname === path ||
-      (pathname === "/" && path === "/email-verifier") || // Assuming /email-verifier is the default for '/'
-      (title === "Beers Hub" && pathname.startsWith("/beer/"))
-    ) {
+    if (pathname === path) {
       setIsActive(true);
     } else {
       setIsActive(false);
@@ -36,7 +30,7 @@ export const SideMenuItem = ({
   const itemClasses = [
     styles.menuItem,
     isActive ? styles.active : "",
-    colorMode === "light" ? styles.lightTheme : styles.darkTheme, // For specific light/dark overrides not covered by CSS vars
+    // For specific light/dark overrides not covered by CSS vars
   ]
     .join(" ")
     .trim();

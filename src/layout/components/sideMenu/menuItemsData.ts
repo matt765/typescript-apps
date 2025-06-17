@@ -6,6 +6,7 @@ import { PlanetIcon } from "../../../assets/icons/PlanetIcon";
 import { NewtonsCradleIcon } from "../../../assets/icons/NewtonsCradleIcon";
 import { GridIcon } from "../../../assets/icons/GridIcon";
 import { WreckingBallIcon } from "../../../assets/icons/WreckingBallIcon";
+import { SpinnerIcon } from "../../../assets/icons/SpinnerIcon";
 
 export const menuItems = [
   {
@@ -27,6 +28,11 @@ export const menuItems = [
     title: "Wrecking Ball",
     icon: WreckingBallIcon,
     path: "/wrecking-ball",
+  },
+  {
+    title: "Spinner",
+    icon: SpinnerIcon,
+    path: "/spinner",
   },
   {
     title: "Newton's Crade",
