@@ -1,6 +1,4 @@
-import { BeerHubIcon } from "../../../assets/icons/BeerHubIcon";
 import { ColorPickerIcon } from "../../../assets/icons/ColorPickerIcon";
-import { WeatherForecastIcon } from "../../../assets/icons/WeatherForecastIcon";
 import { HealthIcon } from "../../../assets/icons/HealthIcon";
 import { TicTacToeIcon } from "../../../assets/icons/TicTacToeIcon";
 import { CalculatorIcon } from "../../../assets/icons/CalculatorIcon";
@@ -39,16 +37,6 @@ export const menuItems = [
     title: "Color picker",
     icon: ColorPickerIcon,
     path: "/color-picker",
-  },
-  {
-    title: "Beers Hub",
-    icon: BeerHubIcon,
-    path: "/beers-hub",
-  },
-  {
-    title: "Weather forecast",
-    icon: WeatherForecastIcon,
-    path: "/weather-forecast",
   },
   {
     title: "Health calculators",
