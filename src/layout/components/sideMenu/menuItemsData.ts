@@ -7,6 +7,7 @@ import { NewtonsCradleIcon } from "../../../assets/icons/NewtonsCradleIcon";
 import { GridIcon } from "../../../assets/icons/GridIcon";
 import { WreckingBallIcon } from "../../../assets/icons/WreckingBallIcon";
 import { SpinnerIcon } from "../../../assets/icons/SpinnerIcon";
+import { SlingshotIcon } from "../../../assets/icons/SlingshotIcon";
 
 export const menuItems = [
   {
@@ -23,6 +24,11 @@ export const menuItems = [
     title: "Cloth Swing",
     icon: GridIcon,
     path: "/cloth-swing",
+  },
+  {
+    title: "Slingshot",
+    icon: SlingshotIcon,
+    path: "/slingshot",
   },
   {
     title: "Wrecking Ball",
